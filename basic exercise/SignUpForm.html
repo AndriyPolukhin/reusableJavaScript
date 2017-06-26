@@ -1,0 +1,120 @@
+<!doctype html>
+<html>
+    <head>
+          <meta charset='utf-8'>
+          <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+          <title>Sign up</title>
+          <link rel='stylesheet' href='bootstrap-3.3.7-dist/css/bootstrap.min.css'>
+          <link rel='stylesheet' href='bootstrap-3.3.7-dist/css/bootstrap-theme.min.css'>
+          <style>
+              body {
+                  background: url(img/ak.png);
+                  color:gold;
+                  text-shadow: 1px 1px 2px black;
+                  border:4px solid purple;
+                  padding:20px;
+              }
+          </style>
+    </head>
+    <body>
+        <form class='form-horizontal'>
+            <h1>Sign Up</h1>
+            <div class='form-group'>
+                <label class='col-xs-3 control-label' for='inputEmail'>Email:</label>
+                <div class='col-xs-9'>
+                    <input type='email' id='inputEmail' placeholder='Insert your Email' class='form-control'>
+                </div>
+            </div>
+            <div class='form-group'>
+                <label class='col-xs-3 control-label' for='inputPassword'>Password:</label>
+                <div class='col-xs-9'>
+                    <input type='password' id='inputPassword' class='form-control' placeholder='Input Password'>
+                </div>
+            </div>
+            <div class='form-group'>
+                <label class='col-xs-3 control-label' for='confirmPassword'>Confirm password</label>
+                <div class='col-xs-9'>
+                    <input type='password' id='confirmPassword' class='form-control' placeholder='Confrim Password'>
+                </div>
+            </div>
+            <div class='form-group'>
+              <label class='col-xs-3 control-label' for='firstName'>First Name:</label>
+              <div class='col-xs-9'>
+                  <input type='text' class='form-control' id='firstName' placeholder='Input First Name'>
+              </div>
+            </div>
+            <div class='form-group'>
+                <label class='col-xs-3 control-label' for='lastName'>Last Name:</label>
+                  <div class='col-xs-9'>
+                      <input type='text' class='form-control' id='lastName' placeholder='Input Last Name'>
+                  </div>
+            </div>
+            <div class='form-group'>
+                <label class='col-xs-3 control-label' for='phone'>Phone:</label>
+                <div class='col-xs-9'>
+                    <input type='tel' id='phone' class='form-control' placeholder='Input Phone Number'>
+                </div>
+            </div>
+            <div class='form-group'>
+                <label class='col-xs-3 control-label'>Date Of Birth:</label>
+                <div class='col-xs-3'>
+                    <select class='form-control'>
+                          <option>Date</option>
+                    </select>
+                </div>
+                <div class='col-xs-3'>
+                    <select class='form-control'>
+                          <option>Month</option>
+                    </select>
+                </div>
+                <div class='col-xs-3'>
+                    <select class='form-control'>
+                          <option>Year</option>
+                    </select>
+                </div>
+            </div>
+            <div class='form-group'>
+                <label class='col-xs-3 control-label' for='inputAddress'>Postal Address:</label>
+                <div class='col-xs-9'>
+                    <textarea rows='3' class='form-control' id='inputAddress' placeholder='Input your Address'></textarea>
+                </div>
+            </div>
+            <div class='form-group'>
+                <label class='col-xs-3 control-label' for='inputZipCode'>Zip Code:</label>
+                <div class='col-xs-9'>
+                    <input type='ZipCode' class='form-control' id='inputZipCode' placeholder='Input Zip Code'>
+                </div>
+            </div>
+            <div class='form-group'>
+                <label class='col-xs-3 control-label'>Gender:</label>
+                <div class='col-xs-2'>
+                    <label class='radio-inline'>
+                        <input type='radio' name='GenderRadio' value='male'>Male:
+                    </label>
+                </div>
+                <div class='col-xs-2'>
+                    <label class='radio-inline'>
+                        <input type='radio' name='GenderRadio' value='female'>Female:
+                    </label>
+                </div>
+            </div>
+            <div class='form-group'>
+              <div class='col-xs-offset-3 col-xs-9'>
+                  <input type='checkbox' value='news'><em> Send me the latest news</em>
+              </div>
+            </div>
+            <div class='form-group'>
+                <div class='col-xs-offset-3 col-xs-9'>
+                  <input type='checkbox' value='agree'>
+                  <em> Agree to the <a href='#'>Terms and Conditions</a>.</em>
+                </div>
+            </div>
+            <div class='col-xs-offset-3 col-xs-9'>
+                  <input type='submit' value='Submit' class='btn btn-warning'>
+                  <input type='reset' value='Reset' class='btn btn-danger'>
+            </div>
+        </form>
+        <script src='js/jquery-3.1.0.min.js'></script>
+        <script src='bootstrap-3.3.7-dist/js/bootstrap.min.js'></script>
+    </body>
+</html>
