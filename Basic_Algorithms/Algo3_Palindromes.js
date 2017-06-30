@@ -56,8 +56,7 @@ palindrome("A man, a plan, a canal. Panama");
 
 function palindrome(str) {
     var re = /[\W_]/g;
-    var lowRegStr = str.lowerCase().replace(re, '');
-    var reverseStr = lowRegStr.split('').reverse().join('');
+    var lowRegStr = str.toLowerCase().replace(re, '');
     var reverseStr = lowRegStr.split('').reverse().join('');
     return reverseStr === lowRegStr;
 }
