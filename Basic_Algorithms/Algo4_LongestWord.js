@@ -67,13 +67,12 @@ function findLongestWord(str) {
     var strSplit = str.split(' ');
     var longestWord = 0;
     for (var i = 0; i < strSplit.length; i++) {
-        if (longestWord > strSplit[i].length) {
+        if (strSplit[i].length > longestWord) {
             longestWord = strSplit[i].length;
         }
     }
     return longestWord;
 }
-
 findLongestWord('The quick brown fox jumped over the lazy dog');
 
 // II. Find the Longest Word With the sort() Method
@@ -112,8 +111,10 @@ findLongestWord('The quick brown fox jumped over the lazy dog');
 
 // Short:
 function findLongestWord(str) {
-  var longestWord = str.split(' ').sort(function(a, b) { return b.length - a.length; });
-  return longestWord[0].length;
+    var longestWord = str.split(' ').sort(function (a, b) {
+        return b.length - a.length;
+    });
+    return longestWord[0].length;
 }
 findLongestWord("The quick brown fox jumped over the lazy dog");
 
@@ -121,20 +122,20 @@ findLongestWord("The quick brown fox jumped over the lazy dog");
 // III. Find the Longest Word With the reduce() Method
 
 function findLongestWord(str) {
-    
+
     // Step 1. Split the string into an array of strings
     var strSplit = str.split(' ');
     // var strSplit = "The quick brown fox jumped over the lazy dog".split(' ');
     // var strSplit = ["The", "quick", "brown", "fox", "jumped", "over", "the", "lazy", "dog"];
-    
+
     // Step 2. use the reduce method
-    var longestWord = strSplit.reduce(function(longest, currentWord) {
-       if(currentWord.length > longest.length)
-           return currentWord;
+    var longestWord = strSplit.reduce(function (longest, currentWord) {
+        if (currentWord.length > longest.length)
+            return currentWord;
         else
             return longest;
     }, "");
-    
+
     /* Reduce process
   currentWord      longest       currentWord.length     longest.length    if(currentWord.length > longest.length)?   var longestWord
   "The"             ""                  3                     0                              yes                          "The"
@@ -147,12 +148,12 @@ function findLongestWord(str) {
   "lazy"            "jumped"            4                     6                              no                          "jumped"
   "dog"             "jumped"            3                     6                              no                          "jumped"
   */
-    
+
     // Step 3. Return the length of the longest
     return longestWord.length;
     // var longestWord = 'jumped'
     // longestWord.length => 'jumped'.length => 6;
-    
+
 }
 
 findLongestWord("The quick brown fox jumped over the lazy dog");
@@ -161,25 +162,10 @@ findLongestWord("The quick brown fox jumped over the lazy dog");
 
 
 function findLongestWord(str) {
-    var longestWord = str.split(' ').reduce(function(longest, current) {
-       return currentWord.length > longest.length ? currentWord : longest;
+    var longestWord = str.split(' ').reduce(function (longest, current) {
+        return currentWord.length > longest.length ? currentWord : longest;
 
     }, "");
     return longestWord.length;
 }
 findLongestWord('The quick brown fox jumped over the lazy dog');
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
