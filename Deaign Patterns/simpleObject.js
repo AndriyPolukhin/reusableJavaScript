@@ -59,4 +59,38 @@ Apple.prototype.getInfo = function () {
 
 
 
-// 2.
+// 2. Using object literals
+
+// create an object
+var o = {};
+// Instead of var o = new Object();
+var a = [];
+// Instead of var a = new Array();
+
+var apple = {
+    type: 'macintosh',
+    color: 'red',
+    getInfo: function () {
+        return this.color + ' ' + this.type + ' apple';
+    }
+}
+
+apple.color = 'reddish';
+console.log(apple.getInfo());
+
+
+
+// 3. Singleton using a function
+
+// Combining the both two from the top
+
+var apple = new function () {
+    this.type = 'macintosh';
+    this.color = 'red';
+    this.getInfo = function () {
+        return this.color + ' ' + this.type + ' apple';
+    };
+}
+
+apple.color = 'reddish';
+console.log(apple.getInfo());
