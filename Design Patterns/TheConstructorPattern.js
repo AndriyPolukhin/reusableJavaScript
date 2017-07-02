@@ -58,7 +58,7 @@ var defineProp = function (obj, key, value) {
     Object.defineProperty(obj, key, config);
 };
 
-// Usage
+// Usage!!!
 var person = Object.create(Object.prototype);
 
 // Populate the object with properties
@@ -92,3 +92,5 @@ Object.defineProperties(newObject, {
 var driver = Object.create(person);
 //Set properties
 defineProp(driver, 'topSpeed', '100mph');
+
+//

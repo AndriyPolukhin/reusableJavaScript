@@ -18,7 +18,7 @@ console.log(myCar.getInfo());
 
 // Three ways to difine a class in JavaScript
 
-// 1. sing a function
+// 1. sing a function!
 
 function Apple(type) {
     this.type = type;
