@@ -39,3 +39,12 @@ ans = [["a", "b"], ["c", "d"]];
 var arr = ['a', 'b', 'c', 'd'],
     size = 2,
     ans = [];
+
+// Updated code on 05/07/2017
+var arr = ['a', 'b', 'c', 'd'],
+    size = 2,
+    ans = [];
+for (var i = 0; i < arr.length; i++) {
+    ans.push(arr.slice(i, size));
+    size = size + i;
+}
