@@ -25,35 +25,46 @@ var myObjectLiteral = {
 
 var myModule = {
 
-    myProperty: 'someValue',
+    myProperty: "someValue",
 
-    // Object literals can contain properties and methods
-
+    // object literals can contain properties and methods.
+    // e.g we can define a further object for module configuration:
     myConfig: {
         useCaching: true,
-        language: 'en'
+        language: "en"
     },
 
-    // A basic method
+    // a very basic method
     saySomething: function () {
-        console.log('Where in the world is Paul Irish todya');
+        console.log("Where in the world is Paul Irish today?");
     },
 
     // output a value based on the current configuration
-    reportMyConfig: function (newConfig) {
-        if (typeof newConfig === 'object') {
+    reportMyConfig: function () {
+        console.log("Caching is: " + (this.myConfig.useCaching ? "enabled" : "disabled"));
+    },
+
+    // override the current configuration
+    updateMyConfig: function (newConfig) {
+
+        if (typeof newConfig === "object") {
             this.myConfig = newConfig;
             console.log(this.myConfig.language);
         }
     }
 };
 
-// Checking
+// Outputs: Where in the world is Paul Irish today?
+myModule.saySomething();
 
-myModule.saySomething(); // Where in the wordl...
-myModule.reportConfig(); // Chaching: en
-myModuel.updateMyConfig({
-    language: 'fr',
+// Outputs: Caching is: enabled
+myModule.reportMyConfig();
+
+// Outputs: fr
+myModule.updateMyConfig({
+    language: "fr",
     useCaching: false
-}); // change to fr
-myModule.reportMyConfig(); // Chaching disabled
+});
+
+// Outputs: Caching is: disabled
+myModule.reportMyConfig();
