@@ -1,4 +1,5 @@
 // THE MODULE PATTERN
+// https://addyosmani.com/resources/essentialjsdesignpatterns/book/#constructorpatternjavascript
 
 /*
 Implementing modules:
