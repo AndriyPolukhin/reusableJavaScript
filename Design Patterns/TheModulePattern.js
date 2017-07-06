@@ -69,3 +69,29 @@ myModule.updateMyConfig({
 
 // Outputs: Caching is: disabled
 myModule.reportMyConfig();
+
+
+
+// Example of a self-container MODULE
+
+var testModule = (function () {
+
+    var countre = 0;
+
+    return {
+
+        incrementCounter: function () {
+            return counter++;
+        },
+
+        resetCounter: function () {
+            console.log('counter value prior to reset: ' + counter);
+            counter = 0;
+        }
+    };
+})();
+
+// Usage:
+testModule.incrementCounter();
+// check the reset
+testModule.resetCounter();
