@@ -1,3 +1,4 @@
+// SUm two arrays
 function Arrays_sum(array1, array2) {
     var result = [];
     var ctr = 0;
@@ -27,3 +28,13 @@ function Arrays_sum(array1, array2) {
 }
 
 console.log(Arrays_sum([1, 0, 2, 3, 4], [3, 5, 6, 7, 8]));
+
+
+// Check if the input is an Array or not
+is_array = function (input) {
+    if (toString.call(input) === '[object Array]')
+        return true;
+    return false;
+};
+console.log(is_array('w3resource'));
+console.log(is_array([1, 2, 4, 0]));
