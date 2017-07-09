@@ -1,16 +1,22 @@
 // Factorials Here I think i should have used Reduce
 function factorialize(num) {
+
+    // here I set the default return if the value is not factoriable
     if (num === 0) {
         return 1;
     }
 
+    // creating a new var
     var array = [];
+
+    // creating a while loop
     var i = 1;
     while (i < num + 1) {
         array.push(i);
         i++;
     }
 
+    // using reduce to multiply values
     var newArray = array.reduce(function (a, b) {
         return a * b;
     });
