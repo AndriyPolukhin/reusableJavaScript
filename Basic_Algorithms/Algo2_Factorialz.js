@@ -78,11 +78,11 @@ factorialize(5);
 function factorialize(num) {
     if (num < 0)
         return -1;
-    else if (num == 0)
+    else if (num === 0)
         return 1;
-    else {
+    else
         return (num * factorialize(num - 1));
-    }
+
 }
 factorialize(5);
 
