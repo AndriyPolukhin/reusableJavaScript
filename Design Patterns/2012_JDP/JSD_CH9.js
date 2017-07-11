@@ -102,3 +102,128 @@ Car.prototype.toString = function () {
 var civic = new Car('Honda Civic', 2009, 20000);
 var mondeo = new Car('Ford Mondeo', 2010, 5000);
 consle.log(civic.toString);
+
+
+// The Singleton Pattern
+
+// 1. First Examples
+
+var mySingleton = {
+    property1: 'something',
+    property2: 'something else',
+    method1: function () {
+        console.log('Hello word');
+    }
+};
+
+// 2. Extending and example
+
+var mySingleton = function () {
+    // here are the private methods and variables
+    var privateVariable = 'something private';
+    
+    function showPrivate() {
+        console.log(privateVariable);
+    }
+    
+    // public var and method which have access
+    
+    return {
+        publicMethod: function () {
+            showPrivate();
+        },
+        
+        publicVar: 'the public can see this'
+    };
+};
+
+var single = mySingleton();
+single.publicMethod(); // logs 'something private'
+console.log(publicVar); // logs 'the public can see this'
+
+
+// 3. Place a singleton into a function
+
+var Singleton = (function () {
+    var instantiated;
+    
+    function init() {
+        // singleton here
+        return {
+            publicMethod: function () {
+                console.log('hello world');
+            },
+            publicProperty: 'test'
+        };
+    }
+    
+    return {
+        getInstance: function () {
+            if(!instantiated) {
+                instantiated = init();
+            }
+            return instantiated;
+        }
+    };
+    
+})();
+
+//calling public method is then as easy as:
+Singleton.getInstance().publicMethod();
+
+// 4. One more singleton Example
+var SingletonTester = (function () {
+   // options: an bject containing configuration options for the singleton
+    //e. g. var options = { name: 'test', pointX: 5};
+    function Singleton(options) {
+        // set options to the options supplied or an empty object if none provided
+        options = options || {};
+        // set the name parameter
+        this.name = 'SingletonTester';
+        // set the value of pointX
+        this.pointX = args.pointX || 6;
+        // set the value of pointY
+        this.pointY = args.pointY || 10;
+    }
+    
+    // this is our instance holder
+    var instance;
+    
+    // this is an emulation of static variables and methods
+    var _static = {
+        
+        name: 'SingletonTester',
+        
+        // This is a method for getting an instance
+        // IT return a singleton instance of a singlton object
+        getInstance: function (options) {
+            if (instance === undefined) {
+                instance = new Singleton(options);
+            }
+            return instance;
+        }
+    };
+    return _static;
+    })();
+var singletonTest = SingletonTester.getInstace({
+    pointX: 5
+});
+})
+
+
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+});
