@@ -117,9 +117,9 @@ console.log(civic.toString());
 console.log(modeo.toString());
 
 
-// COunstructor With Prototype
+// Counstructor With Prototype
 
-function Car(model, year, mile) {
+function Car(model, year, miles) {
     this.model = model;
     this.year = year;
     this.miles = miles;

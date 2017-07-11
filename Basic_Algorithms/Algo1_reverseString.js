@@ -103,7 +103,7 @@ function reverseString(str) {
         return '';
 
     else
-        return reverseString(str.substr(1)) + str.charAr(0);
+        return reverseString(str.substr(1)) + str.charAt(0);
 
     /* 
 First Part of the recursion method

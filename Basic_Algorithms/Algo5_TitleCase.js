@@ -28,7 +28,7 @@ titleCase("I'm a little tea pot");
 // Using:
 // 1. toLowerCase();
 // 2. split();
-// 3. charAr();
+// 3. charAt();
 // 4. slice();
 // 5. join();
 // 6. toUpperCase();
