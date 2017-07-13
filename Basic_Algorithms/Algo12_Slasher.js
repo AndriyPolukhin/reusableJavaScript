@@ -26,3 +26,20 @@ slasher([1, 2, 3], 2);
         testing!
 =================================
 */
+
+
+// Solutions Basic
+function slasher(arr, howMany) {
+    // remove the head
+    arr.splice(0, howMany);
+    return arr;
+}
+
+slasher([1, 2, 3], 2);
+
+// Solution Intermediate
+
+function slasher(arr, howMany) {
+    //return after slice
+    return arr.slice(howMany);
+}
