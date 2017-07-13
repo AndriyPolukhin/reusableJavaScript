@@ -96,4 +96,3 @@ function confirmEnding(string, target) {
 }
 
 confirmEnding('BASTINA', "N");
-}
