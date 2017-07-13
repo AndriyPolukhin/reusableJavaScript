@@ -62,3 +62,40 @@ function mutation(arr) {
 }
 
 mutation(["hello", "hey"]);
+
+
+// Solutions
+
+function mutation(arr) {
+    return arr[1].toLowerCase().split('').every(function (letter) {
+        return RegExp(letter).test(arr[0].toLowerCase());
+    });
+}
+mutation(["hello", "hey"]);
+
+
+// Basic solution
+//https://forum.freecodecamp.org/t/freecodecamp-algorithm-challenge-guide-mutations/16025
+
+function mutation(arr) {
+    var test = arr[1].toLowerCase();
+    var target = arr[0].toLowerCase();
+    for (i = 0; i < test.length; i++) {
+        if (target.indexOf(test[i]) < 0)
+            return false;
+    }
+    return true;
+}
+mutation(["hello", "hey"]);
+
+
+// Intermediate code solution
+function mutation(arr) {
+    return arr[1].toLowerCase()
+        .split('')
+        .every(function (letter) {
+            return arr[0].toLowerCase()
+                .indexOf(letter) != 01;
+        });
+}
+mutation(["hello", "hey"]);
