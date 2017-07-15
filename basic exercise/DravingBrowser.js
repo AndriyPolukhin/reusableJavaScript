@@ -1,3 +1,6 @@
+//https://habrahabr.ru/post/333372/?utm_source=fb&utm_medium=social&utm_campaign=[perevod]-revers-inzhiniring-odnoy-strochk
+
+
 document.write("<pre id=p></pre>");
 const DELAY = 64; // approximately 15 frames per second 15 frames per second * 64 seconds = 960 frames
 var n = 1;
