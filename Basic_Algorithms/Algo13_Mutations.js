@@ -99,3 +99,21 @@ function mutation(arr) {
         });
 }
 mutation(["hello", "hey"]);
+
+
+// Coders solution
+
+function mutation(arr) {
+    var a1 = arr[0].toLowerCase();
+    var a2 = arr[1].toLowerCase();
+
+    for (var i in a2.split('')) {
+        if (a1.indexOf(a2[i]) == -1) {
+            console.log(a1 + "..." + a2[i]);
+            return false;
+        }
+    }
+    return true;
+}
+
+mutation(['hello', 'hey']);
