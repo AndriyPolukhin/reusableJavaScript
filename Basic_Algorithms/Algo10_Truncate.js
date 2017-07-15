@@ -43,3 +43,17 @@ answer = "A-tisket..."
 
 
 truncateString("A-tisket a-tasket A green and yellow basket", 11);
+
+
+// Solution 1
+function truncateString(str, num) {
+    if (str.length <= num) {
+        return str;
+    }
+    if (num <= 2) {
+        return str.substring(0, num) + "...";
+    }
+    return str.substring(0, num - 3) + "...";
+}
+
+truncateString("A-tisket a-tasket A green and yellow basket", 11);
