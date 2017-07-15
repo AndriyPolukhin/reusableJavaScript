@@ -8,11 +8,32 @@
 
 function bouncer(arr) {
     // Don't show a false ID to this bouncer.
-    return arr;
+    var newArr = [];
+    var i = 0;
+
+    function filterFalse(value) {
+        var a = Boolean(value);
+        if (a === true) {
+            return a;
+        }
+        return a;
+    }
+
+    function filterIt(x) {
+        var y = filterFalse(x);
+        if (y) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    newArr = arr.filter(filterIt);
+    return newArr;
 }
 
 bouncer([7, "ate", "", false, 9]);
-bouncer([false, null, 0, NaN, undefined, ""])
+
 
 /*
 =================================
@@ -32,7 +53,7 @@ Array.prototype.filter()
 */
 
 
-var arr = [7, 'ate', '', false, 9];
+var arr = [1, null, NaN, 2, undefined];
 var newArr = [];
 var i = 0;
 
@@ -44,7 +65,7 @@ function filterFalse(value) {
 }
 
 
-var arr = [7, 'ate', '', false, 9];
+var arr = [1, null, NaN, 2, undefined];
 var newArr = [];
 var i = 0;
 
@@ -65,6 +86,7 @@ function filterIt(x) {
     i++;
 }
 
+newArr = arr.filter(filterIt);
 // Searching in the Array
 
 
