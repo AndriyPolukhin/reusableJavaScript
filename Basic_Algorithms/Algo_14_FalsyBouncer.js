@@ -9,10 +9,10 @@
 function bouncer(arr) {
     // Don't show a false ID to this bouncer.
     var newArr = [];
-    var i = 0;
+    var a;
 
     function filterFalse(value) {
-        var a = Boolean(value);
+        a = Boolean(value);
         if (a === true) {
             return a;
         }
@@ -32,7 +32,7 @@ function bouncer(arr) {
     return newArr;
 }
 
-bouncer([7, "ate", "", false, 9]);
+bouncer([1, null, NaN, 2, undefined]);
 
 
 /*
@@ -107,3 +107,64 @@ function isBigEnough(value) {
 
 var filtered = [12, 5, 8, 130, 44].filter(isBigEnough);
 // filtered is [12, 130, 44]
+
+
+
+// solution 1
+newArr = arr.filter(el => el);
+
+// solutiono 2
+function bouncer(arr) {
+    return arr.filter(function (val) {
+        return val;
+    });
+}
+bouncer([1, null, NaN, 2, undefined]);
+
+// solution 3
+function bouncer(arr) {
+    return arr.filter(Boolean);
+}
+bouncer([1, null, NaN, 2, undefined]);
+
+// solution 4
+function bouncer(arr) {
+    return arr.filter(function (val) {
+        return val !== false &&
+            val !== "" &&
+            !(Number.isNaN(val)) &&
+            val !== undefined &&
+            val !== 0 &&
+            val !== null;
+    });
+}
+
+bouncer([1, null, NaN, 2, undefined]);
+
+
+// solution 5
+function bouncer(arr) {
+    return arr.filter((val) => {
+        return !!val;
+    });
+}
+bouncer([1, null, NaN, 2, undefined]);
+
+
+// solution 6
+
+function bouncer(arr) {
+    var falsy;
+    var trueArr = [];
+
+    for (i = 0; i < arr.length; i++) {
+        falsy = Boolean(arr[i]);
+
+        if (falsy === true) {
+            trueArr.push(arr[i]);
+        }
+    }
+    return trueArr;
+}
+
+bouncer([1, null, NaN, 2, undefined]);
