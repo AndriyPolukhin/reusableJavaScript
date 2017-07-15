@@ -109,6 +109,8 @@ var filtered = [12, 5, 8, 130, 44].filter(isBigEnough);
 // filtered is [12, 130, 44]
 
 
+//  SOLUTIONS
+
 
 // solution 1
 newArr = arr.filter(el => el);
@@ -168,3 +170,25 @@ function bouncer(arr) {
 }
 
 bouncer([1, null, NaN, 2, undefined]);
+
+
+// solution 7 from a coder
+
+function bouncer(arr) {
+
+    return arr.filter(function (x) {
+        if (x !== null) {
+            return x;
+        }
+    });
+}
+
+bouncer([1, null, NaN, 2, undefined, 4]);
+
+// shorter
+function bouncer(arr) {
+    return arr.filter(function (i) {
+        return i !== null ? i : '';
+    });
+}
+bouncer([1, null, NaN, 2, undefined, 4]);
