@@ -1,4 +1,4 @@
-document.write("<p id=p></p>");
+document.write("<pre id=p></pre>");
 const DELAY = 64; // approximately 15 frames per second 15 frames per second * 64 seconds = 960 frames
 var n = 1;
 var p = document.getElementById("p");
@@ -51,3 +51,8 @@ var draw = function () {
 };
 
 setInterval(draw, 64);
+
+
+// https://www.desmos.com/calculator
+//   y = mod(i,2) * 64/i - 64/i
+//   y = 64/i
