@@ -22,8 +22,6 @@ Remove all falsy values from an array.
 
 Falsy values in JavaScript are false, null, 0, "", undefined, and NaN.
 
-Remember to use Read-Search-Ask if you get stuck. Write your own code.
-
 Here are some helpful links:
 
 Boolean Objects
@@ -34,8 +32,38 @@ Array.prototype.filter()
 */
 
 
+var arr = [7, 'ate', '', false, 9];
+var newArr = [];
+var i = 0;
+
+function filterFalse(value) {
+    let a = new Boolean(value);
+    if (a === true) {
+        return a;
+    }
+}
 
 
+var arr = [7, 'ate', '', false, 9];
+var newArr = [];
+var i = 0;
+
+function filterFalse(value) {
+    var a = Boolean(value);
+    if (a === true) {
+        return a;
+    }
+    return a;
+}
+
+function filterIt(x) {
+    if (filterFalse(x[i] !== null)) {
+        return x;
+    } else if (filterFalse(x[i] === null)) {
+        i++;
+    }
+    i++;
+}
 
 // Searching in the Array
 
