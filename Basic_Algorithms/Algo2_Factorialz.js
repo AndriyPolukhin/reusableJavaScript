@@ -1,4 +1,10 @@
 // Factorials Here I think i should have used Reduce
+/*
+=================================
+        My Answer
+=================================
+*/
+// my first answer
 function factorialize(num) {
 
     // here I set the default return if the value is not factoriable
@@ -30,6 +36,26 @@ factorialize(10);
 factorialize(20);
 factorialize(0);
 
+// Refactoring my first answer
+
+function factorialize(num) {
+
+    if (num === 0) {
+        return 1;
+    }
+
+    var array = [];
+    var i = 1;
+    while (i <= num) {
+        array.push(i);
+        i++;
+    }
+
+    return array.reduce(function (a, b) {
+        return a * b;
+    });
+
+}
 
 // 5! = 1 * 2 * 3 * 4 * 5 = 120
 
