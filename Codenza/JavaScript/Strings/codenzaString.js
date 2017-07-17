@@ -41,3 +41,16 @@ is_Blank = function (input) {
 
 console.log(is_Blank(''));
 console.log(is_Blank('abc'));
+
+
+// V. Check is a str is an actual string or not
+
+is_string = function (input) {
+    if (Object.prototype.toString.call(input) === '[object String]')
+        return true;
+    else
+        return false;
+};
+
+console.log(is_string('anastasia'));
+console.log(is_string(1, 2, 3, 4, 5));
