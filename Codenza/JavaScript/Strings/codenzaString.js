@@ -29,3 +29,15 @@ function string_endsWith(str, suffix) {
 
 console.log(string_endsWith('JS PHP PYTHON', 'PYTHON'));
 console.log(string_endsWith('JS PHP PYTHON', ''));
+
+// IV.  Check if the string is blank or not
+
+is_Blank = function (input) {
+    if (input.length === 0)
+        return true;
+    else
+        return false;
+}
+
+console.log(is_Blank(''));
+console.log(is_Blank('abc'));
