@@ -54,3 +54,18 @@ is_string = function (input) {
 
 console.log(is_string('anastasia'));
 console.log(is_string(1, 2, 3, 4, 5));
+
+
+// VI. Chop a string into a specific size
+
+string_chop = function (str, size) {
+    if (str === null) return [];
+    str = String(str);
+    size = ~~size;
+    return size > 0 ? str.match(new RegExp('.{1,' + size + '}', 'g')) : [str];
+
+}
+
+console.log(string_chop('anastasia'));
+console.log(string_chop('anastasia', 2));
+console.log(string_chop('anastasia', 3));
