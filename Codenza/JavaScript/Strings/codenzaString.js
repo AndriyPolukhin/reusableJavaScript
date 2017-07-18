@@ -56,7 +56,7 @@ console.log(is_string('anastasia'));
 console.log(is_string(1, 2, 3, 4, 5));
 
 
-// VI. Chop a string into a specific size
+// VI. Chop a string into a specific length based on a size
 
 string_chop = function (str, size) {
     if (str === null) return [];
@@ -69,3 +69,15 @@ string_chop = function (str, size) {
 console.log(string_chop('anastasia'));
 console.log(string_chop('anastasia', 2));
 console.log(string_chop('anastasia', 3));
+
+// VII. Concatenate a specific string a specific number of times => repeat a string
+
+repeat = function repeat(str, count) {
+    if (typeof (count) === 'undefined') {
+        count = 1;
+    }
+    return count < 1 ? '' : new Array(count + 1).join(str);
+}
+console.log(repeat("Ha!"));
+console.log(repeat('Ha!', 2));
+console.log(repeat('Ha!', 3));
