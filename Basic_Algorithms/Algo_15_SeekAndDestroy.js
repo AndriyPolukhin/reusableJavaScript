@@ -40,3 +40,28 @@ function destroyer(arr) {
     return arr;
 }
 destroyer([1, 2, 3, 1, 2, 3], 2, 3);
+
+
+// testing 19.07.2017
+function destroyer(arr) {
+    // Remove all the values
+
+    function checkArg(a) {
+        for (var i = arguments[0]; i < arguments.length; i++) {
+            for (var j = i + 1; j < arguments.length; j++) {
+                if (arr[i] === i || arr[j] === j) {
+                    return false;
+                }
+                return true;
+            }
+        }
+    }
+    var result = arr.filter(checkArg);
+    return result;
+}
+
+destroyer([1, 2, 3, 1, 2, 3], 2, 3);
+
+
+// Read this article for more clues
+//https://stackoverflow.com/questions/33686942/javascript-filter-callback-that-uses-arguments
