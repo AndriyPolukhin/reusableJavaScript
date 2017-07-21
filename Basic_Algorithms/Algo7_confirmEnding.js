@@ -91,7 +91,7 @@ confirmEnding('Bastian', 'n');
 function confirmEnding(string, target) {
     // We return the method with the target as a parameter
     // The result will be a boolean (true/false)
-    return string.endWith(target);
+    return string.endsWith(target);
     // 'BASTIAN'.endWith("N");
 }
 
