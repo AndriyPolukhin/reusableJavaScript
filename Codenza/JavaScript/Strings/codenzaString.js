@@ -14,7 +14,7 @@ function capitalizeWords(str) {
 }
 console.log(capitalizeWords('js string exercises'));
 
-// III. EndWith :::> Check if a str ends with a suffix
+// III. EndsWith :::> Check if a str ends with a suffix
 
 function string_endsWith(str, suffix) {
 
