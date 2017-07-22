@@ -2,11 +2,11 @@
 
 function ascii_to_hexa(str) {
 
-    let arr1 = [];
+    let arr = [];
 
     for (let n = 0, l = str.length; n < l; n++) {
         let hex = Number(str.charCodeAt(n).toString(16));
-        arr1.push(hex);
+        arr.push(hex);
     }
 
     return arr1.join('');
@@ -17,9 +17,9 @@ console.log(ascii_to_hexa('100'));
 
 // VIII. Turn Hexa into ASCII
 
-function hex_to_ascii(str1) {
+function hex_to_ascii(strmain) {
 
-    let hex = str1.toString();
+    let hex = strmain.toString();
     let str = '';
 
     for (let n = 0; n < hex.length; n += 2) {
@@ -29,3 +29,16 @@ function hex_to_ascii(str1) {
 }
 console.log(hex_to_ascii('3132'));
 console.log(hex_to_ascii('313030'));
+
+// VIX. Convert a string into an abbr.
+
+abbr_name = function (str) {
+    var split_names = st.trim().split(' ');
+    if (split_names.length > 1) {
+        return (split_names[0] + ' ' + split_names[1].charAt(0) + '.');
+    }
+
+    return split_names[0];
+};
+
+console.log(abbr_name('Robin Singh'));
