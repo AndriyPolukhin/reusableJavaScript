@@ -30,10 +30,10 @@ function hex_to_ascii(strmain) {
 console.log(hex_to_ascii('3132'));
 console.log(hex_to_ascii('313030'));
 
-// VIX. Convert a string into an abbr.
+// IX. Convert a string into an abbr.
 
 abbr_name = function (str) {
-    var split_names = st.trim().split(' ');
+    let split_names = str.trim().split(' ');
     if (split_names.length > 1) {
         return (split_names[0] + ' ' + split_names[1].charAt(0) + '.');
     }
@@ -42,3 +42,17 @@ abbr_name = function (str) {
 };
 
 console.log(abbr_name('Robin Singh'));
+
+
+// X. Camelize the string.
+
+camelize = function camelize(str) {
+
+    return str.replace(/\W+(.)/g, function (match, chr) {
+        return chr.toUpperCase();
+    });
+}
+
+console.log(camelize('JavaScript Exercises'));
+console.log(camelize('JavaScript exercises'));
+console.log(camelize('JavaScriptExercises'));
