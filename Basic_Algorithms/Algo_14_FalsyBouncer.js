@@ -35,6 +35,34 @@ function bouncer(arr) {
 bouncer([1, null, NaN, 2, undefined]);
 
 
+
+// Refactored solution on 23/07/2017
+function bouncer(arr) {
+
+    let newArr = [];
+
+    function filterFalse(value) {
+        let a = Boolean(value);
+        if (a === true)
+            return a;
+    }
+
+    function filterIt(x) {
+        let y = filterFalse(x);
+        if (y) {
+            return true;
+        }
+        return false;
+    }
+
+    return newArr = arr.filter(filterIt);
+
+}
+
+console.log(bouncer([1, null, NaN, 2, undefined]));
+
+
+
 /*
 =================================
         testing!
@@ -113,7 +141,14 @@ var filtered = [12, 5, 8, 130, 44].filter(isBigEnough);
 
 
 // solution 1
-newArr = arr.filter(el => el);
+function bouncer(arr) {
+
+    return arr = arr.filter(el => el);
+
+}
+
+console.log(bouncer([1, null, NaN, 2, undefined]));
+
 
 // solutiono 2
 function bouncer(arr) {
