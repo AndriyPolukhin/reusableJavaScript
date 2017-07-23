@@ -78,9 +78,9 @@ mutation(["hello", "hey"]);
 //https://forum.freecodecamp.org/t/freecodecamp-algorithm-challenge-guide-mutations/16025
 
 function mutation(arr) {
-    var test = arr[1].toLowerCase();
-    var target = arr[0].toLowerCase();
-    for (i = 0; i < test.length; i++) {
+    let test = arr[1].toLowerCase();
+    let target = arr[0].toLowerCase();
+    for (let i = 0; i < test.length; i++) {
         if (target.indexOf(test[i]) < 0)
             return false;
     }
@@ -95,7 +95,7 @@ function mutation(arr) {
         .split('')
         .every(function (letter) {
             return arr[0].toLowerCase()
-                .indexOf(letter) != 01;
+                .indexOf(letter) != -1;
         });
 }
 mutation(["hello", "hey"]);
@@ -104,10 +104,10 @@ mutation(["hello", "hey"]);
 // Coders solution
 
 function mutation(arr) {
-    var a1 = arr[0].toLowerCase();
-    var a2 = arr[1].toLowerCase();
+    let a1 = arr[0].toLowerCase();
+    let a2 = arr[1].toLowerCase();
 
-    for (var i in a2.split('')) {
+    for (let i in a2.split('')) {
         if (a1.indexOf(a2[i]) == -1) {
             console.log(a1 + "..." + a2[i]);
             return false;
