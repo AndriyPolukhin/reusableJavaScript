@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HTML5</title>
+    <style>
+        fieldset {
+            border: 1px solid black;
+        }
+
+        span {
+            margin-right: 24px;
+        }
+    </style>
+</head>
+
+<body>
+    <form action='mailto:your.mail.address@mail.com' method='post' enctype='text/plain'>
+        <fieldset>
+            <legend><i>Customer</i></legend>
+            First and second name: <input type='text' name='customerName' required placeholder='First and second name' autofocus='autofocus'><br> Address: <input type='text' name='customerAddress' required><br> Postal code: <input type='text' name='customerPostalCode' size='4' maxlenght='5' required pattern='[0-9]{5}'><br> Country: <input type='text' name='customerCountry' readonly value='Spain'>
+        </fieldset>
+        <br>
+        <fieldset>
+            <legend><i>Order</i></legend>
+            Model: <input type='text' name='orderModel' readonly value='Road 66'><br> Size: <br>
+            <input type='range' name='orderSize' min='1' max='4' step='1' value='2'>
+            <div>
+                <span>S</span>
+                <span>M</span>
+                <span>L</span>
+                <span>XL</span>
+            </div>
+            <br> Quantity: <input type='number' name='orderQuatity' min='1' max='4' step='1' value='1'><br>
+        </fieldset>
+        <br>
+        <input type='submit' value='Submit order'>
+        <input type='reset' value='Abort order'>
+    </form>
+</body>
+</html>
