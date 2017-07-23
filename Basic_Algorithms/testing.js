@@ -1,10 +1,9 @@
-camelize = function camelize(str) {
+ function getIndexToIns(arr, num) {
+     // Find my place in this sorted array.
+     return num;
+ }
 
-    return str.replace(/\W+(.)/g, function (match, chr) {
-        return chr.toUpperCase();
-    });
-}
+ getIndexToIns([40, 60], 50);
 
-console.log(camelize('JavaScript Exercises'));
-console.log(camelize('JavaScript exercises'));
-console.log(camelize('JavaScriptExercises'));
+ console.log('Should return 3: ' + getIndexToIns([10, 20, 30, 40, 50], 35));
+ console.log('Should return 2: ' + getIndexToIns([10, 20, 30, 40, 50], 30));
