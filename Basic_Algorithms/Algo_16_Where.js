@@ -16,9 +16,9 @@ function getIndexToIns(arr, num) {
     });
 
     function numIndex(e) {
-        if (e) {
-            return e >= num;
-        }
+
+        return e >= num;
+
     }
 
     return arr.findIndex(numIndex);
