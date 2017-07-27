@@ -1,33 +1,36 @@
 function rot13(str) { // LBH QVQ VG!
 
 
-    var alpha = 'ABCDEFGHIJKLM';
-    var beta = 'NOPQRSTUVWXYZ';
-    var str2 = ''
+    var re = /\W+/g;
+
+    var a = 13,
+        b = -13,
+        c,
+        d,
+        strans = '';
 
 
-
-    for (let i = 0; i < str.length; i++) {
-
-        if (alpha.indexOf(i) !== -1) {
-            let a = alpha.indexOf(i);
-            console.log('The value of a is ' + a + ' and the value of beta.valueOf(a) is = ' + beta.valueOf(a));
-            let a1 = beta.valueOf(a);
-            str2 += a1;
-        } else if (beta.indexOf(i) !== -1) {
-            let b = beta.indexOf(i);
-            console.log('The value of a is ' + a + ' and the value of beta.valueOf(a) is = ' + alpha.valueOf(b));
-            let b1 = alpha.valueOf(b);
-            str2 += b1;
-
-        } else {
-            str += ' ';
-            console.log('Trouble');
+    for (var i = 0; i < str.length; i++) {
+        d = str.charCodeAt(i);
+        if (d < 64) {
+            c = String.fromCharCode(d);
+            strans += c;
+        } else if (d >= 65 && d <= 77) {
+            c = String.fromCharCode(d + a);
+            strans += c;
+        } else if (d >= 78 && d <= 90) {
+            c = String.fromCharCode(d + b);
+            strans += c;
         }
 
+
     }
-    return str2;
+
+    return strans;
 }
 
 // Change the inputs below to test
 console.log(rot13("SERR PBQR PNZC"));
+console.log(rot13("SERR CVMMN!"));
+console.log(rot13("SERR YBIR?"));
+console.log(rot13("GUR DHVPX OEBJA QBT WHZCRQ BIRE GUR YNML SBK."));
