@@ -1,28 +1,33 @@
-function getIndexToIns(arr, num) {
+function rot13(str) { // LBH QVQ VG!
 
-    // Sort the array
-    arr.push(num);
 
-    arr.sort(function (a, b) {
-        return a - b;
-    });
+    var alpha = 'ABCDEFGHIJKLM';
+    var beta = 'NOPQRSTUVWXYZ';
+    var str2 = ''
 
-    function numIndex(e) {
-        if (e) {
-            return e >= num;
+
+
+    for (let i = 0; i < str.length; i++) {
+
+        if (alpha.indexOf(i) !== -1) {
+            let a = alpha.indexOf(i);
+            console.log('The value of a is ' + a + ' and the value of beta.valueOf(a) is = ' + beta.valueOf(a));
+            let a1 = beta.valueOf(a);
+            str2 += a1;
+        } else if (beta.indexOf(i) !== -1) {
+            let b = beta.indexOf(i);
+            console.log('The value of a is ' + a + ' and the value of beta.valueOf(a) is = ' + alpha.valueOf(b));
+            let b1 = alpha.valueOf(b);
+            str2 += b1;
+
+        } else {
+            str += ' ';
+            console.log('Trouble');
         }
+
     }
-
-    return arr.findIndex(numIndex);
-
-
+    return str2;
 }
 
-// So first I loop thorought the array in one of the functions
-// I create a function that checks for ifs
-// I just inject this function into an arr.findIndex(Function);
-
-console.log('Should return 3: Got should be last one => ' + getIndexToIns([2, 5, 10], 15));
-
-console.log('Should return 2:  => ' + getIndexToIns([5, 3, 20, 3], 5));
-console.log('Should return 3: Got => ' + getIndexToIns([20, 10, 50, 40, 30], 35));
+// Change the inputs below to test
+console.log(rot13("SERR PBQR PNZC"));
