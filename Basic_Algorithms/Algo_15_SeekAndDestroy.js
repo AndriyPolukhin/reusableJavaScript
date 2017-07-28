@@ -133,3 +133,29 @@ function removeItems(arr, items) {
 var result = removeItems([1, 2, 3, 1, 2, 3, 4], [2, 3]);
 
 console.log(result); // [1, 1, 4]
+
+
+// Solution from the psyperl
+
+function destroyer(arr) {
+    var r = arguments[0];
+    var x = [];
+
+    for(var i = 1; i < arguments.length; i++) {
+        x.push(arguments[i]);
+    }
+
+    return r.filter(
+        function (z) {
+            for (var i = 0; i <x.length; i++) {
+                if (x[i] === z){
+                return false;
+                }
+            }
+            return true;
+        }
+    );
+}
+
+destroyer([1, 2, 3, 1, 2, 3], 2, 3);
+

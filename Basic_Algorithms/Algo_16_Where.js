@@ -39,3 +39,15 @@ console.log('Should return 3: Got => ' + getIndexToIns([20, 10, 50, 40, 30], 35)
         testing!
 =================================
 */
+
+
+// Shorter solution
+
+function getIndexToIns(arr, num) {
+    arr.push(num);
+    return arr.sort(function (a, b) {
+        return a - b;
+    }).indexOf(num);
+}
+
+console.log('Should return 3: Got should be last one => ' + getIndexToIns([2, 5, 10], 15));
