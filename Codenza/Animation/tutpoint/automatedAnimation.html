@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Automated Animation</title>
+</head>
+
+<body>
+
+    <form>
+        <img id='myImage' src='html.gif'>
+        <p>Click the buttons below to handle animation</p>
+        <input type='button' value='Start' onclick='moveRight();'>
+        <input type='button' value='Stop' onclick='stop();'>
+    </form>
+
+    <script>
+        var imgObj = null;
+        var animate;
+
+        function init() {
+            imgObj = document.getElementById('myImage');
+            imgObj.style.position = 'relative';
+            imgObj.style.left = '0px';
+        }
+
+        function moveRight() {
+            imgObj.style.left = parseInt(imgObj.style.left) + 10 + 'px';
+            animate = setTimeout(moveRight, 20); // call moveRight in 20 msec
+        }
+
+        function stop() {
+            clearTimeout(animate);
+            imgObj.style.left = '0px';
+        }
+
+        window.onload = init;
+    </script>
+
+
+
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Roll-over effect</title>
+</head>
+
+<body>
+    <p>Move your mouse over the image to see the result</p>
+
+    <a href='#' onMouseOver='document.myImage.src=image2.src;' onMouseOut='document.myImage.src=image1.src;'>
+        <img name='myImage' src='html.gif'>
+    </a>
+
+    <script>
+        if (document.images) {
+            var image1 = new Image(); // Preload an image
+            image1.src = 'html.gif';
+            var image2 = new Image();
+            image2.src = 'http.gif';
+        }
+    </script>
+
+
+</body>
+</html>
