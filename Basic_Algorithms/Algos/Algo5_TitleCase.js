@@ -68,7 +68,7 @@ function titleCase(str) {
     5th iteration: str[4] = str[4].charAt(0).toUpperCase() + str[4].slice(1);
                    str[4] = "pot".charAt(0).toUpperCase() + "pot".slice(1);
                    str[4] = "P"                           + "ot";
-                   str[4] = "Pot";                                                         
+                   str[4] = "Pot";
     End of the FOR Loop*/
     }
 
@@ -126,7 +126,7 @@ function titleCase(str) {
             5th word: "pot"    => (word.charAt(0).toUpperCase() + word.slice(1));
                                   "pot".charAt(0).toUpperCase() + "pot".slice(1);
                                         "P"                     +     "ot";
-                                  return "Pot";                                                        
+                                  return "Pot";
             End of the map() method */
         });
 
@@ -172,7 +172,7 @@ function titleCase(str) {
                                return word => "Tea"
             5th word: "pot" => word.replace(word[0], word[0].toUpperCase());
                                "pot".replace("p", "P");
-                               return word => "Pot"                                                        
+                               return word => "Pot"
             End of the map() method */
         });
 

@@ -56,7 +56,7 @@ function reverseString(str) {
     var newString = '';
 
     // Step 2. Create the FOR loop
-    /* The starting point of the loop will be (str.length - 1) which corresponds to the 
+    /* The starting point of the loop will be (str.length - 1) which corresponds to the
       last character of the string, "o"
       As long as i is greater than or equals 0, the loop will go on
       We decrement i after each iteration */
@@ -105,7 +105,7 @@ function reverseString(str) {
     else
         return reverseString(str.substr(1)) + str.charAt(0);
 
-    /* 
+    /*
 First Part of the recursion method
 You need to remember that you won’t have just one call, you’ll have several nested calls
 Each call: str === "?"        	                  reverseString(str.subst(1))     + str.charAt(0)
@@ -120,7 +120,7 @@ The method hits the if condition and the most highly nested call returns immedia
 4th call will return reverseString("o") + "l" = "o" + "l"
 3rd call will return reverseString("lo") + "l" = "o" + "l" + "l"
 2nd call will return reverserString("llo") + "e" = "o" + "l" + "l" + "e"
-1st call will return reverserString("ello") + "h" = "o" + "l" + "l" + "e" + "h" 
+1st call will return reverserString("ello") + "h" = "o" + "l" + "l" + "e" + "h"
 */
 
 }

@@ -75,7 +75,7 @@ function largestOfFour(arr) {
                 /* FOR loop cycles
                    arrayIndex => i
                    subArrayIndex => j
-                   
+
                 Iteration in the first array
                    For each iteration: arr[i][j]           largestNumber[i]          if arr[i][j] > largestNumber[i]?     then largestNumber[i] = arr[i][j]
                    First iteration:    arr[0][0] => 4      largestNumber[0] => 0     4 > 0? => TRUE                       then largestNumber[0] = 4

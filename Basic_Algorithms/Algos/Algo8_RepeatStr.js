@@ -87,7 +87,7 @@ function repeatStringNumTimes(string, times) {
     else {
         return string + repeatStringNumTimes(string, times - 1); // return "abcabcabc";
     }
-    /* 
+    /*
       First Part of the recursion method
       You need to remember that you won’t have just one call, you’ll have several nested calls
                        times       string + repeatStringNumTimes(string, times - 1)
