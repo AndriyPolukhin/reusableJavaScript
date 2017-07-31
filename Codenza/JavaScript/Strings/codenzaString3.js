@@ -1,4 +1,4 @@
-// XI
+// XI Case Title
 
 function sentenceCase(str) {
     if ((str === null) || (str === ''))
@@ -44,3 +44,18 @@ function zeroFill(number, width, osign) {
 
 console.log(zeroFill(120, 5, '-'));
 console.log(zeroFill(29, 4));
+
+
+// XIII Crfeatea a acase instantive search
+
+function case_insensitive_search(str, search_str) {
+    var result = str.search(new RegExp(search_str, 'i'));
+
+    if (result > 0)
+        return 'Matched';
+    else
+        return 'Not Matched';
+}
+
+console.log(case_insensitive_search('JavaScript Exercises', 'exercisies'));
+console.log(case_insensitive_search('JavaScript Exercises', 'Exercisies'));
