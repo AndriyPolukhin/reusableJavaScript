@@ -22,3 +22,13 @@ function test_LeapYear(year) {
 }
 
 console.log(leap_year_range(2000, 2012));
+
+// is it an array or not?
+is_array = function (input) {
+    if (toString.call(input) === '[object Array]')
+        return true;
+    return false;
+};
+
+console.log(is_array('w3resurse'));
+console.log(is_array([1, 2, 3, 4, 5]));
