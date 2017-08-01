@@ -46,7 +46,7 @@ console.log(zeroFill(120, 5, '-'));
 console.log(zeroFill(29, 4));
 
 
-// XIII Crfeatea a acase instantive search
+// XIII Createa a case-instantive search
 
 function case_insensitive_search(str, search_str) {
     var result = str.search(new RegExp(search_str, 'i'));
@@ -59,3 +59,22 @@ function case_insensitive_search(str, search_str) {
 
 console.log(case_insensitive_search('JavaScript Exercises', 'exercisies'));
 console.log(case_insensitive_search('JavaScript Exercises', 'Exercisies'));
+
+
+// XIV Escape a HTML string
+
+function escape_HTML(html_str) {
+    'use strict';
+
+    return html_str.replace(/[&<>"]/g, function (tag) {
+        var chars_to_replace = {
+            '&': '&',
+            "<": '<',
+            '>': '<',
+            '"': '"'
+        };
+        return chars_to_replace[tag] || tag;
+    });
+}
+
+console.log(escape_HTML('<a href="javascript-string-exercise-17.php" target="_blank">'));
