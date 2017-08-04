@@ -61,6 +61,26 @@ function bouncer(arr) {
 
 console.log(bouncer([1, null, NaN, 2, undefined]));
 
+// Refactored solution on 03/08/2017
+
+function bouncer(arr) {
+
+    let newArr = [];
+
+    function filterFalse(value) {
+        let a = Boolean(value);
+        return a !== false;
+    }
+
+    function filterIt(x) {
+        let y = filterFalse(x);
+        return y === true ? true : false;
+
+    }
+    return newArr = arr.filter(filterIt);
+
+}
+console.log(bouncer([1, null, NaN, 2, undefined]));
 
 
 /*
