@@ -32,3 +32,24 @@ is_array = function (input) {
 
 console.log(is_array('w3resurse'));
 console.log(is_array([1, 2, 3, 4, 5]));
+
+// Function that Clones an array
+
+array_Clone = function(arra1) {
+    return arra1.slice(0);
+};
+
+
+console.log(array_Clone([1,2,4,0]));
+console.log(array_Clone([1,2,[4,0]]));
+
+
+
+// Prefilled with number
+
+function array_filled(n, val) {
+    return Array.apply(null, Array(n)).map(Number.prototype.valueOf, val);
+}
+
+console.log(array_filled(6, 0));
+console.log(array_filled(4, 11));
