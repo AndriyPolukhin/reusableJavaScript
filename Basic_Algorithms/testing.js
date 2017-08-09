@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 // JS Nuggets : Data Types
 
 
@@ -22,3 +23,17 @@ console.log(a + 2);
 var num = 3.6;
 var ber = 6.4;
 console.log(num + ber);
+=======
+
+function Car(model, year, miles) {
+    this.model = model;
+    this.year = year;
+    this.miles = miles;
+
+    this.toString = function () {
+        return this.model + ' has done ' + this.miles + ' miles';
+    };
+}
+
+var civic = new Car('Honda', )
+>>>>>>> origin/master
