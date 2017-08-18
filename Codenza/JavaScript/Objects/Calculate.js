@@ -31,3 +31,22 @@ Cylinder.prototype.Volume = function () {
 var cyl = new Cylinder(7, 4);
 // Volume of the cylinder with four decimal places.
 console.log('volume =', cyl.Volume().toFixed(4));
+
+// Check does it have a specific property
+
+function hasKey(obj, key) {
+    return obj != null && hasOwnProperty.call(obj, key);
+}
+console.log(hasKey({
+    red: "#FF0000",
+    green: "#00FF00",
+    white: "#ffffff"
+}, "green"));
+
+
+// Is there a DOM element
+function is_dom_element(obj) {
+    return !!(obj && obj.nodeType === 1);
+}
+
+console.log(is_dom_element(jQuery('body')[0]));
