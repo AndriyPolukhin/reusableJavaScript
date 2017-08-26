@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Tickets</title>
+    <style>
+        .confirmation {
+            height: 100px;
+            width: 300px;
+            background: #fe5fe5;
+        }
+
+        button {
+            background: blue;
+            color: white;
+        }
+
+        .ticket {
+            height: 100px;
+            width: 300px;
+            background: #ad4ad4;
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+
+    <li class='confirmation'>
+        <h3>Hawaiian Vacation</h3>
+        <button>Flight details</button>
+        <div class='ticket' data-confNum='1234'>
+            <a class='view-boarding-pass'>View Boarding Pass</a>
+            <img src='/ticket-14836.png'>
+        </div>
+    </li>
+
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('.confirmation').on('click', 'button', function() {
+                $(this).find('.ticket').slideDonw();
+
+            });
+            $('.confirmation').on('click', '.view-boarding-pass', function() {
+                $(this).closest('.ticket').find('img').show();
+            });
+
+            $('.confirmation').on('click', 'button', function() {
+                $.ajax('confirmation.html', {
+                    success: function(response) {
+                        $('.ticket').html(response).slideDown();
+                    },
+                    data: {
+                        'confNum': $('.ticket').data('confNum')
+                    },
+                    error: function(request, errorType, errorMessage) {
+                        alert('Error: ' + errorType + ' with message: ' + errorMessage);
+                    },
+                    timeout: 3000,
+                    beforeSend: function() {
+                        $('.confirmation').addClass('is-loading');
+                    },
+                    complete: function() {
+                        $('.confirmation').removeClass('is-loading');
+                    }
+                });
+            });
+
+        });
+    </script>
+</body>
+
+</html>

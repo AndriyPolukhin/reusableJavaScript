@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Trigger Click Events</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    <style>
+
+    </style>
+
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="row text-center">
+            <h2>Cat Photo Finder</h2>
+        </div>
+        <div class="row text-center">
+            <div class="col-xs-12 well message">
+                The message will go here
+            </div>
+        </div>
+        <div class="row text-center">
+            <div class="col-xs-12">
+                <button id="getMessage" class="btn btn-primary">
+        Get Message
+      </button>
+            </div>
+        </div>
+    </div>
+
+    <div id="data">
+        <h4>You are here:</h4>
+
+    </div>
+
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <script>
+        $(document).ready(function() {
+            $('#getMessage').on('click', function() {
+
+                $.getJSON("/json/cats.json", function(json) {
+
+                    var html = "";
+
+                    json = json.filter(function(val) {
+                        return (val.id !== 1);
+                    });
+
+                    json.forEach(function(val) {
+
+
+                        html += "<div class='cat'>";
+
+                        html += "<img src '" + val.imageLink + "'" + "alt='" + val.altText + "'>";
+
+                        html += "</div>";
+
+                    });
+
+                    $(".message").html(html);
+
+                });
+
+            });
+
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(function(position) {
+                    $("#data").html("latitude: " + position.coords.latitude + "<br>longtitude: " + position.coords.longitude);
+                });
+            }
+
+
+
+        });
+    </script>
+</body>
+
+</html>
