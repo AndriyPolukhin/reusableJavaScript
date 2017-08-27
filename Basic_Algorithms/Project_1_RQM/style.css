@@ -1,0 +1,76 @@
+* {
+    /*    background: rgba( 0, 0, 0, 0.1);*/
+}
+
+body {
+    background: rgba(0, 255, 0, .5);
+}
+
+.container-fluid {
+    /*    background: rgba(0, 255, 0, .5);*/
+    max-width: 960px;
+    padding: 5em;
+}
+
+div {
+    text-align: center;
+    /*    border: 1px solid black;*/
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 2rem;
+    font-family: 'Roboto', sans-serif;
+    font-style: italic;
+    min-height: 20em;
+    color: white;
+}
+
+h4 {
+    text-align: right;
+}
+
+h5 a,
+h5 a:hover,
+h5 {
+    text-align: center;
+    color: white;
+    margin-top: 4em;
+}
+
+.auth-title {
+    text-align: right;
+    margin-right: 2em;
+    font-size: 1.5em;
+    font-family: 'Roboto', serif;
+}
+
+.btn {
+    background: rgba(255, 255, 255, 1);
+    color: rgba(0, 255, 0, .7);
+}
+
+.btn:hover {
+    color: rgba(0, 255, 0, 1);
+}
+
+a {
+    text-decoration: none;
+    -webkit-text-decoration-line: none;
+    text-decoration-line: none;
+    color: rgba(0, 255, 0, .7);
+}
+
+a:hover {
+    text-decoration: none;
+    -webkit-text-decoration-line: none;
+    text-decoration-line: none;
+    color: rgba(0, 255, 0, 1);
+}
+
+.glyphicon-tower {
+    font-size: 2em;
+}
+
+.glyphicon-pencil {
+    padding-right: 0.5em;
+}

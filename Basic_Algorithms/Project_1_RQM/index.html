@@ -1,10 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>Random Quote Machine</title>
+    <link rel="stylesheet" type='text/css' href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel='stylesheet' type='text/css' href="style.css">
 </head>
+
 <body>
 
+    <div class='container-fluid'>
+        <div class='row'>
+            <div id="#post" name="post">
+                <blockquote><span class="glyphicon glyphicon-tower"></span>
+                    <h1 class="quote-text" id="quote-text" name="quote-text" data-content="quote-text">
+                        It's quite a place. A place of good times and bad, of pain and growth, but in the end a place of great hope. But if you ever do come aboard, remember one thing: No one there is exactly what he seems. But then, who is?
+                    </h1>
+                </blockquote>
+
+                <h4><i class="glyphicon glyphicon-pencil"></i><cite class='auth-title' id='auth-title' name="auth-text" data-caption='auth-title'>G'Kar</cite></h4>
+            </div>
+            <button class='btn'><a
+  href="https://www.tumblr.com/widgets/share/tool?posttype=quote&tags=quotes,RQM&data-caption=auth-title&data-content=quote-text&canonicalUrl=https%3A%2F%2Fwww.tumblr.com%2Fbuttons&shareSource=tumblr_share_button"> Tumblr
+</a></button>
+            <button class='btn' id='quote-change'>new quote</button>
+        </div>
+
+        <h5><a href="https://codepen.io/AndriyPolukhin/">by Andriy Polukhin</a></h5>
+
+    </div>
+
+
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script id="tumblr-js" async src="https://assets.tumblr.com/share-button.js"></script>
+    <script src="main.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            $('#quote-change').on('click', function() {
+                var id = Math.floor(Math.random() * 9) + 1;
+                $("#quote-text").html(quotes[id]['quote']);
+                $("#auth-title").html(quotes[id]['author']);
+                var id = Math.floor(Math.random() * 9);
+                if ((id > 9) || (id < 0)) {
+                    id = 1;
+                }
+            });
+
+            var content = $("#quote-text").html(quotes[id]['quote']);
+            var title = $("#auth-title").html(quotes[id]['author']);
+
+
+        });
+
+    </script>
 </body>
+
 </html>
