@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Form Builder</title>
+    <base href="file:///F:/Project_WebSites/Practise_and_modules/Modules_/REUSABLE%20CODE/JavaScript/reusableJavaScript/Bootcamp_WD_FS/HTML_eg">
+</head>
+
+<body>
+
+
+    <h1>Register</h1>
+    <form action="https://wikipedia.org" method="get">
+        <label for="fname">First Name: </label>
+        <input type="text" id="fname" placeholder="UserName" required>
+        <br>
+        <label fro='lname'>Last Name: </label>
+        <input type="text" id="lname" placeholder="Last Name" required>
+        <div>
+            <label for="male">Male</label>
+            <input id='male' name="gender" type="radio" value="Male">
+            <label for="female">FeMale</label>
+            <input id='female' name="gender" type='radio' value="Female">
+            <label for="other">Other</label>
+            <input id='other' name="gender" type="radio" value="Other">
+        </div>
+        <div>
+            <label for="email">Email: </label>
+            <input type="email" required id="email" placeholder="your Email">
+            <label for="psw">Password: </label>
+            <input required type='password' id='psw' placeholder="Input your password">
+        </div>
+        <div>
+            <label for='brth'>Birthday:    </label>
+            <input id='brth' type='datetime-local'>
+        </div>
+
+        <label for="checkbox">I agree to the terms and conditions</label>
+        <input type="checkbox" id='checkbox'>
+
+
+        <br>
+        <input type="submit" value="Submit">
+    </form>
+
+
+
+</body>
+
+</html>
