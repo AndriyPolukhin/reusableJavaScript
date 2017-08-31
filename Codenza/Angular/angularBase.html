@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html data-ng-app="" lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>USING ANGULAR JS</title>
+</head>
+
+<body data-ng-init="names=[
+                    {name: 'John Doe', city:'New York'},
+                    {name: 'Jane Doe', city: 'San Francisco'}
+                    ]">
+
+    Name:
+    <br/>
+    <input type="text" data-ng-model="name" /> {{ name }}
+
+    <ul>
+        <li data-ng-repeat="cust in customers">{{ cust.name + ' ' + cust.city }}</li>
+    </ul>
+    <ul>
+        <li data-ng-repeat="cust in customers | orderBy: 'name'">
+            {{ cust.name | uppercase }}
+        </li>
+    </ul>
+
+    <input type="text" data-ng-model="nameText">
+    <ul>
+        <li data-ng-repeat="cust in customers | filter:nameText | orderBy: 'name'">
+            {{ cust.name }} - {{ cust.city }}
+        </li>
+    </ul>
+
+    <script src="jquery-3.2.1.min.js"></script>
+    <script src="angular.min.js"></script>
+
+    <script>
+        function SimpleController($scope) {
+            $scope.customers = [{
+                    name: 'Dave Jones',
+                    city: 'Phonix'
+                },
+                {
+                    name: 'Jamie Riley',
+                    city: 'Atlanta'
+                },
+                {
+                    name: 'Heedy Wahlin',
+                    city: 'Chandler'
+                },
+                {
+                    name: 'Thomas WInter',
+                    city: 'Seattle'
+                }
+            ];
+        }
+    </script>
+</body>
+
+</html>
