@@ -308,3 +308,199 @@ Intro
         height: 20em;
     }
 }
+
+.intro header h1 {
+    position: absolute;
+    color: #ffffff;
+    font-size: 100%;
+    line-height: 2em;
+    top: 4.2em;
+    left: -3em;
+    width: auto;
+    margin: 0;
+    padding: 1em;
+    -webkit-transform: rotate(-90deg);
+    -moz-transform: rotate(-90deg);
+    -ms-transform: rotate(-90deg);
+    -o-transform: rotate(-90deg);
+    filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.intro header h2 {
+    position: relative;
+    background: #0d2c40 url(icon-star.svg) no-repeat left bottom;
+    background-size: 100%;
+    float: right;
+    color: #ffffff;
+    font-size: 250%;
+    line-height: 1.25em;
+    width: 50%;
+    height: 20.019em;
+    margin: 0 0 0 0;
+    padding: 6em 0.5em 0 0.5em;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+@media (max-width: 70em) {
+    .intro header h2 {
+        background: #0d2c40 url(icon-star.svg) no-repeat left bottom;
+        background-size: 49%;
+        width: 66.666%;
+        height: 11em;
+        padding: 1em 0.5em 0 0.5em;
+    }
+}
+
+@media (max-width: 53em) {
+    .intro header h2 {
+        background: #0d2c40 url(icon-star.svg) no-repeat left bottom;
+        background-size: 49%;
+        font-size: 200%;
+        width: 66.666%;
+        height: 10em;
+        padding: 1em 0.5em 0 0.5em;
+    }
+}
+
+.intro summary {
+    font-size: 100%;
+    color: #ffffff;
+    width: 60%;
+    float: left;
+    background: #c879b2 url(icons-3-pack.svg);
+    background-repeat: no-repeat;
+    background-position: center bottom;
+    background-size: 101%;
+    height: 50em;
+    margin: 0;
+    padding: 16.3em 2em 10em 2em;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+@media (max-width: 70em) {
+    .intro .summary {
+        width: 100%;
+        height: auto;
+        padding: 2em 1em 37% 1em;
+    }
+}
+
+.intro .summary p {
+    padding: 0 40% 2em 0;
+    margin: 0;
+}
+
+@media (max-width: 70em) {
+    .intro .summary p {
+        padding: 0 0 1em 35%;
+    }
+}
+
+@media (max-width: 53em) {
+    .intro .summary p {
+        padding: 0 0 1em 0;
+    }
+}
+
+.intro .summary p {
+    color: #ffffff;
+    text-decoration: none;
+    border-bottom: 1px solid #ffffff;
+}
+
+.intro .summary a:hover {
+    color: rgba(0, 0, 0, 0.4);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.4);
+}
+
+.intro .preamble {
+    position: relative;
+    float: left;
+    width: 60.1%;
+    margin: 0 0 0 20%;
+    padding: 8em 0.5em 32em 0;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+@media (max-width: 70em) {
+    .intro .preamble {
+        width: 100%;
+        margin 0 0 0 0;
+        padding: 2em 1em 28em 1em;
+    }
+}
+
+@media (max-width: 53em) {
+    .intro .preamble {
+        overflow: hidden;
+        width: 100%;
+        margin: 0;
+        padding: 0 1em;
+    }
+}
+
+.intro .preamble h3 {
+    font-size: 150%;
+    margin-right: 35%;
+}
+
+@media (max-width: 53em) {
+    .intro .preamble h3 {
+        margin-right: 0;
+    }
+}
+
+.intro .preamble p {
+    margin-right: 35%;
+}
+
+@media (max-width: 53em) {
+    .intro .preamble p {
+        margin-right: 0;
+    }
+}
+
+.intro .preamble p:last-child {
+    position: absolute;
+    z-index: 2;
+    color: #ffffff;
+    background: rgba(0, 188, 217, 0.8);
+    width: 33.65%;
+    top: -1em;
+    right: 0;
+    margin-right: 0;
+    padding: 10em 1em 20em 1em;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+@media (max-width: 70em) {
+    .intro .preamble p:last-child {
+        background: rgba(239, 54, 5, 0.8);
+        width: 33.250%;
+        padding: 6em 1em 10em 1em;
+    }
+}
+
+@media (max-width: 53em) {
+    .intro .preamble p:last-child {
+        color: #0d2c40;
+        background: transparent;
+        position: relative;
+        top: 0;
+        width: 100%;
+        padding: 0;
+    }
+}
+
+
+/*
+==========================================================================
+Main
+==========================================================================
+*/
