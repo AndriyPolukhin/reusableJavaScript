@@ -1,0 +1,313 @@
+/* css Zen Garden submission 220 - 'Garments', by Dan Mall, http://www.danielmall.com/  */
+
+
+/* css released under Creative Commons License - http://creativecommons.org/licenses/by-nc-sa/1.0/  */
+
+
+/*
+*************************************************
+
+CSS ZEN GARDEN
+General Screen Styles
+
+Created by the epic SuperFriendly team.
+http://superfriend.ly/
+
+*************************************************
+*/
+
+
+/* TYPEKIT_KIT_ID: qoj3gsc */
+
+
+/*-------------------------------------------
+    Base
+-------------------------------------------*/
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+
+/* for rems */
+
+body {
+    font-family: Helvetica, Arial, sans-serif;
+    color: #333;
+    background: #e8ecf0 url(i/denim2.png) no-repeat 50% 350px;
+}
+
+
+/* block level */
+
+h1 {
+    font: bold 4.2rem Helvetica, Arial, sans-serif;
+    margin: 0 0 0.5em;
+}
+
+h2 {
+    font: bold 1.8rem Helvetica, Arial, sans-serif;
+    margin: 0 0 1em;
+}
+
+h3 {
+    font: bold 1.5rem Helvetica, Arial, sans-serif;
+    margin: 0 0 1em;
+}
+
+h4,
+h5,
+h6 {
+    font: bold 1.2rem Helvetica, Arial, sans-serif;
+    margin: 0 0 1em;
+}
+
+.wf-active body,
+.wf-active h1,
+.wf-active h2,
+.wf-active h3,
+.wf-active h4,
+.wf-active h5,
+.wf-active h6 {
+    font-family: "effra";
+}
+
+p,
+ul,
+ol,
+dl,
+table {
+    font-size: 16px;
+    margin: 0 0 1.5em;
+}
+
+.wf-active p {
+    font-weight: 300;
+}
+
+form {
+    margin: 0 0 1.5em;
+}
+
+
+/* inline */
+
+label {
+    font-size: 1.6rem;
+}
+
+input,
+select,
+textarea {}
+
+input::-webkit-input-placeholder,
+textarea::-webkit-input-placeholder {}
+
+input.empty::-webkit-input-placeholder,
+textarea.empty::-webkit-input-placeholder {
+    color: red;
+}
+
+.error {
+    color: red;
+}
+
+table {}
+
+td {
+    padding: 0.25em 1em;
+    border-top: 1px solid #aaa;
+}
+
+em {
+    font-style: italic;
+}
+
+strong {
+    font-weight: bold;
+}
+
+mark {
+    background: none;
+    font-style: normal;
+}
+
+video {
+    width: 100%;
+    height: auto;
+}
+
+a {
+    text-decoration: none;
+    color: #a28351;
+    position: relative;
+    transition: all 0.25s linear;
+    -moz-transition: all 0.25s linear;
+    -webkit-transition: all 0.25s linear;
+    -o-transition: all 0.25s linear;
+}
+
+a: after {
+    content: "";
+    display: block;
+    background: #a28351;
+    height: 2px;
+    width: 100%;
+    position: absolute;
+    bottom: -0.2em;
+    left: 0;
+    opacity: 0;
+    transition: all 0.25s linear;
+    -moz-transition: all 0.25s linear;
+    -webkit-transition: all 0.25s linear;
+    -o-transition: all 0.25s linear;
+}
+
+a:hover,
+a:focus {
+    color: #000;
+}
+
+a:hover:after,
+a:focus:after {
+    opacity: 1;
+    bottom: 0;
+}
+
+img {
+    display: block;
+    margin: 0 10px 10px 0;
+    max-width: 100%;
+}
+
+a img {
+    border: none;
+}
+
+i {
+    font-style: normal;
+}
+
+b {
+    font-weight: normal;
+}
+
+abbr,
+abbr[title],
+acronym {
+    font-size: 75%;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    border: none;
+}
+
+code {
+    font: 1.4rem/1 Consolas, 'Courier New', Courier, monospace;
+    color: #999;
+}
+
+sub,
+sup {
+    line-height: 0;
+}
+
+::selection {
+    background: #d5d9dc;
+    color: #333;
+}
+
+::-moz-selection {
+    background: #d5d9dc;
+    color: #333;
+}
+
+
+/*-------------------------------------------
+    Global
+-------------------------------------------*/
+
+
+/* Phark Image Replacement - http://phark.typepad.com/phark/2003/08/accessible_imag.html */
+
+.phark {
+    display: block;
+    text-indent: -9999px;
+    background-position: 0 0;
+    background-repeat: no-repeat;
+    background-color: transparent;
+}
+
+* Trimming Outline in Firefox - http: //snook.ca/archives/html_and_css/trimming_long_o  */
+
+/*\*/
+
+.phark-link {
+    overflow: hidden;
+}
+
+
+/**/
+
+
+/* Easy Clearing - http://www.positioniseverything.net/easyclearing.html */
+
+.clearfix:after {
+    content: ".";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+}
+
+.offscreen {
+    position: absolute;
+    left: -9999px;
+    display: block;
+}
+
+.offscreen {
+    position: absolute;
+    left: -9999px;
+    display: block;
+}
+
+.onscreen {
+    left: 0;
+}
+
+.hide {
+    display: none;
+}
+
+.no-bullets {
+    list-style: none;
+}
+
+.bulleted {
+    list-style: disc;
+}
+
+.uppercase {
+    text-transform: uppercase;
+}
+
+.rwd-break {
+    display: block;
+}
+
+.kellum {
+    display: block;
+    text-indent: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+
+/*-------------------------------------------
+	Modules
+-------------------------------------------*/
