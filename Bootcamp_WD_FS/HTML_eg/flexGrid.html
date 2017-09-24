@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=2, user-scalable=yes">
+
+    <title>Flex Grid</title>
+    <style>
+        body {
+            font: 600 14px/24px "Open Sans", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", Sans-Serif;
+        }
+
+        h1 {
+            color: #9799a7;
+            font-size: 14px;
+            font-weight: bold;
+            margin-bottom: 6px;
+        }
+
+        figure {
+            margin: 0 0 24px 0;
+        }
+
+        .figure-75 {
+            width: 75%;
+        }
+
+        .figure-50 {
+            margin-bottom: 0;
+            width: 50%;
+        }
+
+        img {
+            display: block;
+            max-width: 100%;
+        }
+
+        #containingBlock {
+            width: 50%;
+        }
+
+        .videoWrapper {
+            position: relative;
+            padding-bottom: 56.25%;
+            padding-top: 25px;
+            height: 0;
+        }
+
+        .videoWrapper object,
+        .videoWrapper embed {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+    </style>
+</head>
+
+<body>
+    <h1>100% Wide Container</h1>
+
+    <figure>
+        <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/29841/chicago.jpg" alt="Chicago">
+    </figure>
+
+    <h1>75% Wide Container</h1>
+
+    <figure class="figure-75">
+        <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/29841/chicago.jpg" alt="Chicago">
+    </figure>
+
+    <h1>50% Wide Container</h1>
+
+    <figure class="figure-50">
+        <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/29841/chicago.jpg" alt="Chicago">
+    </figure>
+
+    <div id="containingBlock">
+        <div class="videoWrapper">
+            <object width="480" height="295">
+      <param name="movie" value="http://www.youtube.com/v/mDRYnaajUcY&hl=en&fs=1"></param>
+      <param name="allowFullScreen" value="true"></param>
+      <param name="allowscriptaccess" value="always"></param>
+      <embed src="http://www.youtube.com/v/mDRYnaajUcY&hl=en&fs=1" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true" width="480" height="295"></embed>
+    </object>
+        </div>
+    </div>
+</body>
+
+</html>
