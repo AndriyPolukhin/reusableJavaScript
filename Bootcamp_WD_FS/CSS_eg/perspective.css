@@ -1,0 +1,71 @@
+body {
+    color: #fff;
+    background: #000;
+    font: 600 14px/24px "Open Sans", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", Sans-Serif;
+    margin: 12px 15px;
+}
+
+.original,
+.box {
+    border-radius: 6px;
+}
+
+.original {
+    background: #eaeaed;
+    border: 1px dashed #cecfd5;
+    float: left;
+    margin: 12px 15px;
+    perspective: 200px;
+}
+
+.group {
+    perspective: 200px;
+}
+
+.box {
+    background: #2db34a;
+    height: 95px;
+    line-height: 95px;
+    text-align: center;
+    transform: rotateX(45deg);
+    width: 95px;
+}
+
+.spin {
+    cursor: pointer;
+    transform-style: preserve-3d;
+}
+
+.spin:hover {
+    animation: spin 5s linear infinite;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotateY(0deg);
+    }
+    100% {
+        transform: rotateY(360deg);
+    }
+}
+
+
+.box-4 {
+    transform: perspective(100px) rotateX(45deg);
+}
+
+.box-5 {
+    transform: perspective(1000px) rotateX(45deg);
+}
+
+.original-1 {
+    perspective-origin: 0 0;
+}
+
+.original-2 {
+    perspective-origin: 75% 75%;
+}
+
+.original-3 {
+    perspective-origin: 20px 40px;
+}

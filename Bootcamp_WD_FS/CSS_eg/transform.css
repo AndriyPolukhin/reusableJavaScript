@@ -1,0 +1,109 @@
+body {
+    color: #fff;
+    font: 600 14px/24px "Open Sans", "helveticaNeue-Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", Sans-Serif;
+    margin: 12px 15px;
+}
+
+.original,
+.box {
+    border-radius: 6px;
+}
+
+.original {
+    background: #eaeaed;
+    border: 1px dashed #cecfd5;
+    float: left;
+    margin: 12px 15px;
+}
+
+.box {
+    background: #2db34a;
+    height: 95px;
+    line-height: 95px;
+    text-align: center;
+    width: 95px;
+
+}
+
+.spin {
+    cursor: pointer;
+    transform-style: preserve-3d;
+}
+
+.spin:hover {
+    animation: spin 5s linear infinite;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotateY(0deg);
+    }
+
+    100% {
+        transform: rotateY(360deg);
+    }
+}
+
+.box-1 {
+    transform: rotate(20deg);
+
+}
+
+.box-2 {
+    transform: rotate(-55deg);
+
+}
+
+.scale-1 {
+
+    transform: scale(.75);
+}
+
+.scale-2 {
+
+    transform: scale(1.25);
+}
+
+.box-5 {
+    transform: scaleX(.5);
+}
+
+.box-6 {
+    transform: scaleY(1.15);
+}
+
+.box-7 {
+    transform: scale(.5, 1.15);
+}
+
+.box-8 {
+    transform: translateY(-10px);
+}
+
+.box-9 {
+    transform: translateY(25%);
+}
+
+.box-10 {
+    transform: translate(-10px, 25%);
+}
+
+.box-11 {
+    transform: skewX(5deg);
+}
+
+.box-12 {
+    transform: skewY(-20deg);
+}
+
+.box-13 {
+    transform: skew(5deg, -20deg);
+}
+
+.box-14 {
+    transform: rotate(50deg) scale(.75);
+}
+
+.box-15 {
+    transform: skew(30deg, 50deg) translateX(20px);
+}
