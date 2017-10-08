@@ -15,18 +15,17 @@ while (num < 20) {
 
 // Solution to problem 2
 var x = 10;
-while (x < 40) {
+while (x <= 40) {
     if (x % 2 === 0) {
         console.log(x);
-
+        x += 2;
     }
-    x++;
 }
 // Solution to problem 3
 
 var y = 300;
-while (y < 333) {
-    if (y % 2 === 1) {
+while (y <= 333) {
+    if (y % 2 !== 0) {
         console.log(y);
     }
     y++;
@@ -34,7 +33,7 @@ while (y < 333) {
 
 // Solution to problem 4
 var z = 5;
-while (z < 50) {
+while (z <= 50) {
     if (z % 5 === 0 && z % 3 === 0) {
         console.log(z);
     }
