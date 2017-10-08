@@ -1,0 +1,95 @@
+body {
+    color: #fff;
+    font: 600 14px/24px "Open Sans", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", Sans-Serif;
+    margin: 12px 15px;
+}
+
+.original,
+.box {
+    border-radius: 6px;
+}
+
+.original {
+    background: #eaeaed;
+    border: 1px dashed $cecfd5;
+    float: left;
+    margin: 12px 15px;
+}
+
+.box {
+    background: #2db34a;
+    height: 95px;
+    width: 95px;
+    line-height: 95px;
+    text-align: center;
+
+}
+
+.spin {
+    cursor: pointer;
+    transform-style: preserve-3d;
+}
+
+.spin:hover {
+    animation: spin 5s linear infinite;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotateY(0deg);
+    }
+
+    /*
+    25% {
+        transform: rotate(90deg);
+
+    }
+
+    50% {
+        transform: rotateY(180deg);
+    }
+
+    75% {
+        transform: rotateY(270deg);
+    }
+*/
+    100% {
+        transform: rotateY(360deg);
+        )
+    }
+
+}
+
+.box-1 {
+    transform: perspective(200px) scaleZ(1.75) rotateX(45deg);
+}
+
+.box-2 {
+    transform: perspective(200px) scaleZ(.25) rotateY(45deg);
+}
+
+.box-3 {
+    transform: perspective(200px) scaleZ(.75) rotateZ(45deg);
+}
+
+.box-4 {
+    transform: perspective(200px) translateZ(-50px);
+}
+
+.box-5 {
+    transform: perspective(200px) scaleY(.50) translateZ(50px);
+}
+
+.box-6,
+box-7 {
+    transform: rotateX(15deg) translateZ(20px);
+    transform-origin: 0 0;
+}
+
+.rotate {
+    background: rgba(45, 179, 74, .3);
+}
+
+.three-d {
+    transform-style: preserve-3d;
+}
