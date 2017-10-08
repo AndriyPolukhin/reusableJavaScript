@@ -8,14 +8,14 @@ While Loops Problem Set
 
 // Solution to problem 1
 var num = -10;
-while (num >= -10 && num <= 19) {
+while (num < 20) {
     console.log(num);
     num++;
 }
 
 // Solution to problem 2
 var x = 10;
-while (x >= 10 && x <= 40) {
+while (x < 40) {
     if (x % 2 === 0) {
         console.log(x);
 
@@ -25,7 +25,7 @@ while (x >= 10 && x <= 40) {
 // Solution to problem 3
 
 var y = 300;
-while (y >= 300 && y <= 333) {
+while (y < 333) {
     if (y % 2 === 1) {
         console.log(y);
     }
@@ -34,7 +34,7 @@ while (y >= 300 && y <= 333) {
 
 // Solution to problem 4
 var z = 5;
-while (z >= 5 && z <= 50) {
+while (z < 50) {
     if (z % 5 === 0 && z % 3 === 0) {
         console.log(z);
     }
