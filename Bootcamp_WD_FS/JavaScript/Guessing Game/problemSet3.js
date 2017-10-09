@@ -19,6 +19,10 @@ console.log(isEven(4));
 console.log(isEven(3));
 
 
+function isEven2(num) {
+    return num % 2 === 0;
+}
+
 /*
 II. Assignment 2
 
@@ -38,6 +42,16 @@ function factorial(num) {
 
 factorial(5);
 
+function factorialize(num) {
+    var result = 1;
+    for (var i = 1; i <= num; i++) {
+        result *= i;
+    }
+    return result;
+}
+
+factorialize(5);
+
 /*
 III. Assignment 3
 
@@ -48,15 +62,7 @@ white a function kebabToSnake() which takes a single kebab-cased string argument
 
 
 function kebabToSnake(str) {
-    var string = str.split("");
-    for (var i = 0; i < string.length; i++) {
-        if (i === "-") {
-            string[i] = "_";
-        }
-        return string;
-    }
-    var result = string.join();
-    return result;
+    var newStr = str.replace(/-/g, "_");
+    return newStr;
 }
-
 kebabToSnake("hello-there");
