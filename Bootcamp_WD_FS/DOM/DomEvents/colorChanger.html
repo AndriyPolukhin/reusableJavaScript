@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Color Changer</title>
+</head>
+
+<body>
+
+    <div>
+
+        <button>CLICK ME</button>
+
+    </div>
+    <script>
+        var container = document.querySelector("div");
+        container.style.width = "200px";
+        container.style.height = "100px";
+        container.style.background = "red";
+        container.style.border = "5px solid green";
+        container.style.paddingTop = "10%";
+        container.style.paddingLeft = "12%";
+        var button = document.querySelector("button");
+        button.addEventListener("click", changeColor);
+        button.style.background = "green";
+        button.style.border = "1px solid green";
+        button.style.boxShadow = "3px 3px 3px black";
+        button.style.marginTop = 0;
+
+        function changeColor() {
+            let bg = container.style.background;
+            if (bg === "red") {
+                container.style.background = "blue";
+
+            } else {
+                container.style.background = "red";
+
+            }
+
+
+        }
+
+    </script>
+</body>
+
+</html>
