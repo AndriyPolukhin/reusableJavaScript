@@ -1,0 +1,15 @@
+.some-class {
+    color: blue;
+    border: 10px solid red;
+}
+
+.another-class {
+    color: purple;
+    font-size: 76px;
+}
+
+.widthImg {
+    display: block;
+    width: 50%;
+    width: 100px;
+}
