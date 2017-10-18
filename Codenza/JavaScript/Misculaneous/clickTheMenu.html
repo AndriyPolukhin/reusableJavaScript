@@ -1,0 +1,48 @@
+<!--
+
+Instructions:
+Set theTarget variable value in the script, as nonted.
+Set the title, address, and items in the form, as shown.
+Insert this entire block of code -- both the script and the
+form -- in your page where the menu should appear.
+-->
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Click the Menu</title>
+</head>
+
+<body>
+
+
+    <form name="theForm">
+
+        <select name="theMenu" size="1" onChange="goThere()">
+            <option selected value="">Happy Coding :-) JavaScript Code Examples</option>
+            <option value="http://javascript.happycodings.com">Item One</option>
+            <option value="http://html-css.happycodings.com">Item Two</option>
+            <option value="http://cplusplus.happycodings.com">Item Three</option>
+            <option value="http://java.happycodings.com">Item Four</option>
+            <option value="http://www.happycodings.com">Item Five</option>
+        </select>
+
+    </form>
+
+
+    <script>
+        var theTarget = "_blank";
+
+        function goThere() {
+            if (!document.theForm.theMenu.selectedindex == "") {
+                window.open(document.theForm.theMenu.options[document.theForm.theMeny.selectedIndex].value, theTarget, "");
+            }
+        }
+
+    </script>
+</body>
+
+</html>
