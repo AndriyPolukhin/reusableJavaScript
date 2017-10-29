@@ -1,0 +1,15 @@
+html {
+    font-size: 12px;
+    font-family: 'Times New Roma', serif;
+}
+
+body {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+.winner {
+    color: green;
+}
