@@ -1,0 +1,20 @@
+body {
+    background-color: #232323;
+    margin: 0;
+    font-family: "Montserrat", "Avenir", sans-serif;
+}
+
+.square {
+    width: 30%;
+    background: purple;
+    padding-bottom: 30%;
+    float: left;
+    margin: 1.6%;
+    border-radius: 15%;
+    transition: background 1.6s;
+}
+
+#container {
+    margin: 20px auto;
+    max-width: 600px;
+}
