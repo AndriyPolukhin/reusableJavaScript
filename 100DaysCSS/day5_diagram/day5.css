@@ -1,5 +1,4 @@
 @import url(https://fonts.googleapis.com/css?family=Open+Sans:600,400);
-
 .frame {
     position: absolute;
     top: 50%;
@@ -8,13 +7,25 @@
     height: 400px;
     margin-top: -200px;
     margin-left: -200px;
-    border-radius: 25px;
+    border-radius: 2px;
     box-shadow: 1px 2px 10px 0px rgba(0, 0, 0, 0.3);
     background: #42A7A1;
-    font-family: 'Open-Sans', Helvetica, sans-serif;
+    font-family: 'Open Sans', Helvetica, sans-serif;
     color: #fff;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+}
+
+.card {
+    position: absolute;
+    top: 90px;
+    left: 60px;
+    height: 220px;
+    width: 280px;
+    background: #fff;
+    border-radius: 3px;
+    box-shadow: 10px 10px 15px 0 rgba(0, 0, 0, 0.3);
+    overflow: hidden;
 }
 
 .card .header {
@@ -43,7 +54,7 @@
     left: 15px;
 }
 
-.card. .header .date {
+.card .header .date {
     top: 30px;
     left: 15px;
 }
@@ -76,7 +87,7 @@
     left: 6px;
     top: 6px;
     display: block;
-    content: "";
+    content: '';
     width: 11px;
     height: 3px;
     border-radius: 3px;
@@ -97,7 +108,7 @@
     margin: 0 auto;
 }
 
-.card .staistic .line-1,
+.card .statistic .line-1,
 .card .statistic .line-2,
 .card .statistic .line-3 {
     position: absolute;
@@ -131,11 +142,11 @@
     stroke-linecap: round;
 }
 
-.card .statistic .data .red polyline {
+.card .statistic .data.red polyline {
     stroke: #FA7373;
 }
 
-.card .statistic .data .blue polyline {
+.card .statistic .data.blue polyline {
     stroke: #7BA2FF;
 }
 
@@ -153,20 +164,16 @@
     border-radius: 3px;
     visibility: hidden;
     opacity: 0;
-    -webkit-transition: opacity 0.4s ease-out 0s,
-    -webkit-transform 0.4s ease-out 0s;
-    transition: opacity 0.4s ease-out 0s,
-    -webkit-transform 0.4s ease-out 0s;
-    transition: transform 0.4s ease-out 0s,
-    opacity 0.4s ease-out 0s;
-    transition: transform 0.4s ease-out 0s, opacity 0.4s ease-out 0s,
-    -webkit-transform 0.4s ease-out 0s;
+    -webkit-transition: opacity 0.4s ease-out 0s, -webkit-transform 0.4s ease-out 0s;
+    transition: opacity 0.4s ease-out 0s, -webkit-transform 0.4s ease-out 0s;
+    transition: transform 0.4s ease-out 0s, opacity 0.4s ease-out 0s;
+    transition: transform 0.4s ease-out 0s, opacity 0.4s ease-out 0s, -webkit-transform 0.4s ease-out 0s;
 }
 
 .card .statistic .data .tooltip:after {
     position: absolute;
     display: block;
-    content: "";
+    content: '';
     height: 6px;
     width: 6px;
     left: 50%;
@@ -174,4 +181,118 @@
     bottom: -3px;
     -webkit-transform: rotate(45deg);
     transform: rotate(45deg);
+}
+
+.card .statistic .data [class^="point-"] {
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    border-radius: 3px;
+    cursor: pointer;
+    z-index: 10;
+}
+
+.card .statistic .data [class^="point-"]:hover .tooltip {
+    visibility: visible;
+    opacity: 1;
+    -webkit-transform: translate3d(-50%, 0, 0);
+    transform: translate3d(-50%, 0, 0);
+}
+
+.card .statistic .data.red [class^="point-"],
+.card .statistic .data.red .tooltip,
+.card .statistic .data.red .tooltip:after {
+    background: #FA7373;
+}
+
+.card .statistic .data.red .point-1 {
+    left: 7px;
+    top: 43px;
+}
+
+.card .statistic .data.red .point-2 {
+    left: 48px;
+    top: 9px;
+}
+
+.card .statistic .data.red .point-3 {
+    left: 88px;
+    top: 20px;
+}
+
+.card .statistic .data.red .point-4 {
+    left: 128px;
+    top: 8px;
+}
+
+.card .statistic .data.red .point-5 {
+    left: 169px;
+    top: 35px;
+}
+
+.card .statistic .data.red .point-6 {
+    left: 209px;
+    top: 45px;
+}
+
+.card .statistic .data.red .point-7 {
+    left: 249px;
+    top: 16px;
+}
+
+.card .statistic .data.blue [class^="point-"],
+.card .statistic .data.blue .tooltip,
+.card .statistic .data.blue .tooltip:after {
+    background: #7BA2FF;
+}
+
+.card .statistic .data.blue .point-1 {
+    left: 7px;
+    top: 58px;
+}
+
+.card .statistic .data.blue .point-2 {
+    left: 48px;
+    top: 47px;
+}
+
+.card .statistic .data.blue .point-3 {
+    left: 88px;
+    top: 62px;
+}
+
+.card .statistic .data.blue .point-4 {
+    left: 128px;
+    top: 52px;
+}
+
+.card .statistic .data.blue .point-5 {
+    left: 169px;
+    top: 58px;
+}
+
+.card .statistic .data.blue .point-6 {
+    left: 209px;
+    top: 71px;
+}
+
+.card .statistic .data.blue .point-7 {
+    left: 249px;
+    top: 61px;
+}
+
+.card .days {
+    width: 280px;
+    margin: 0 auto;
+}
+
+.card .days .day {
+    display: block;
+    float: left;
+    width: 14.28571%;
+    font-size: 9px;
+    color: #949494;
+    line-height: 30px;
+    text-transform: uppercase;
+    text-align: center;
 }
