@@ -7,16 +7,36 @@
 </head>
 
 <body>
-    <h1>JQuery Demo!</h1>
+    <!--
+<h1>JQuery Demo!</h1>
 
 
-    <ul>
-        <li>Item 1</li>
-        <li>Item 2</li>
-        <li>Item 3</li>
-    </ul>
+<ul>
+    <li>Newt</li>
+    <li>Howler Monkey <a href="monkey.com">Monkey.com</a></li>
+    <li id='adorable'>Pine Marten </li>
+</ul>-->
+
+    <h1>Exercises</h1>
+
+
+    <div>Div 1</div>
+    <div class="highlight">Div 2</div>
+    <div id="third">Div 3</div>
+    <div class="highlight">DIv 4</div>
+
+
+
 
     <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+
+    <script>
+        $('div').css('background', 'purple');
+        $('.highlight').css('width', '200px');
+        $('#third').css('border', '2px solid orange');
+        $('div:first').css('color', 'pink');
+
+    </script>
 </body>
 
 </html>
