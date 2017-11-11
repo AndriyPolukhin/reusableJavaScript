@@ -4,6 +4,23 @@
 <head>
     <meta charset="UTF-8">
     <title>jQuery Method</title>
+
+    <style>
+        .correct {
+            color: green;
+        }
+
+        .wrong {
+            color: red;
+            background: pink;
+        }
+
+        .done {
+            color: blue;
+            text-decoration: line-through;
+        }
+
+    </style>
 </head>
 
 <body>
@@ -13,6 +30,13 @@
 
     <input type='text' placeholder='your name'>
 
+    <select>
+      <option value="ostrich">ostrich</option>
+      <option value="turtle">turtle</option>
+      <option value="toad">toad</option>
+   </select>
+
+
     <ul>
         <li>Skittle</li>
         <li>Starburst</li>
@@ -20,10 +44,19 @@
     </ul>
 
 
-
+    <img src="pineMarten.jpg">
+    <img src="pineMarten.jpg">
+    <img src="pineMarten.jpg">
 
 
     <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+
+    <script>
+        $('img').css('width', '200px');
+        /* $('input').attr('type', 'color'); $('img').last().attr('src', "pineMarten-2.jpg"); $('select').val();*/
+        $('li').toggleClass('done');
+
+    </script>
 
 </body>
 

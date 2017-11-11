@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>jQuery Events</title>
+</head>
+
+<body>
+
+    <h1>JQuery Events</h1>
+
+
+
+    <button>Don't Click Me</button>
+    <button>Seriosly Don't Click me</button>
+    <button>This is your last warning</button>
+
+
+    <input type='text'>
+
+
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+
+    <script>
+        /*
+                                 $("button").click(function() { let text = $(this).text(); console.log("You clicked " + text); }); $('input').keypress(function(event) { console.log(event); }); $("input").keypress(function(event) { if (event.which === 13) { console.log("you hit Enter"); } });*/
+
+        $("button").on("mouseenter", function() {
+            $(this).css('font-weight', 'bold');
+        });
+        $("button").on("mouseleave", function() {
+            $(this).css("font-weight", "normal");
+        });
+
+    </script>
+
+
+</body>
+
+</html>
