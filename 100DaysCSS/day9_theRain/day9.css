@@ -1,0 +1,81 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:300,400);
+
+.frame {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 400px;
+    height: 400px;
+    margin-top: -200px;
+    margin-left: -200px;
+    border-radius: 2px;
+    box-shadow: 1px 2pxx 10px 0px rgba(0, 0, 0, 0.3);
+    background: #1A2238;
+    color: #394568;
+    font-family: 'Open Sans', Helvetica, sans-serif;
+    font-weight: 300;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow: hidden;
+}
+
+.moon {
+    position: absolute;
+    width: 67px;
+    height: 67px;
+    top: 45px;
+    left: 55px;
+    border-radius: 50px;
+    background: #f6EDBD;
+    overflow: hidden;
+    box-shadow: 0 0 10px 0 #F6EDBD;
+    -webkit-animation: rise 1s ease-out;
+    animation: rise 1s ease-out;
+}
+
+.moon .crater-1,
+.moon .crater-2,
+.moon .crater-3,
+.moon .crater-4,
+.moon .crater-5,
+.moon .crater-6,
+.moon .crater-7,
+.moon .crater-8,
+.moon .crater-9,
+.moon .crater-10,
+.moon .crater-11 {
+    position: absolute;
+    width: 11px;
+    height: 11px;
+    top: 9px;
+    left: 28px;
+    border-radius: 10px;
+    background: #ECE1A8;
+}
+
+.moon .crater-2 {
+    top: 12px;
+    left: 0;
+}
+
+.moon .crater-3 {
+    top: 56px;
+    left: 10px;
+}
+
+.moon .crater-4,
+.moon .crater-5,
+.moon .crater-6,
+.moon .crater-7,
+.moon .crater-8,
+.moon .crater-9 {
+    width: 6px;
+    height: 6px;
+    top: 37px;
+    left: 49px;
+}
+
+.moon .crater-5 {
+    top: 24px;
+    left: 61px;
+}
