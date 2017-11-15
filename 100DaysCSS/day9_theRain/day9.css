@@ -79,3 +79,186 @@
     top: 24px;
     left: 61px;
 }
+
+.moon .crater-6 {
+    top: 55px;
+    left: 33px;
+}
+
+.moon .crater-7 {
+    top: 17px;
+    left: 46px;
+}
+
+.moon .crater-8 {
+    top: 28px;
+    left: 27px;
+}
+
+.moon .crater-9 {
+    top: 39px;
+    left: 17px;
+}
+
+.moon .crater-10,
+.moon .crater-11 {
+    width: 4px;
+    height: 4px;
+    top: 25px;
+    left: 15px;
+}
+
+.moon .crater-11 {
+    top: 37px;
+    left: 37px;
+}
+
+.hill-bg-1,
+.hill-bg-2,
+.hill-fg-1,
+.hill-fg-2,
+.hill-fg-3 {
+    position: absolute;
+    z-index: 2;
+    width: 337px;
+    height: 281px;
+    top: 201px;
+    left: -57px;
+    background: #26314F;
+    border-radius: 50%;
+}
+
+.hill-bg-2 {
+    top: 197px;
+    left: 177px;
+    s
+}
+
+.hill-fg-1,
+.hill-fg-2,
+.hill-fg-3 {
+    background: #303C5D;
+    top: 248px;
+    left: -137px;
+}
+
+.hill-fg-2 {
+    top: 221px;
+    left: 63px;
+}
+
+.hill-fg-3 {
+    top: 248px;
+    left: 292px;
+}
+
+.front {
+    position: absolute;
+    z-index: 10;
+    width: 400px;
+    height: 90px;
+    left: 0px;
+    bottom: 0px;
+    background: #fff;
+}
+
+.front .temperature {
+    float: left;
+    margin-left: 20px;
+    font-size: 45px;
+    line-height: 90px;
+}
+
+.front .info {
+    float: left;
+    margin: 25px 0 0 13px;
+    font-size: 15px;
+    line-height: 20px;
+}
+
+.front .preview {
+    float: right;
+    font-weight: 400;
+    text-align: right;
+    font-size: 15px;
+    line-height: 20px;
+    margin: 25px 20px 0 0;
+}
+
+.front .preview td {
+    padding: 0 3px;
+    text-transform: uppercase;
+}
+
+.front .preview td:first-child {
+    font-weight: 300;
+}
+
+.drop-big-1,
+.drop-medium-1,
+.drop-small-1,
+.drop-medium-2,
+.drop-small-2,
+.drop-medium-3,
+.drop-small-3,
+.drop-medium-4,
+.drop-small-4,
+.drop-medium-5,
+.drop-small-5,
+.drop-medium-6,
+.drop-small-6,
+.drop-medium-7,
+.drop-small-7,
+.drop-medium-8,
+.drop-small-8,
+.drop-medium-9,
+.drop-small-9,
+.drop-medium-10,
+.drop-small-10 {
+    position: absolute;
+    z-index: 20;
+    left: 18px;
+    bottom: 90px;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #7FC1F9;
+    -webkit-animation: drop 0.9s linear 1.32s infinite;
+    animation: drop 0.9.s linear 1.32s infinite;
+    -webkit-animaiton-fill-mode: both;
+    animation-fill-mode: both;
+    -webkit-transform-origin: 50% 100%;
+    transform-origin: 50% 100%;
+}
+
+.drop-big-1:before,
+.drop-medium-1:before,
+.drop-small-1:before,
+.drop-medium-2:before,
+.drop-small-2:before,
+.drop-medium-3:before,
+.drop-small-3:before,
+.drop-medium-4:before,
+.drop-small-4:before,
+.drop-medium-5:before,
+.drop-small-5:before,
+.drop-medium-6:before,
+.drop-small-6:before,
+.drop-medium-7:before,
+.drop-small-7:before,
+.drop-medium-8:before,
+.drop-small-8:before,
+.drop-medium-9:before,
+.drop-small-9:before,
+.drop-medium-10:before,
+.drop-small-10:before {
+    position: absolute;
+    content: '';
+    display: block;
+    top: -2px;
+    left: 1px;
+    width: 6px;
+    height: 6px;
+    background: #7FC1F9;
+    border-radius: 3px;
+}
