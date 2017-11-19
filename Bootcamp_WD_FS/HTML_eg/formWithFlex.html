@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Form with flex</title>
+    <style>
+        form {
+            max-width: 700px;
+            padding: 0 20px 20px 20px;
+        }
+
+        input,
+        label {
+            display: block;
+            width: 100%;
+        }
+
+        label {
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        input,
+        select {
+            background: #f9f9f9;
+            border: 1px solid #e5e5e5;
+            border-radius: 8px;
+            box-shadow: inset 0 1px 1px #e1e1e1;
+            font-size: 16px;
+            padding: 8px;
+        }
+
+        .select-state {
+            width: 100%;
+        }
+
+        .fieldset {
+            margin-top: 20px;
+        }
+
+        .fieldsets-group {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .fieldset-1of2+.fieldset-1of2 {
+            margin-left: 30px;
+        }
+
+        .fieldset-state {
+            padding-right: 15px;
+        }
+
+        .fieldset-zip {
+            padding-left: 15px;
+        }
+
+        @media screen and (min-width: 600px) {
+
+            .fieldset-state {
+                padding-left: 30px;
+            }
+
+        }
+
+        .signIn-container {
+            align-items: center;
+            background: #fcfaff;
+            display: flex;
+            justify-content: center;
+            min-height: 600px;
+        }
+
+        .form-signIn {
+            background: #ffffff;
+            border: 1px solid #e5e5e5;
+            border-radius: 4px;
+            max-width: 360px;
+            padding: 10px 30px 30px 30px;
+        }
+
+        .btn-signIn {
+            margin-top: 24px;
+        }
+
+        .fieldset-signIn {
+            display: flex;
+        }
+
+        .fieldset-icon {
+            display: flex;
+            align-items: center;
+            border: 1px solid #e5e5e5;
+            border-right: 0;
+            border-radius: 8px 0 0 8px;
+
+            padding: 0 8px;
+        }
+
+        .fieldset-signIn input {
+            border-radius: 0 8px 8px 0;
+        }
+
+        @media screen and (min-width: 420px) {
+            .fieldset-signIn {
+                min-width: 280px;
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <div class='signIn-container'>
+        <form class='form-signIn'>
+            <div class='fieldset fieldset-email'>
+                <label>Email</label>
+                <div class='fieldset-signIn'>
+                    <div class='fieldset-icon'>
+                        <img src='assets/images/icon-email.svg' width='15' />
+                    </div>
+                    <input id='signIn-email' type='email' />
+                </div>
+            </div>
+            <div class='fieldset'>
+                <label>Password</label>
+                <div class='fieldset-signIn'>
+                    <div class='fieldset-icon'>
+                        <img src='assets/images/icon-lock.svg' width='15' />
+                    </div>
+                    <input id='signIn-password' type='password' />
+                </div>
+            </div>
+            <button class='btn btn-signIn'>Sign In</button>
+        </form>
+    </div>
+
+</body>
+
+</html>
