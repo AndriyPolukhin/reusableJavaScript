@@ -1,19 +1,9 @@
-// init a fun() with placeholders [holder] and [holder[value]]
-function inArray(arrayToCheck, value) {
-    // init a for loop for [holder]
-    for (j = 0; j < arrayToCheck.length; j++) {
-        // init a check for the [holder[value]]
-        if (arrayToCheck[j] === value) {
-            // finish with true if found
-            return true;
-        }
+function factorial(num) {
+    if (num <= 1) {
+        return 1;
+    } else {
+        return num * factorial(num - 1);
     }
-    // finish with false if !found
-    return false;
 }
 
-// init an random array to hold data
-var randArray = [1, 2, 3, 4, 5, 6];
-
-// Output the functionn check
-document.write(inArray(randArray, 4) + "<br>");
+document.write("Return a factorial of a 5 = ", factorial(5), "<br>");
