@@ -29,3 +29,50 @@ document.getElementById("charInput").onkeypress = function (event) {
     document.getElementById("keyData").innerHTML = char + " was clicked";
     return true;
 }
+
+
+document.getElementById("charInput").onfocus = function (event) {
+    document.getElementById("keyData").innerHTML = "Input Gainded Focus";
+}
+
+document.getElementById("charInput").onselect = function (event) {
+    document.getElementById("keyData").innerHTML = "Text selected";
+}
+
+document.getElementById("logoButton").onclick = function (event) {
+    document.getElementById("logo").className = "show";
+}
+
+document.getElementById("logo").onmouseover = function (event) {
+    document.getElementById("logo").className = "scaleX";
+    document.getElementById("mouseInput").value = "Mouse Over Image";
+}
+
+document.getElementById("logo").onmouseout = function (event) {
+    document.getElementById("logo").classList.remove = "scaleX";
+    document.getElementById("mouseInput").value = " ";
+}
+
+document.body.onmousemove = function (e) {
+
+    e = e || window.event;
+
+    var pageX = e.pageX;
+    var pageY = e.pageY;
+
+    if (pageX === undefined) {
+        pageX = e.clientX + document.body.scrollLeft + document.documentElement.scrollLeft;
+        pageY = e.clientY + document.body.scrollTop + document.documentElement.scrollTop;
+    }
+    document.getElementById("mouseX").value = pageX;
+    document.getElementById("mouseY").value = pageY;
+};
+
+document.getElementById("clearInputs").onclick = function (event) {
+    var inputElements = document.getElementsByTagName("input");
+    for (var i = 0; i < inputElements.length; i++) {
+        if (inputElements[i].type == "text") {
+            inputElements[i].value = "";
+        }
+    }
+}

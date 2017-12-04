@@ -1,21 +1,30 @@
-        body {
-            font-size: 1.1em;
-        }
+body {
+    font-size: 1.1em;
+}
 
-        .hidden {
-            display: none;
-        }
+.hidden {
+    display: none;
+}
 
-        .show {
-            display: inline !important;
-        }
+.show {
+    display: inline !important;
+}
 
-        button {
-            border: 2px solid black;
-            background: #E5E4E2;
-            font-size: .5em;
-            font-weight: bold;
-            color: black;
-            padding: .8em 2em;
-            margin-top: .4em;
-        }
+button {
+    border: 2px solid black;
+    background: #E5E4E2;
+    font-size: .5em;
+    font-weight: bold;
+    color: black;
+    padding: .8em 2em;
+    margin-top: .4em;
+}
+
+
+hr {
+    margin-top: .2em;
+}
+
+.scaleX {
+    transform: scaleX(-1);
+}
