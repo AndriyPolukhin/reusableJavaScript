@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<customers>
+    <customer id="0">
+        <firstName>Andriy</firstName>
+        <lastName>Polukhin</lastName>
+        <street>123 Main St</street>
+        <city>Hamburg</city>
+        <zip>22022</zip>
+    </customer>
+    <customer id="1">
+        <firstName>Anastasia</firstName>
+        <lastName>Polukhina</lastName>
+        <street>123 Main St</street>
+        <city>Hamburg</city>
+        <zip>22022</zip>
+    </customer>
+</customers>
