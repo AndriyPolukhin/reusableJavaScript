@@ -28,3 +28,8 @@ hr {
 .scaleX {
     transform: scaleX(-1);
 }
+
+
+.highlight {
+    background-color: yellow;
+}

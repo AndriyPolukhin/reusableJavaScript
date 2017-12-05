@@ -8,17 +8,94 @@
 </head>
 
 <body>
+    <div id="wrapper">
+
+        <h1>Random Stuff</h1>
+
+        <p id="p_one"><img src="ntt-logo.png" id="logo2" alt="NTT Logo" height="180" width="180">Lorem ipsum dolor sit amet, consectetur adipiscing elit. <em>Aenean pretium</em>, ipsum quis ultrices aliquet, lacus urna ultrices odio, eu interdum tortor tortor quis ligula. <a href="#">Morbi finibus</a> auctor ipsum vel tempus. Nullam gravida leo ac iaculis pretium. <b>In pretium varius nisi</b>, quis tristique ipsum semper vitae. Mauris eu aliquet odio. Pellentesque tristique sem turpis, id gravida nunc consequat vel. <a href="#">Nullam nec condimentum magna</a>. Sed dignissim interdum risus ac mattis. In hac habitasse platea dictumst. Vivamus placerat tristique vestibulum. Pellentesque quis eleifend nisl. Quisque mollis aliquam enim eu ullamcorper.</p>
+        <p id="p_two">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean pretium, ipsum quis ultrices aliquet, lacus urna ultrices odio, eu interdum tortor tortor quis ligula. <a href="mailto:derekbanas@verizon.net">Morbi finibus</a> auctor ipsum vel tempus. Nullam gravida leo ac iaculis pretium. In pretium varius nisi, quis tristique ipsum semper vitae. Mauris eu aliquet odio. Pellentesque tristique sem turpis, id <a href="http://google.com">gravida nunc consequat</a> vel. Nullam nec condimentum magna. Sed dignissim interdum risus ac mattis. <a href="http://www.newthinktank.com/wordpress/PersonalityTest.pdf">In hac habitasse</a> platea dictumst. Vivamus placerat tristique vestibulum. Pellentesque quis eleifend nisl. Quisque mollis aliquam enim eu ullamcorper.</p>
+
+        <p id="p_three">Lorem ipsum dolor sit amet, consectetur adipiscing elit. <i>Aenean pretium,</i> ipsum quis ultrices aliquet, lacus urna ultrices odio, eu interdum tortor tortor quis ligula.</p>
+
+        <table id="tableData">
+            <caption>Baseball</caption>
+            <thead>
+                <tr>
+                    <td colspan="4">Best Baseball Players</td>
+                </tr>
+            </thead>
+            <tfoot>
+                <tr>
+                    <td colspan="4">* Hall of Fame</td>
+                </tr>
+            </tfoot>
+            <tbody>
+                <tr>
+                    <td></td>
+                    <td>Average</td>
+                    <td>RBIs</td>
+                    <td>Homeruns</td>
+                </tr>
+                <tr>
+                    <td><a href="#">Hank Aaron*</a></td>
+                    <td>.305</td>
+                    <td>2297</td>
+                    <td>755</td>
+                </tr>
+                <tr>
+                    <td><a href="#">Babe Ruth*</a></td>
+                    <td>.342</td>
+                    <td>2214</td>
+                    <td>714</td>
+                </tr>
+                <tr>
+                    <td><a href="#">Barry Bonds</a></td>
+                    <td>.298</td>
+                    <td>1996</td>
+                    <td>762</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h2 id="bestSelling">Best Selling Childrens Books</h2>
+
+        <ol id="oListTypes">
+            <li>Harry Potter
+                <ol id="oListIndent">
+                    <li>and the Sorcerer's Stone</li>
+                    <li>and the Half-Blood Prince</li>
+                    <li>and the Chamber of Secrets</li>
+                    <li>Prisoner of Azkaban</li>
+                    <li name="best_book">and the Goblet of Fire</li>
+                    <li>and the Order of the Phoenix</li>
+                    <li>and the Deathly Hallows</li>
+                </ol>
+            </li>
+            <li>The Very Hungry Caterpillar</li>
+        </ol>
+
+        <input type="text" id="yourName" size="50">
+
+        <input type="text" id="listStuff" size="50"><br />
+
+        <h2 id="trackEvents">Tracking Events</h2>
+
+        Mouse Click : X : <input type="text" id="mClickXPos"> Y : <input type="text" id="mClickYPos"><br /> Mouse Move : X : <input type="text" id="mMoveXPos"> Y : <input type="text" id="mMoveYPos"><br /> Key Pressed : <input type="text" id="keyPressed"><br />
+
+        <span id="formEvent">Form Event</span> : <input type="text" id="inputFormEvent"><br /><br />
+
+        <img src="1.jpg" id="accident" alt="accident">
+
+        <div id="jsonData"></div>
+
+        <button type="button" id="getData">Get Data</button>
 
 
-    <div>
-        Enter your name:
-        <input id="name" name="name" type="text" size="30" onBlur="isTheFieldEmpty(this, document.getElementById('name_help'))">
-        <span id="name_help"></span>
 
-    </div>
+        <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
 
-
-    <script src="main.js"></script>
+        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js" integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=" crossorigin="anonymous"></script>
+        <script src="main.js"></script>
 </body>
 
 </html>
