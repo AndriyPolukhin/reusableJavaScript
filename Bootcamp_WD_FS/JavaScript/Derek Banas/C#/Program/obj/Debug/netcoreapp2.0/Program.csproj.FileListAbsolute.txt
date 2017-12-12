@@ -1,0 +1,10 @@
+F:\Project_WebSites\Practise_and_modules\Modules_\REUSABLE CODE\PRACTICE\reusableJavaScript\Bootcamp_WD_FS\JavaScript\Derek Banas\C#\Program\bin\Debug\netcoreapp2.0\Program.deps.json
+F:\Project_WebSites\Practise_and_modules\Modules_\REUSABLE CODE\PRACTICE\reusableJavaScript\Bootcamp_WD_FS\JavaScript\Derek Banas\C#\Program\bin\Debug\netcoreapp2.0\Program.runtimeconfig.json
+F:\Project_WebSites\Practise_and_modules\Modules_\REUSABLE CODE\PRACTICE\reusableJavaScript\Bootcamp_WD_FS\JavaScript\Derek Banas\C#\Program\bin\Debug\netcoreapp2.0\Program.runtimeconfig.dev.json
+F:\Project_WebSites\Practise_and_modules\Modules_\REUSABLE CODE\PRACTICE\reusableJavaScript\Bootcamp_WD_FS\JavaScript\Derek Banas\C#\Program\bin\Debug\netcoreapp2.0\Program.dll
+F:\Project_WebSites\Practise_and_modules\Modules_\REUSABLE CODE\PRACTICE\reusableJavaScript\Bootcamp_WD_FS\JavaScript\Derek Banas\C#\Program\bin\Debug\netcoreapp2.0\Program.pdb
+F:\Project_WebSites\Practise_and_modules\Modules_\REUSABLE CODE\PRACTICE\reusableJavaScript\Bootcamp_WD_FS\JavaScript\Derek Banas\C#\Program\obj\Debug\netcoreapp2.0\Program.csproj.CoreCompileInputs.cache
+F:\Project_WebSites\Practise_and_modules\Modules_\REUSABLE CODE\PRACTICE\reusableJavaScript\Bootcamp_WD_FS\JavaScript\Derek Banas\C#\Program\obj\Debug\netcoreapp2.0\Program.AssemblyInfoInputs.cache
+F:\Project_WebSites\Practise_and_modules\Modules_\REUSABLE CODE\PRACTICE\reusableJavaScript\Bootcamp_WD_FS\JavaScript\Derek Banas\C#\Program\obj\Debug\netcoreapp2.0\Program.AssemblyInfo.cs
+F:\Project_WebSites\Practise_and_modules\Modules_\REUSABLE CODE\PRACTICE\reusableJavaScript\Bootcamp_WD_FS\JavaScript\Derek Banas\C#\Program\obj\Debug\netcoreapp2.0\Program.dll
+F:\Project_WebSites\Practise_and_modules\Modules_\REUSABLE CODE\PRACTICE\reusableJavaScript\Bootcamp_WD_FS\JavaScript\Derek Banas\C#\Program\obj\Debug\netcoreapp2.0\Program.pdb
