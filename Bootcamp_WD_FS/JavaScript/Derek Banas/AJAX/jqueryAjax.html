@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Jquery and Ajax</title>
+    <style>
+        p.third {
+            font-weight: normal;
+        }
+
+        p.styleSample {
+            font-weight: bold;
+            text-decoration: line-through;
+            text-transform: uppercase;
+        }
+
+
+        a.email {
+            background: url("http://wwww.newthinktank.com/images/email-icon.gif") no-repeat right top;
+            padding-right: 20px;
+        }
+
+        .tableAlt {
+            background-color: #F5f5DC;
+        }
+
+        .tableTitle {
+            background-color: #3D2B1F;
+            color: #fff;
+            font-weight: bold;
+        }
+
+    </style>
+</head>
+
+<body>
+
+
+    <div id='firstDiv'>
+
+        <h4>First Header</h4>
+        <p id="firstPara">First paragraph in first div<span> First Span </span></p>
+        <p>Second paragraph in first div</p>
+        <p>Third paragraph in first div</p>
+    </div>
+
+    <div id='secondDiv'>
+        <h4>Second header</h4>
+        <p>First paragraph in second div<span> Second Span</span></p>
+        <p>Second paragraph in second div</p>
+        <p>Third paragraph in second div</p>
+    </div>
+
+    <div id="thridDiv">
+        <h4>Third header</h4>
+        <p>First paragraph in third div <span>Third Span</span></p>
+        <p>Second paragraph in thrid div</p>
+        <p>Third paragraph in third div</p>
+    </div>
+
+    <span id="clickToHide">Clik to hide me</span><br>
+    <input type="button" id="bringItBack" value="Bring Back"><br>
+
+
+    <button id="oneButton">boldTheText</button>
+    <button id="twoButton">countParagraphs</button>
+    <button id="threeButton">deleteDiv</button>
+    <button id="fourButton">changeText</button>
+    <button id="fiveButton">allTheSame</button>
+    <button id="sixButton">changeStyle</button>
+    <button id="sevenButton">messUpLast</button>
+    <button id="eightButton">bringDivBack</button>
+    <button id="nineButton">makeBlue</button>
+    <button id="tenButton">slideItUp</button>
+    <button id="elevenButton">anotherP</button>
+
+
+    <h2>Playing with Paragraphs</h2>
+    <div>
+        <p id="first">I Should be Bold</p>
+        <p id="second">Second Paragraphs</p>
+        <p id="third">Third Paragraph</p>
+        <p id="fourth">Fourth Paragraph</p>
+        <p id="fifth">Fifth Paragraph</p>
+    </div>
+
+
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+    <script>
+        window.onload = function() {
+            document.getElementById("oneButton").onclick = boldTheText;
+            document.getElementById("twoButton").onclick = countParagraphs;
+            document.getElementById("threeButton").onclick = deleteDiv;
+            document.getElementById("fourButton").onclick = changeText;
+            document.getElementById("fiveButton").onclick = allTheSame;
+            document.getElementById("sixButton").onclick = changeStyle;
+            document.getElementById("sevenButton").onclick = messUpLast;
+            document.getElementById("eightButton").onclick = bringDivBack;
+            document.getElementById("nineButton").onclick = makeBlue;
+            document.getElementById("tenButton").onclick = slideItUp;
+            document.getElementById("elevenButton").onclick = anotherP;
+        };
+
+
+        function boldTheText() {
+            document.getElementById('first').style.fontWeight = 'bold';
+        }
+
+        function countParagraphs() {
+            alert("There are " + $("p").size() + " paragraphs.");
+        }
+
+        function deleteDiv() {
+            $("#firstDiv").fadeOut();
+        }
+
+        function changeText() {
+            $("#second").html("you changed me");
+        }
+
+        function allTheSame() {
+            $("#firstDiv p").html("We are the same");
+        }
+
+        function changeStyle() {
+            $("p.third").toggleClass("styleSample");
+        }
+
+        function messUpLast() {
+            $("p:last").css("font-style", 'italic');
+        }
+
+        function bringDivBack() {
+            $("#firstDiv").show();
+        }
+
+        function makeBlue() {
+            $("p")[3].style.color = "blue";
+        }
+
+        function slideItUp() {
+            $("#fourth").slideUp('slow');
+        }
+
+        function anotherP() {
+            $("<p>Another Paragraph</p>").insertAfter("#fifth");
+        }
+
+    </script>
+</body>
+
+</html>
