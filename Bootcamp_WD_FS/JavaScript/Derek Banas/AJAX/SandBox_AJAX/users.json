@@ -1,17 +1,17 @@
 [
     {
-        "id": 1,
-        "name": "Rick",
-        "email": "rick@gmail.com"
+        "id":1,
+        "name":"Rick",
+        "email":"rick@gmail.com"
     },
     {
         "id":2,
         "name":"Glenn",
-        "email":"glenn@gmail.com"
+        "email":"glenn@gnail.com"
     },
     {
         "id":3,
-        "name":"Negan",
-        "email": "negan@gmail.com"
+        "name":"Steffany",
+        "email":"steffany@aol.com"
     }
 ]
