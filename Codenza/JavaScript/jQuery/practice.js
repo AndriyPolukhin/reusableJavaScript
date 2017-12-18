@@ -1,25 +1,10 @@
-var counter = (function () {
-    var privateCounter = 0;
+var start = new Date();
+doSomething();
+var end = new Date();
 
-    function changeBy(val) {
-        privateCounter += val;
-    }
-    return {
-        increment: function () {
-            changeBy(1);
-        },
-        decrement: function () {
-            changeBy(-1);
-        },
-        value: function () {
-            return privateCounter;
-        }
-    };
-})();
+var elapsed = end.getTime() - start.getTime();
+console.log(elapsed);
 
-console.log(counter.value());
-counter.increment();
-counter.increment();
-console.log(counter.value());
-counter.decrement();
-console.log(counter.value());
+function doSomething() {
+    for (var i = 0; i < 10000000000; i++) {}
+};
