@@ -40,4 +40,8 @@ var singleA = mySingleton.getInstance();
 var singleB = mySingleton.getInstance();
 singleA.publicMethod();
 console.log(singleA.publicProperty);
-console.log(singleA.getRandomNumber() === singleB.getRandomNumber())
+console.log(singleA.getRandomNumber() === singleB.getRandomNumber());
+
+
+
+
