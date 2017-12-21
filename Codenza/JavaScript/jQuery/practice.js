@@ -1,19 +1,7 @@
-// S.O.L.I.D.
 
-// **Single Reasponsibility Principle**
-// One reason to change
+var a = 100;
 
-// Bad
-class UserSettings {
-    constructor(user) {
-        this.user = user;
-    }
-    changeSettings(settings) {
-        if (this.verifyCredentials()) {
-            // ..
-        }
-    }
-    verifyCredentials() {
-        //..
-    }
-}
+var b = 200;
+
+result = a + b;
+result;
