@@ -1,5 +1,5 @@
 // Conditions and relational operators
-#include <cs50.h>
+// #include <cs50.h>
 #include <stdio.h>
 
 void space(int b);
