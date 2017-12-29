@@ -1,0 +1,87 @@
+Build a Node.js API in Under 30 Minutes
+
+// CODE
+https://github.com/beaucarnes/fcc-project-tutorials/tree/master/notable
+
+// ARTICLE
+https://medium.freecodecamp.org/building-a-simple-node-js-api-in-under-30-minutes-a07ea9e390d2
+
+/*
+** Dependancies
+*/
+Create a folder 'notable'
+npm init 
+notable
+default settings
+
+Intall pagages NODE EXPRESS MONGODB and BODY-PARSER
+
+// base dependencies
+npm install -save express mongodb body-parser 
+// dev dependencies for reloading automaticly restarts the server when changes accure
+npm install --save-dev nodemon  
+
+/*
+** Preparation stage before CROD
+*/
+1. set in scripts of the package.json:
+"dev": "nodemon server.js"
+
+2. write to a new file named server.js:
+const express = require('express');
+const MongoClient = require('mongodb').MongoClient;
+const bodyParser = require('body-parser');
+const app = express();
+const port = 8000;
+app.listen(port, () => {
+    console.log("We are live on " + port);
+})
+
+3. GET A POSTMAN EXTENSION FOR GOOGLE CHROME (let you check for messages a DevTool)
+
+4. Create a filestructure
+mkdir app
+cd app
+mkdir routes
+cd routes
+touch index.js
+touch note_routes.js
+
+5. GO to the Mlab and create a database notable.
+   Create a user for the db and set a psw
+   Copy the link: mongodb://<dbuser>:<dbpassword>@ds235827.mlab.com:35827/notable
+
+6. Create a mkdir config
+	    cd config
+	    touch db.js
+
+we user the url in this file:
+module.exports = {
+    url: "mongodb://andriyfcc:App1@ds235827.mlab.com:35827/notable"
+}
+
+
+7. we finish the einfrastructure by adding the database to the MobgoClient
+So the server.js will look like this:
+const express = require('express');
+const MongoClient = require('mongodb').MongoClient;
+const bodyParser = require('body-parser');
+const db = require('./config/db');
+const app = express();
+const port = 8000;
+
+app.use(bodyParser.urlencoded({
+    extended: true
+}))
+
+MongoClient.connect(db.url, (err, database) => {
+    if (err) return console.log(err)
+    require('./app/routes')(app, database);
+    app.listen(port, () => {
+        console.log("We are live on " + port);
+    })
+})
+
+
+
+
