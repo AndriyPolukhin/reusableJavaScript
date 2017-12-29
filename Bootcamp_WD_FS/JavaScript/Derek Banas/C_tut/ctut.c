@@ -1,23 +1,28 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <string.h>
+// #include <string.h>
 
 
-int globalVar = 0;
+void editMessageSent(char* message , int size) 
+{
 
-int addTwoInts(int num1, int num2) {
-    return num1 + num2;
-}
+    char newMessage[] = "New Message";
 
-void changeVariables() {
-    int age = 40;
+    if(size > sizeof(newMessage)) 
+    {
 
-    printf("age inside of function = %d\n\n", age);
-    
+        for(int i = 0;  i < sizeof(newMessage); i++)
+        {
+            message[i] = newMessage[i];
+        }
 
-    globalVar = 100;
+    } 
+    else
+    {
 
-    printf("globalVar inside of function = %d\n\n", globalVar);
+        printf("New Message is to big\n\n");
+
+    }
 }
 
 
@@ -25,21 +30,16 @@ void main()
 {
     printf("\n");
     
-    int total = addTwoInts(4,5);
+    char randomMessage[] = "Edit my function";
 
-    printf("The sum is %d\n\n", total);
+    printf("Old Message: %s\n\n",
+           randomMessage);
 
-    int age = 10;
+    editMessageSent(randomMessage,
+        sizeof(randomMessage));
 
-    globalVar = 50;
+    printf("New Message: %s\n\n",
+        randomMessage);
 
-    printf("age before a call to the function = %d\n\n", age);
 
-    printf("globalVar before a call to the function = %d\n\n", globalVar);
-
-    changeVariables();
-
-    printf("age after a call to the function = %d\n\n", age);
-
-    printf("globalVar after a call to the function = %d\n\n", globalVar);
 }
