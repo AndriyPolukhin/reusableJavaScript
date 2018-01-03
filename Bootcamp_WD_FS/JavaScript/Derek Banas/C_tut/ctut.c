@@ -3,26 +3,56 @@
 // #include <string.h>
 
 
-void editMessageSent(char* message , int size) 
+struct dogsFavs
 {
+    char *food;
+    char *friend;
+};
 
-    char newMessage[] = "New Message";
 
-    if(size > sizeof(newMessage)) 
-    {
 
-        for(int i = 0;  i < sizeof(newMessage); i++)
-        {
-            message[i] = newMessage[i];
-        }
+typedef struct dog 
+{
+    const char *name;
+    const char *breed;
+    int avgHeightCm;
+    int avgWeightLbs;
 
-    } 
-    else
-    {
+    struct dogsFavs favoriteThings;
 
-        printf("New Message is to big\n\n");
+} dog;
 
-    }
+void getDogsFavs(dog theDog) {
+    printf("\n");
+    printf("%s loves %s and his friend is %s\n\n", 
+        theDog.name,
+        theDog.favoriteThings.food,
+        theDog.favoriteThings.friend); 
+}
+
+void setDogWeightPtr(dog *theDog, int newWeight)
+{
+    (*theDog).avgWeightLbs = newWeight;
+    printf("The weight was changed to %d\n\n",
+        theDog->avgWeightLbs);
+}
+
+void getDogInfo(struct dog theDog) 
+{
+    printf("\n");
+    printf("Name: %s\n\n", theDog.name);
+    printf("Breed: %s\n\n", theDog.breed);
+    printf("Height: %d cms\n\n", theDog.avgHeightCm);
+    printf("Weight: %d lbs\n\n", theDog.avgWeightLbs);
+
+}
+
+void getMemoryLocations(struct dog theDog) 
+{
+    printf("Name Location: %d\n\n", theDog.name);
+    printf("Breed Location: %d\n\n", theDog.breed);
+    printf("Height Location: %d\n\n", theDog.avgHeightCm);
+    printf("Weight Location: %d\n\n", theDog.avgWeightLbs);
 }
 
 
@@ -30,16 +60,11 @@ void main()
 {
     printf("\n");
     
-    char randomMessage[] = "Edit my function";
+    dog benji = {"Benji", "Silky Terrier", 25, 9 , {"Meat", "Joe Camp"}};
 
-    printf("Old Message: %s\n\n",
-           randomMessage);
+    // getDogsFavs(benji);
+    setDogWeightPtr(&benji, 11);
 
-    editMessageSent(randomMessage,
-        sizeof(randomMessage));
-
-    printf("New Message: %s\n\n",
-        randomMessage);
-
-
+    printf("The Weight in Main() %d\n\n",
+        benji.avgWeightLbs);
 }
