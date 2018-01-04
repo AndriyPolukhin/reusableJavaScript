@@ -1,70 +1,40 @@
+// Floating-point arithmetic
+
+// #include <cs50.h>
 #include <stdio.h>
-#include <stdlib.h>
-// #include <string.h>
+#include <math.h>
 
+float quarter = 25.00, dime = 10.00, nickel = 5.00, penny = 1.00;
 
-struct dogsFavs
+int main(void)
 {
-    char *food;
-    char *friend;
-};
 
+    // Prompt user for cash
+    float cash;
+    do
+    {
+        cash = get_float("How much do should I give you? ");
+    } while (cash <= 0);
 
+    // Formula
+    float chAmt = round(cash * 100);
+    float coins = calculateCoins(chAmt);
+    printf("Amount of Coins is: %.2f", coins);
 
-typedef struct dog 
-{
-    const char *name;
-    const char *breed;
-    int avgHeightCm;
-    int avgWeightLbs;
-
-    struct dogsFavs favoriteThings;
-
-} dog;
-
-void getDogsFavs(dog theDog) {
-    printf("\n");
-    printf("%s loves %s and his friend is %s\n\n", 
-        theDog.name,
-        theDog.favoriteThings.food,
-        theDog.favoriteThings.friend); 
+    printf("Float is %f\n", cash);
+    printf("float is %.2f\n", round(cash * 100));
 }
 
-void setDogWeightPtr(dog *theDog, int newWeight)
+float calculatecouns(chAmt)
 {
-    (*theDog).avgWeightLbs = newWeight;
-    printf("The weight was changed to %d\n\n",
-        theDog->avgWeightLbs);
-}
+    int count = 0;
+    float a = chAmt;
+    while (a > quarter)
+    {
+        count++;
+        return a = a - quarter;
+    }
 
-void getDogInfo(struct dog theDog) 
-{
-    printf("\n");
-    printf("Name: %s\n\n", theDog.name);
-    printf("Breed: %s\n\n", theDog.breed);
-    printf("Height: %d cms\n\n", theDog.avgHeightCm);
-    printf("Weight: %d lbs\n\n", theDog.avgWeightLbs);
-
-}
-
-void getMemoryLocations(struct dog theDog) 
-{
-    printf("Name Location: %d\n\n", theDog.name);
-    printf("Breed Location: %d\n\n", theDog.breed);
-    printf("Height Location: %d\n\n", theDog.avgHeightCm);
-    printf("Weight Location: %d\n\n", theDog.avgWeightLbs);
-}
-
-
-void main()
-{
-    printf("\n");
-    
-    dog benji = {"Benji", "Silky Terrier", 25, 9 , {"Meat", "Joe Camp"}};
-
-    // getDogsFavs(benji);
-    setDogWeightPtr(&benji, 11);
-
-    printf("The Weight in Main() %d\n\n",
-        benji.avgWeightLbs);
+    printf("Change Amount %.2f", a);
+    printf("count is %i\n", count);
 }

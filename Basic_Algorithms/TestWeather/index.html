@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Weather App</title>
+</head>
+
+<body>
+
+
+
+    <div id="weather"></div>
+    <p><span id="temp"></span></p>
+    <p><span id="wind"></span></p>
+
+
+    <script>
+        var weather = new XMLHttpRequest();
+        weather.open('GET', 'https://api.wunderground.com/api/fa5715ba5adff2ac/conditions/q/CA/San_Francisco.json', false);
+
+
+        weather.send(null);
+
+        var r = JSON.parse(weather.response);
+        var weather = "Current Location: " + r.current_observation.display_location.full + "<br>";
+        var temp = r.current_observation.temperature_string + "<br>";
+        var wind = r.current_observation.wind_string + "<br>";
+
+        document.getElementById("weather").innerHTML = weather;
+
+    </script>
+</body>
+
+</html>

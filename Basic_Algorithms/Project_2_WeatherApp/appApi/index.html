@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1.0">
+
+    <title>Weather API</title>
+
+    <style>
+        body {
+            background: black;
+            padding: 0;
+            margin: 0;
+
+        }
+
+        div {
+            margin: 0 auto;
+            display: block;
+            color: white;
+        }
+
+        ul {
+            margin: 0 auto;
+        }
+
+        ul li {
+            list-style: none;
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <button id="button">Get Weather</button>
+    <div id="data"></div>
+    <div id="weather"></div>
+
+
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"></script>
+    <script>
+        document.getElementById("button").addEventListener('click', loadWeather);
+
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(function(position) {
+                $("#data").html("latitude: " + position.coords.latitude + "<br>longitude: " + position.coords.longitude);
+                var latitude = position.coords.latitude;
+                var longitude = position.coords.longitude;
+            });
+        }
+
+        function loadWeather() {
+            var xhr = new XMLHttpRequest();
+            xhr.open('GET', 'https://fcc-weather-api.glitch.me/api/current?lat=35&lon=139', true);
+            xhr.onload = function() {
+                if (this.status == 200) {
+                    var json = JSON.parse(this.responseText);
+                    var output = "";
+
+                    output +=
+                        "<ul>" +
+                        "<li><img src='" + json.weather[0].icon + "'></li>" +
+                        "<li>" + json.weather[0].description + "</li>" +
+                        "<li>" + json.weather[0].description + "</li>" +
+                        "</ul>";
+
+                    document.getElementById("weather").innerHTML = output;
+
+                }
+
+            }
+            xhr.send();
+        }
+
+    </script>
+</body>
+
+</html>
