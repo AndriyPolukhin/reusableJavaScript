@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <style>
+        
+            html, body {
+                height: 100%;
+                padding: 0;
+                margin: 0;
+            }
+            
+            #weather {
+                margin: 0 auto;
+            }
+            
+                    
+        </style>
+    </head>
+    <body>
+       
+       <div id="weather"></div>
+       <button id="getweather">Press Me</button>
+        
+        <script>
+        document.getElementById("getweather").addEventListener("click", loadWeather);
+            
+        function loadWeather()
+            {
+                
+                if(navigator.geolocation)
+                    {
+                        navigator.geolocation.getCurrentPosition(onSuccess, onError, {
+                            enableHighAccuracy: true,
+                            maximumAge: 5*60*1000,
+                            timeout: 60*1000
+                        });
+                    }
+                else
+                    {
+                        document.getElementById("weather").innerHTML = "Your browser does not support HTML 5 Geolocation";
+                    }
+                
+            }
+        function onSuccess(position)
+            {
+                var latitude = position.coords.latitude;
+                var longitude = position.coords.longitude;
+                
+                
+                
+                // get open send onload
+                
+                var xhr = new XMLHttpRequest();
+                var url = "http://api.openweathermap.org/data/2.5/weather?lat=" + latitude + "&lon=" + longitude + "&appid=db8bccaa0d0b6f3205c80c763b51ed2a";
+                
+                
+                
+                xhr.open("GET", url, true);
+                
+                xhr.onload = function()
+                {
+                    
+                    if(this.status == 200)
+                        {
+                            
+                            var weather = JSON.parse(this.responseText);
+                            
+                            var location = weather.name;
+                            var country = weather.sys.country;
+                            var desc = weather.weather[0].description;
+                            var temperature = Math.round((weather.main.temp - 273.15)*100)/100;
+                            var pressure = weather.main.pressure;
+                            var humidity = weather.main.humidity;
+                            var windspeed = weather.wind.speed;
+                            
+                            var output ="<p>I am at " + location + "In beautiful " + country; 
+                            output += "<table><tr><td>Description</td><td>" + desc + "</td></tr>";        
+                            output += "<table><tr><td>Temperature</td><td>" + temperature + "o".sup() + "C</td></tr>";        
+                            output += "<table><tr><td>Pressure</td><td>" + pressure + " pha</td></tr>";        
+                            output += "<table><tr><td>Humidity</td><td>" + humidity + "%</td></tr>";        
+                            output += "<table><tr><td>Wind Speed</td><td>" + windspeed + " m/s</td></tr>";
+                            output += "</table>";
+                            
+                            document.getElementById("weather").innerHTML = output;
+                        }
+                    
+                }
+                 xhr.send();
+                
+                
+                
+            }
+        function onError(error)
+            {
+                switch(error.code)
+                    {
+                        case PERMISSION_DENIED:
+                            console.log("User denied permission");
+                            break;
+                        case TIMEOUT:
+                            console.log("Geolocation timeout");
+                            break;
+                        case POSITION_UNAVAILABLE:
+                            console.log("Geolocation information is unavailable");
+                            break;
+                        default:
+                            console.log("The Error is Unknown");
+                            break;
+                    }
+            }
+            
+            
+        </script>
+    </body>
+</html>

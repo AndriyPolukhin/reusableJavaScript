@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Find Around me</title>
+
+    <style>
+
+        html, body {
+            height: 100%;
+            padding: 0;
+            margin: 0;
+        }
+        #box {
+            border: 10px solid royalblue;
+            margin-left: 35%;
+            margin-right: 35%;
+            color: blue;
+            
+            
+        }
+        #box * {
+            background-color: purple;
+            color: gold;
+        }
+
+        #mapArea {
+            height: 100%;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div id="box">
+    Find Nearby: 
+    <select id="interest" onchange="getLocations();">
+        <option value="default">Select your interest</option>
+        <option value="atm">ATM</option>
+        <option value="beauty_salon">Beauty Parlor</option>
+        <option value="church">Church</option>
+        <option value="doctor">Doctor</option>
+        <option value="parking">Parking</option>
+        <option value="library">Library</option>
+        <option value="restaurant">Restaurant</option>
+
+    </select> within
+    <select id="distance" onchange="getLocations();">
+        <option value="500" selected>500</option>
+        <option value="1000">1000</option>
+        <option value="1500">1500</option>
+        <option value="2000">2000</option>
+    </select> meters <br>
+</div>
+    <div id="mapArea"></div>
+
+    <script>
+        var myLocation, interest, distance, map;
+        var markers = new Array();
+        /*
+        document.getElementById("interest").addEventListener("change", getLocations);
+        document.getElementById("distance").addEventListener("change", getLocations);
+        */
+        window.onload = function()
+        {
+            drawMap();
+        }
+
+        function drawMap()
+        {
+            if(navigator.geolocation)
+            {
+                navigator.geolocation.getCurrentPosition(onSuccess, onError, {
+                    enableHighAccuracy: true,
+                    maximumAge: 5*60*1000,
+                    timeout: 60*1000
+                });
+            }
+            else
+            {
+                document.getElementById("mapArea").innerHTML = "Your browser does not support HTML5 Geolocation";
+            }
+        }
+
+        function onError(error)
+        {
+            switch(error.code)
+            {
+                case PERMISSION_DENIED:
+                    alert("User denied permission");
+                    break;
+                case TIMEOUT:
+                    alert("Geolocation timeout");
+                    break;
+                case POSITION_UNAVAILABLE:
+                    alert("Geolocation information is not available");
+                    break;
+                default: 
+                    alert("Error is unknown");
+                    break;
+            }
+        }
+
+        function onSuccess(position)
+        {
+            var lat = position.coords.latitude;
+            var long = position.coords.longitude;
+
+            myLocation = new google.maps.LatLng(lat, long); 
+
+            var mapOptions = {
+                center: myLocation,
+                zoom: 11,
+                mapTypeId: google.maps.MapTypeId.ROADMAP
+            };
+
+            map = new google.maps.Map(document.getElementById("mapArea"), mapOptions);
+
+
+
+        }
+
+        function getLocations()
+        {
+            interest = document.getElementById("interest").value;
+            distance = document.getElementById("distance").value;
+
+            if(interest == "default")
+            {
+                alert("You need to select a point of interst");
+                console.log("You need to select a point of interst");
+            }
+            else
+            {
+                findPlaces();
+            }
+        }
+
+        function findPlaces()
+        {
+            var request = {
+                location: myLocation,
+                radius: distance,
+                type: [interest]
+            };
+
+            var service = new google.maps.places.PlacesService(map);
+            service.nearbySearch(request, createMarkers);
+        }
+
+        function createMarkers(results, status)
+        {
+            var latlngbounds = new google.maps.LatLngBounds();
+            if(status === google.maps.places.PlacesServiceStatus.OK)
+            {
+                clearMarkers();
+                for (var i = 0; i < results.length; i++)
+                {
+                    createMarker(results[i]);
+                    latlngbounds.extend(results[i].geometry.location);
+
+                }
+                map.fitBounds(latlngbounds);
+            }
+            else
+            {
+                alert("Sorry, there been an erorr");
+            }
+
+        }
+
+        function createMarker(place)
+        {
+            var placeLoc = place.geometry.location;
+            var marker = new google.maps.Marker({
+                map: map,
+                position: place.geometry.location
+                
+            });
+            markers.push(marker);
+
+            var infoWindow = new google.maps.InfoWindow({
+                content: "<img src='" + place.icon 
+                + "'><font style='color:gray'>" 
+                + place.name + "<br>Rating: " 
+                + place.rating + "<br>Vicinity: " 
+                + place.vicinity + "</font>"
+            });
+
+            google.maps.event.addListener(marker, 'click', function() {
+                infoWindow.open(map, marker);
+            });
+        }
+
+        function clearMarkers()
+        {
+            if(markers)
+            {
+                for(var i in markers)
+                {
+                    markers[i].setMap(null);
+                }
+                markers = [];
+            }
+        }
+    </script>
+  
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVx0UutwLf5HpsYhD0ixqLvULEb7YPJ4Y&libraries=places" async defer></script>
+
+</body>
+</html>
