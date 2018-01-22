@@ -3,6 +3,7 @@
 # $_SERVER SUPERGLOVAL
 
 // CREATE SERVER ARRAY (assicuatuve)
+
 $server = [
     'Host Server Name' => $_SERVER['SERVER_NAME'],
     'Host Header' => $_SERVER['HTTP_HOST'],
@@ -12,6 +13,8 @@ $server = [
     'Script Name' => $_SERVER['SCRIPT_NAME'],
     'Absolute Path' => $_SERVER['SCRIPT_FILENAME']
 ];
+ 
+
 
 // print_r($server);
 
@@ -19,12 +22,13 @@ $server = [
 // CREATE A CLIENT ARRAY
 
 $client = [
-    'Client System Info' => $_SERVER['HTTP_USER_AGENT'],
+    'Client System info' => $_SERVER['HTTP_USER_AGENT'],
     'Client IP' => $_SERVER['REMOTE_ADDR'],
     'Remote Port' => $_SERVER['REMOTE_PORT']
 ];
 
-// print_R($client);
 
+
+//   print_r($client);
 
 ?>
