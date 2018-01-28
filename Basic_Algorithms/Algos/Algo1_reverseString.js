@@ -78,7 +78,7 @@ function reverseString(str) {
     // 'olleh'
 }
 
-reverseSting('hello');
+reverseString('hello');
 
 
 function reverseString(str) {
