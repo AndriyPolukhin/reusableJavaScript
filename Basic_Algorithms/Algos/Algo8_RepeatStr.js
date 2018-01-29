@@ -1,4 +1,4 @@
-// Confirm the Ending
+// REoeating the String
 
 /*
 =================================
