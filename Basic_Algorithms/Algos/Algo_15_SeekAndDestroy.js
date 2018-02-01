@@ -15,7 +15,7 @@ function destroyer(arr) {
     }
     return arr;
 }
-
+агт
 destroyer([1, 2, 3, 1, 2, 3], 2, 3);
 
 

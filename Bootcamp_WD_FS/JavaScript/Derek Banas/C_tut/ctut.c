@@ -1,28 +1,24 @@
-// #include <cs50.h>
 #include <stdio.h>
-#include <math.h>
-#include <string.h>
 
-long long ifValid(long long card);
+// Needed for exit()
+#include <stdlib.h>
 
-string status = "INVALID";
+void main() {
+    int whatToDo = 0;
 
-int main(void)
-{
+    do {
+        printf("\n");
+        printf("1. Whtt time is it?\n");
+        printf("2. What is todays date?\n");
+        printf("3. What day is it?\n");
+        printf("4. Quit\n");
 
-    // Prompt user for cash
-    long long card;
-    do
-    {
-        card = get_long_long("Change owned: ");
-    } while (card < 999999999999);
+        scanf(" %d", &whatToDo);
 
-    long long checkNum = ifValid(card);
-    printf("%s and %lld\n", status, checkNum);
-    return 0;
-}
 
-long long ifValid(long long card)
-{
-    printf("%s and %lld\n", status, card);
+    } while(whatToDo < 1 || whatToDo > 4);
+
+    if(whatToDo === 1 ) {
+        printf("Print the time\n");
+    }
 }
