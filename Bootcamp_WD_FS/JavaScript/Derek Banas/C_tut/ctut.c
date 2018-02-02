@@ -1,24 +1,35 @@
 #include <stdio.h>
 
-// Needed for exit()
-#include <stdlib.h>
+struct dogsFavs 
+{
+    char *food;
+    char *friend;
+};
 
-void main() {
-    int whatToDo = 0;
+typedef struct dog
+{
+    const char *name;
+    const char *beed;
+    int avgHeightCm;
+    int avgWeightLbs;
 
-    do {
-        printf("\n");
-        printf("1. Whtt time is it?\n");
-        printf("2. What is todays date?\n");
-        printf("3. What day is it?\n");
-        printf("4. Quit\n");
+    struct dogsFavs favoriteThings;
 
-        scanf(" %d", &whatToDo);
+} dog;
 
+void getDogsFavs(dog theDog)
+{
+    printf("\n");
 
-    } while(whatToDo < 1 || whatToDo > 4);
+    printf("%s lovaes %s and his friend is %s\n\n", 
+        theDog.name,
+        theDog.favoriteThings.food,
+        theDog.favoriteThings.friend);
+}
 
-    if(whatToDo === 1 ) {
-        printf("Print the time\n");
-    }
+void main()
+{
+    dog benji = {"Benji", "Silky Terrier", 25, 9, {"Meat", "Joe Camp"}};
+
+    getDogsFavs(benji);
 }
