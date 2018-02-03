@@ -2,152 +2,56 @@
 #include <stdlib.h>
 #include <string.h>
 
-struct product 
+
+
+
+
+char * convertBase(unsigned int numberToConvert, int base, char *pConvertedNumber)
 {
-    float price;
-    char productName[30];
+    
+    char allValues[] = "0123456789abcdef";
 
-    struct product *next;
-};
-
-struct product *pFirstNode = NULL;
-struct product *pLastNode = NULL;
-
-
-void createNewList()
-{
-    struct product *pNewStruct = (struct product *) malloc(sizeof(struct product));
-
-    pNewStruct->next = NULL;
-
-    printf("Enter Product Name: ");
-    scanf("%s", &(pNewStruct)->productName);
-
-    printf("Enter Product price: ");
-    scanf("%f", &(pNewStruct)->price);
-
-    pFirstNode = pLastNode = pNewStruct;
-}
-
-
-void outputData()
-{
-    struct product *pProducts = pFirstNode;
-
-    printf("Products Entered\n\n");
-
-    while(pProducts != NULL)
+    if(base < 2 || base > 16)
     {
-        printf("%s cost %.2f\n\n", pProducts->productName,
-            pProducts->price);
-
-            pProducts = pProducts->next;
+        printf("Enter a number between 2 and 16\n");
+        exit(1);
     }
+
+     
+
+    pConvertedNumber[32] = '\0';
+
+    do {
+
+        int value = numberToConvert % base;
+        pConvertedNumber = pConvertedNumber - 1;
+        *pConvertedNumber = allValues[value];
+        numberToConvert /= base;
+
+    } while(numberToConvert != 0);
+
+    
+    return pConvertedNumber;
 }
 
 
-void inputData()
-{
-    if(pFirstNode == NULL)
-    {
-        createNewList();
-    } else {
-        
-
-        struct product *pNewStruct = (struct product *) malloc(sizeof(struct product));
-
-        printf("Enter Product Name: ");
-        scanf("%s", &(pNewStruct)->productName);
-
-        printf("Enter Product price: ");
-        scanf("%f", &(pNewStruct)->price);
-
-        if(pFirstNode == pLastNode)
-        {
-            pFirstNode->next = pNewStruct;
-
-            pLastNode = pNewStruct;
-
-            pNewStruct->next = NULL;
-        } else {
-
-            pLastNode->next = pNewStruct;
-
-            pNewStruct->next = NULL;
-
-            pLastNode = pNewStruct;
-
-
-        }
-    }
-}
-
-struct product *pProductBeforeProductToDelete = NULL;
-
-struct product* searchForProduct(char * productName)
-{
-    struct product *pProductIterator = pFirstNode;
-
-    while(pProductIterator != NULL)
-    {
-        int areTheyEqual = strncmp(pProductIterator->productName,
-            productName, 30);
-
-            if(!areTheyEqual) 
-            {
-                printf("%s was found and it costs %.2f\n\n",
-                    pProductIterator->productName,
-                    pProductIterator->price);
-
-                    return pProductIterator;
-            }
-           
-            pProductBeforeProductToDelete = pProductIterator;
-            pProductIterator = pProductIterator->next;
-    }
-    printf("%s Wasn't Found\n\n",  productName);
-    return NULL;
-}
-
-
-void removeProduct(char * productName)
-{
-    struct product *pProductToDelete = NULL;
-
-    pProductToDelete = searchForProduct(productName);
-
-    if(pProductToDelete != NULL)
-    {
-        printf("%s Was Deleted\n\n", productName);
-
-        if(pProductToDelete == pFirstNode)
-        {
-            pFirstNode = pProductToDelete->next;
-        } else {
-            pProductBeforeProductToDelete->next = pProductToDelete->next; 
-        }
-
-        free(pProductToDelete);
-    } else {
-        printf("%s Was Not Found", productName);
-    }
-}
-
-
-
-int main()
+int main(void)
 {
 
-    inputData();
-    inputData();
-    inputData();
+    unsigned int numberSix = 6; // 110
+    unsigned int numberSeven = 7; // 111
 
-    outputData();
+    char *pConvertedNumber;
+    pConvertedNumber = malloc(33 * sizeof(char));
 
-    removeProduct("Tomato");
-    searchForProduct("Tomato");
+    unsigned int analyzeMyBits = 170;
+    unsigned int theMask = 15;
+    unsigned int last4Bits = analyzeMyBits & theMask;
 
-    outputData();
+    printf("Last 4 Bits : 5s\n", convertBase(last4Bits, 2, pConvertedNumber));
+
+
+    free(pConvertedNumber);
 
     return 0;
 }
