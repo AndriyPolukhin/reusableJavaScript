@@ -16,8 +16,7 @@ char * convertBase(unsigned int numberToConvert, int base, char *pConvertedNumbe
         printf("Enter a number between 2 and 16\n");
         exit(1);
     }
-
-     
+ 
 
     pConvertedNumber[32] = '\0';
 
