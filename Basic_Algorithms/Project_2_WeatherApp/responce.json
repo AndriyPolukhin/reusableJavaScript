@@ -1,0 +1,62 @@
+
+{
+    "coord": {
+        "lon": 30.45,
+        "lat": 50.45
+    },
+    
+    "weather": [{
+        "id": 803,
+    
+        "main": "Clouds",
+    
+        "description": "broken clouds",
+    
+        "icon": "04n"
+    }],
+    
+    "base": "stations",
+    
+    "main": {
+    
+        "temp": 270.48,
+    
+        "pressure": 1013,
+    
+        "humidity": 79,
+    
+        "temp_min": 269.15,
+    
+        "temp_max": 272.15
+    },
+    
+    "visibility": 10000,
+    
+    "wind": {
+    
+        "speed": 4,
+    
+        "deg": 80
+    },
+    
+    "clouds": {
+        "all": 75
+    },
+    
+    "dt": 1518453000,
+    
+    "sys": {
+        "type": 1,
+        "id": 7358,
+        "message": 0.0132,
+        "country": "UA",
+        "sunrise": 1518412455,
+        "sunset": 1518448278
+    },
+    
+    "id": 696050,
+    
+    "name": "Pushcha-Voditsa",
+    
+    "cod": 200
+}
