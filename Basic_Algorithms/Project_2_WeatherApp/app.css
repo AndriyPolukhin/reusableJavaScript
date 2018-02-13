@@ -1,32 +1,36 @@
- body {
-     position: absolute;
-     top: 50%;
-     left: 50%;
-     width: 400px;
-     height: 400px;
-     margin-top: -200px;
-     margin-left: -200px;
-     border-radius: 2px;
-     -webkit-box-shadow: 1px 2px 10px 0px rgba(0, 0, 0, 0.3);
-     box-shadow: 1px 2px 10px 0px rgba(0, 0, 0, 0.3);
-     background: #43389F;
-     background: -webkit-gradient(linear, left bottom, right top, from(#43389F), to(#4ec6ca));
-     background: linear-gradient(to top right, #43389F 0%, #4ec6ca 100%);
-     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#43389F', endColorstr='#4ec6ca', GradientType=1);
-     font-family: 'Open Sans', sans-serif;
-     /* color: #fff; */
- }
+.container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 400px;
+    height: 400px;
+    margin-top: -200px;
+    margin-left: -200px;
+    border-radius: 2px;
+    -webkit-box-shadow: 1px 2px 10px 0px rgba(0, 0, 0, 0.3);
+    box-shadow: 1px 2px 10px 0px rgba(0, 0, 0, 0.3);
+    font-family: 'Open Sans', sans-serif;
+    /* background: #43389F; */
+    /* background: -webkit-gradient(linear, left bottom, right top, from(#43389F), to(#4ec6ca)); */
+    /* background: linear-gradient(to top right, #43389F 0%, #4ec6ca 100%); */
+    /* filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#43389F', endColorstr='#4ec6ca', GradientType=1); */
+    background-image: url(https://www.osfashland.org/~/media/Content-Masthead-Folder/WeatherMH47.ashx?as=1&h=308&la=en&w=746&hash=88B4BF08C1D40F898E4AD0E7EFA866F20C831F87);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
 
- .weather {
-     position: absolute;
-     top: 50.8%;
-     left: 50.5%;
-     -webkit-transform: translate(-50%, -50%);
-     transform: translate(-50%, -50%);
- }
+.weather {
+    position: absolute;
+    top: 50.8%;
+    left: 50.5%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    font-weight: bold;
+    color: #fff;
+    text-shadow: 1px 1px 1px 0px #ccc;
+    /* background: red; */
+}
 
 span {
     cursor: pointer;
 }
-
- 
