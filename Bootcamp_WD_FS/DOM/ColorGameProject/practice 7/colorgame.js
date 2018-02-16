@@ -1,116 +1,103 @@
-var colors = generateRandomColors(6);
+// THE COLOR GAME INTERACTIVE FUNCTIONS HERE
+// 1. NUMERIC VALUES
+var numSquares = 6;
+var colors = [];
+var pickedColor;
 
+// 2. DOM SELECTORS
 var squares = document.querySelectorAll(".square");
-var pickedColor = pickColor();
 var colorDisplay = document.getElementById("colorDisplay");
 var messageDisplay = document.getElementById("message");
 var h1 = document.querySelector("h1");
 var resetButton = document.getElementById("reset");
-
-var easyBtn = document.querySelector("#easy");
-var hardBtn = document.querySelector("#hard");
+var modeButtons = document.querySelectorAll(".mode");
 
 
-easyBtn.addEventListener("click", function() {
-    hardBtn.classList.remove("selected")
-    easyBtn.classList.add("selected");
-    colors = generateRandomColors(3);
+// 3. INIT FUNCTION FOR BASE PARAMETERS CALL
+init();
+function init() {
+    // MODE BUTTON LISTENERS
+    setupModeButtons();
+    // END OF MODE BUTTON LISTENERS
+    // CHANGE COLOR DISPLAY
+    setupSquares(); 
+    // END OF THE COLOR DISPLAY
+    // RUN RESET ONE MORE TIME
+    reset();
+    // END OF THE RESET() CALL
+}
+
+// 3.1 SETUP MODE BUTTONS FUNCTION
+function setupModeButtons() {
+    for (var i = 0; i < modeButtons.length; i++) {
+        modeButtons[i].addEventListener("click", function () {
+            modeButtons[0].classList.remove("selected");
+            modeButtons[1].classList.remove("selected");
+            this.classList.add("selected");
+            // if(this.textContent === "Easy") { numSquares = 3;} else {numSquares = 6;}
+            this.textContent === "Easy" ? numSquares = 3 : numSquares = 6;
+            reset();
+        });
+    }
+}
+
+// 3.2 SETUP SQUARE LISTENERS FUNCTION
+function setupSquares() {
+     for (let i = 0; i < squares.length; i++) {
+         squares[i].style.background = colors[i];
+         squares[i].addEventListener("click", function () {
+             var clickedColor = this.style.background;
+             if (clickedColor === pickedColor) {
+                 messageDisplay.textContent = "Correct";
+                 changeColors(clickedColor);
+                 h1.style.background = clickedColor;
+                 resetButton.textContent = "Play Again";
+             } else {
+                 this.style.background = "#232323";
+                 messageDisplay.textContent = "Try Again";
+             }
+         });
+     }
+}
+
+
+// 3.3 RESET FUNCTION FOR THE REFRESHING THE PARAMETERS TO THE BEGINING
+resetButton.addEventListener("click", function () {
+    reset();
+});
+function reset(){
+    colors = generateRandomColors(numSquares);
     pickedColor = pickColor();
     colorDisplay.textContent = pickedColor;
-    for(var i = 0; i < squares.length; i++)
-    {
-        if(colors[i]) {
+    resetButton.textContent = "New Colors";
+    messageDisplay.textContent = "";
+    h1.style.background = "steelblue";
+    for(var i = 0; i < squares.length; i++){
+        if (colors[i]) {
+            squares[i].style.display = "block";
             squares[i].style.background = colors[i];
         } else {
-            squares[i].style.display = "none";
-        }
-    }
-});
-hardBtn.addEventListener("click", function() {
-    easyBtn.classList.remove("selected");
-    hardBtn.classList.add("selected");
-
-    colors = generateRandomColors(6);
-    pickedColor = pickColor();
-    colorDisplay.textContent = pickedColor;
-    for (var i = 0; i < squares.length; i++)
-    {
-        squares[i].style.background = colors[i];
-        squares[i].style.display = "block";
-    }
-
-});
-
-
-resetButton.addEventListener("click", function() {
-    // all new color
-    colors = generateRandomColors(6);
-    // pick a new color from array
-    pickedColor = pickColor();
-    // change color display to mathc the Display color
-    colorDisplay.textContent = pickedColor;
-    // display new colors on squares
-    for(var i = 0; i < squares.length; i++)
-    {squares[i].style.background = colors[i];}
-    resetButton.textContent = "New Colors";
-    h1.style.background = "#232323";
-});
-
-colorDisplay.textContent = pickedColor;
-
-for(let i = 0; i < squares.length; i++){
-    // add initial color to sqaures
-    squares[i].style.background = colors[i];
-
-    // add event listeners to squares
-    squares[i].addEventListener("click", function() {
-        // grabb the color clicked
-        var clickedColor = this.style.background;
-        // compare color to picked Color
-        console.log(clickedColor ,pickedColor);
-        if(clickedColor === pickedColor) {
-            messageDisplay.textContent = "Correct";
-            changeColors(clickedColor);
-            h1.style.background = clickedColor;
-            resetButton.textContent = "Play Again";
-        } else {
-           this.style.background = "#232323";
-           messageDisplay.textContent = "Try Again";
-        }
-    });
-}     
-
-function changeColors(color) {
-    // loop throug all the squares
-    for(var i = 0; i < squares.length; i++)
-    { // change all the colors
-        squares[i].style.background = color;}
+           squares[i].style.display = "none";
+        }}
 }
+   
+// 4. COLOR FUNCTIONS (CHANGERS / PICKERS / GENERATORS / RANDOMIZERS)
+function changeColors(color) {
+    for(var i = 0; i < squares.length; i++)
+    { squares[i].style.background = color;}}
 
 function pickColor() {
     var random = Math.floor(Math.random() * colors.length);
     return colors[random];
 }
-
 function generateRandomColors(num) {
-    // make an array
     var arr = [];
-    // add num colors to array
-    for(var i = 0; i < num; i++){
-        // get random color and push into an array
-        arr.push(randomColor());
-    }
-    // return an array
+    for(var i = 0; i < num; i++){arr.push(randomColor());}
     return arr;
 }
-
 function randomColor(){
-    // pick a red from 0-255
     var r = Math.floor(Math.random() * 256);
-    // pick a green from 0-255
     var g = Math.floor(Math.random() * 256);
-    // picj a blue form 0-255
     var b = Math.floor(Math.random() * 256);
-    // return a color to the functoin generate
     return "rgb(" + r + ", " + g + ", " + b + ")";
 }
