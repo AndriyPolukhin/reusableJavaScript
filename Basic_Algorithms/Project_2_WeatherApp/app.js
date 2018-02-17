@@ -26,6 +26,7 @@ function onSuccess(position) {
     xmlhttpweather.onreadystatechange = function()
     {
         var output = "";
+        var mainWeather = "";
         if(xmlhttpweather.readyState == 4 && xmlhttpweather.status == 200)
         {
             var jsonResponse = xmlhttpweather.responseText;
@@ -41,49 +42,43 @@ function onSuccess(position) {
             var icon = weatherInfo.weather[0].icon;
             
             
-
-
-            output += "<p><b>Latest Weather Updates: " + location + "</b></p>";
+            output += "<p><b>Latest Weather Updates at: <br>" + location + "   </b></p>";
             output += "<table><tr><td>Description</td><td>" + description +"</td></tr>";
-            output += "<tr><td>Temperature</td><td id='tempF'>" + temperature + " o".sup() +  "<span id='temp_switch'>C</span></td></tr>";
+            output += "<tr><td>Temperature</td><td id='tempF'>" + temperature; 
+            output += "<a id='temp_switch' class='button'> C</a></td></tr>";
             output += "<tr><td>Pressure</td><td>" + pressure + " hpa</td></tr>";
-            output += "<tr><td>Humidity</td><td>" + humidity + "</td></tr>";
+            output += "<tr><td>Humidity</td><td>" + humidity + " %</td></tr>";
             output += "<tr><td>Wind Speed</td><td>" + windSpeed + " m/s</td></tr>";
-            output += "<tr><td>Icon</td><td>" + icon + "</td></tr>";
+            output += "<tr><td>Icon</td><td id='icon'>" + icon + "</td></tr>";
             output += "</table>";
 
-            document.getElementById("weather").innerHTML = output;
-            document.getElementById("temp_switch").addEventListener("click", changeTemp()); 
+            var weather = document.getElementById("weather");
+            weather.innerHTML = output; 
+            
+            
+           
+            
+            weather.addEventListener("click", function (event) {
+                event.stopPropagation();
+                changeTemp(temperatureF);
+            }); 
+
+            // MAIN WEATHER DESCIPTION
+            mainWeather = weatherInfo.weather[0].main;
+            // mainWeather.onload(
+            //     colorWeather(mainWeather));
+            if(mainWeather) {
+                colorWeather(mainWeather);
+                console.log(mainWeather);
+            }
+
+
 
         }
-    }
-
-    
+    }    
 }
-
-
-
-document.getElementById("weather").addEventListener("onload", "div", "span", changeTemp()); 
-
-function changeTemp() {
-    var current = document.getElementById("temp_switch");
-    var tempChange = document.getElementById("tempF");
-    var switchC = 'F';
-    var temperature = tempChange.innerText;
-    if (current == switchC) {
-        current.innerHTML = "C";
-        tempChange.innerHTML = Math.round((tempChange.innerText - 273.15) * 100) / 100;;
-    } else {
-        current.innerHTML = "F";
-        tempChange.innerHTML = temperature;
-    }
-}
-
-
-function onError(error)
-{
-    switch(error.code)
-    {
+function onError(error) {
+    switch (error.code) {
         case PERMISSION_DINIED:
             alert("User denied premission");
             break;
@@ -98,4 +93,70 @@ function onError(error)
             break;
     }
 }
+
+// THIS FUNCTION IS FOR CHANGING THE BACKGROUND AND THE ICON FOR THE WEATEHR FORECAST
+function colorWeather(mainWeather) {
+    var bodyBg = document.getElementsByTagName("body");
+    var iconCh = document.querySelector("td#icon");
+    var color = mainWeather;
+
+    bodyBg.classList.add(color);
+    console.log(bodyBg);
+    console.log(iconCh);
+    
+    switch(color)
+    {
+        case "Clouds":
+            bodyBg.classList.add("clouds");
+            iconCh.innerHTML = "<i class='fas fa-cloud'></i>";
+            break;
+        case "Rain":
+            bodyBg.classList.add("rain");
+            iconCh.innerHTML = "<i class='fas fa-tint'></i>";
+            break;
+        case "Snow":
+            bodyBg.classList.add("snow");
+            iconCh.innerHTML = "<i class='fas fa-snowflake'></i>";
+            break;
+        case "Extreme":
+            bodyBg.classList.add("extreme");
+            iconCh.innerHTML = "<i class='fas fa-hotjar'></i>";
+            break;
+        case "Mist":
+            bodyBg.classList.add("mist");
+            iconCh.innerHTML = "<i class='fas fa-cloudversify'></i>";
+            break;
+        case "Clear":
+            bodyBg.classList.add("clear");
+            iconCh.innerHTML = "<i class='fas fa-skyatlas'></i>";
+            break;
+        case "Sunny":
+            bodyBg.classList.add("sunny");
+            iconCh.innerHTML = "<i class='fas fa-sun'></i>";
+            break;
+        default:
+            bodyBg.classList.add("default");
+            iconCh.innerHTML = "<i class='fas fa-cloudversify'></i>";
+            break;
+    }
+}
+
+
+// THIS CHANGES THE TEMPERATURE WITH A CLICK ON A INDICATOR LINK
+function changeTemp(temperatureF) {
+    var tempF_base = temperatureF;
+    var tempSwitch = document.querySelector("a#temp_switch.button");
+    var tempData = document.querySelector("td#tempF");
+    var tempSwitchText = tempSwitch.innerText;
+
+    if (tempSwitchText === " F") {
+        var tempC = Math.round((tempF_base - 273.15) * 100) / 100;
+        tempData.innerHTML = tempC + "<a id='temp_switch' class='button'> C</a>";
+    } else if (tempF_base > 100) {
+        tempData.innerHTML = "";
+        tempData.innerHTML = tempF_base + "<a id='temp_switch' class='button'> F</a>"; 
+    } 
+}
+
+
 

@@ -1,36 +1,100 @@
+body * {
+    /* background: rgba(0, 0, 0, 0.1); */
+}
+
+body {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
 .container {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 400px;
-    height: 400px;
-    margin-top: -200px;
-    margin-left: -200px;
-    border-radius: 2px;
-    -webkit-box-shadow: 1px 2px 10px 0px rgba(0, 0, 0, 0.3);
-    box-shadow: 1px 2px 10px 0px rgba(0, 0, 0, 0.3);
-    font-family: 'Open Sans', sans-serif;
-    /* background: #43389F; */
-    /* background: -webkit-gradient(linear, left bottom, right top, from(#43389F), to(#4ec6ca)); */
-    /* background: linear-gradient(to top right, #43389F 0%, #4ec6ca 100%); */
-    /* filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#43389F', endColorstr='#4ec6ca', GradientType=1); */
-    background-image: url(https://www.osfashland.org/~/media/Content-Masthead-Folder/WeatherMH47.ashx?as=1&h=308&la=en&w=746&hash=88B4BF08C1D40F898E4AD0E7EFA866F20C831F87);
-    background-size: cover;
-    background-repeat: no-repeat;
+    width: 600px;
+    margin: 0 auto;
+    padding: 0;
 }
 
 .weather {
-    position: absolute;
-    top: 50.8%;
-    left: 50.5%;
-    -webkit-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);
-    font-weight: bold;
-    color: #fff;
-    text-shadow: 1px 1px 1px 0px #ccc;
-    /* background: red; */
+    margin: 200px auto;
+    height: 320px;
 }
 
-span {
+p {
+    font-size: 18px;
+}
+
+table {
+    table-layout: fixed;
+    width: 250px;
+    text-align: center;
+}
+
+tr {
+    text-align: left;
+}
+
+td,
+tr {
+    padding: 10px;
+}
+
+.button {
     cursor: pointer;
+}
+
+
+/* BACKGROUNDS FOR THE BODY BASED IN A SWITCH STRATEMENT */
+
+.clouds {
+    background: #360033;
+    background: -webkit-linear-gradient(to right, #0b8793, #360033);
+    background: linear-gradient(to right, #0b8793, #360033);
+}
+
+.rain {
+    background: #485563;
+    background: -webkit-linear-gradient(to right, #29323c, #485563);
+    background: linear-gradient(to right, #29323c, #485563);
+}
+
+.snow {
+    background: #403B4A;
+    background: -webkit-linear-gradient(to right, #E7E9BB, #403B4A);
+    background: linear-gradient(to right, #E7E9BB, #403B4A);
+}
+
+.extreme {
+    background: #c21500;
+    background: -webkit-linear-gradient(to right, #ffc500, #c21500);
+    background: linear-gradient(to right, #ffc500, #c21500);
+}
+
+.mist {
+    background: #5f2c82;
+    background: -webkit-linear-gradient(to right, #49a09d, #5f2c82);
+    background: linear-gradient(to right, #49a09d, #5f2c82);
+}
+
+.clear {
+    background: #1FA2FF;
+    background: -webkit-linear-gradient(to right, #A6FFCB, #12D8FA, #1FA2FF);
+    background: linear-gradient(to right, #A6FFCB, #12D8FA, #1FA2FF);
+}
+
+.sunny {
+    background: #FF512F;
+    background: -webkit-linear-gradient(to right, #F09819, #FF512F);
+    background: linear-gradient(to right, #F09819, #FF512F);
+}
+
+.drizzle {
+    background: #603813;
+    background: -webkit-linear-gradient(to right, #b29f94, #603813);
+    background: linear-gradient(to right, #b29f94, #603813);
+}
+
+.default {
+    background: #003973;
+    background: -webkit-linear-gradient(to right, #E5E5BE, #003973);
+    background: linear-gradient(to right, #E5E5BE, #003973);
 }
