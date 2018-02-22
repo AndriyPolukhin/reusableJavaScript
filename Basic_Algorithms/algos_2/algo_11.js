@@ -22,7 +22,7 @@ console.log(
     chunk([0,2,4,5,1,5,6,7], 4)
 );
 */
-/*
+ 
 function chunk(arr, size)
 {
     let arrA = [];
@@ -35,7 +35,7 @@ console.log(
     chunk(
         [2,3,4,5,6,1,6,53,], 3)
     );
-*/
+ 
 
 
 
