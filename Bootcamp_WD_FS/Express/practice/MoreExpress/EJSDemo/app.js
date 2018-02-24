@@ -5,15 +5,21 @@
         var express = require("express");
         var app = express();
 
+        // 1.1.1 Here we added the static directory
+            app.use(express.static("public"));
+        
+        // 1.1.2 Indicate that the file format is .ejs
+            app.set("view engine", "ejs");
+
     // 1.2 ROOT ROUTE
         app.get("/", function (req, res) {
-            res.render("home.ejs");
+            res.render("home");
         });
 
     // 1.3 CUSTOMER ROUTES
         app.get("/fallinlovewith/:her", function(req, res) {
             var her = req.params.her;
-            res.render("love.ejs", {herVar : her});
+            res.render("love", {herVar : her});
         });
 
     // 1.4 A LOOP ROUTE 
@@ -24,7 +30,7 @@
                 {title: "That miteciolus enough", author: "John"},
             ];
 
-            res.render("posts.ejs", {posts: posts});
+            res.render("posts", {posts: posts});
         });  
 
 
