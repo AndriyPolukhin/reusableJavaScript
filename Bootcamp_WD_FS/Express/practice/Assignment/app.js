@@ -32,7 +32,7 @@ var app = express();
        res.send("Hi there, welcome to the assignment!");
     }); // 2.1 Done!
 
-    // 2.2 SPEAK ROUTE
+    // 2.2 SPEAK ROUTE v.1
 
     app.get("/speak/:type", function(req, res) {
         var type = req.params.type;
@@ -53,15 +53,46 @@ var app = express();
         }
         
         res.send("The " + type + "says " + type_say);
-    }); // 2.2 Done!
+    }); // 2.2 v.1 Done!
 
-    // 2.3 Repeat Route
+    // 2.2 SPEAK ROUTE v.2
+    app.get("/speak/2/:animal", function(req, res) {
+        var sounds = {
+            pig: "Oink",
+            cow: "Moo",
+            dog: "Woof Woof!",
+            cat: "Hello Human",
+            goldfish: "Blump Blump"
+        }
+        var animal = req.params.animal.toLowerCase();
+        var sound = sounds[animal];
+        res.send("The " + animal + " says '" + sound + "'");
+    }); // 2.2 v.2 Done!
+
+
+    // 2.3 Repeat Route v.1
     app.get("/repeat/:word/:times", function (req, res) {
         var word = req.params.word + " ";
         var times = req.params.times;
 
         res.send(" " + word.repeat(times));
-    }); // 2.3 Done!
+    }); // 2.3 v.1 Done!
+
+    // 2,3 Reoeat Route v.2
+    app.get("/repeat/2/:message/:times", function(req, res) {
+        var message = req.params.message;
+        var times = Number(req.params.times);
+        
+        // 2.3.1 Here we define a variable that we will return
+        var result = "";
+        // 2.3.2 The 'for(){}' loop is used to creat a message
+        for (let i = 0; i < times; i++) {
+            result += message + " ";
+        }
+
+        // 2.3.3 We return the variable 'result' after the for loop
+        res.send(result); 
+    }); // 2.3 v.2 Done!
 
     //2.4 Error Route
 
