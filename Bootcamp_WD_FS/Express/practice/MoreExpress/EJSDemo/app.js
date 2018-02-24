@@ -16,6 +16,17 @@
             res.render("love.ejs", {herVar : her});
         });
 
+    // 1.4 A LOOP ROUTE 
+        app.get("/posts", function ( req, res) {
+            var posts = [
+                {title: "What does it takes", author: "Andriy"},
+                {title: "Shom me your wit", author: "Anastasia"},
+                {title: "That miteciolus enough", author: "John"},
+            ];
+
+            res.render("posts.ejs", {posts: posts});
+        });  
+
 
     // 4. Get the server to listen to the port 3000
         app.listen(3000, function() {
