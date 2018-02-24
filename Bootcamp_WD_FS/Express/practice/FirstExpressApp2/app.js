@@ -28,11 +28,26 @@ app.get("/dog", function(req, res) {
 
 // 4. Let's learn the parameters usage
 
- 
+ app.get("/r/:subredditName", function (req, res) {
+     console.log(req.params);
+     var subreddit = req.params.subredditName;
+     res.send("THIS IS A JUST A SUBREDDIT of name " + subreddit.toUpperCase() + " Finally");
+ });
+
+ app.get("/r/:subredditName/comments/:id/:title", function (req, res) {
+    console.log(req.params);
+    var subreddit = req.params.subredditName;
+    var id = req.params.id;
+    var title = req.params.title; 
+    res.send("THIS IS A MULTIPARAMETER ROUTE: " + "<br> 1. We have a Subreddit called: " + subreddit.toUpperCase() + "<br> 2. We now it unde the id: " + id + "<br> And the title is: "  + title);
+ });
+
 
 // 5. All of the rest that are not actual routes
 
- 
+ app.get("*", function (req, res) {
+     res.send("NO DATA BESIDES THIS ONE IS PROVIDED BY THE ROUTE");
+ });
 
 // 6. "Tell Express to listen for request (start server)"
 
