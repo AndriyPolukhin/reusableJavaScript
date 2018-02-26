@@ -1,25 +1,38 @@
 var express =require("express");
 var app = express();
+var bodyParser = require("body-parser");
 
+app.use(bodyParser.urlencoded({extended: true}));
 
 app.set("view engine", "ejs");
-
 
 app.get("/", function(req, res) {
     res.render("home");
 });
 
+
 app.get("/friends", function(req, res) {
-    var friends = ["Andriy", "Anastasia", "Alexandra", "Olga"];
+    
     res.render("friends", {friends: friends});
-}); 
-
-
-app.post("/addfriend", function(req, res) {
-    res.send("YOU HAVE REACHED THE POST ROUTE!!!");
 });
 
 
+
+// Setting up a POST ROUTE
+    // Friends Array is moved to be visible to all routes
+    var friends = ["Anastasia", "Alexandra", "Olga", "Andriy", "Maria"];
+    // Post are fixed so it adds new values to the friends array.
+    app.post("/addfriend", function(req, res) {
+        // console.log(req.body.newfriend);
+        var newFriend = req.body.newfriend;
+        friends.push(newFriend);
+        res.redirect("/friends");
+    });
+
+
+
+
+
 app.listen(3000, function() {
-    console.log("SERVING");
+    console.log("Server Started");
 });
