@@ -18,7 +18,7 @@ function onSuccess(position) {
     var longitude = position.coords.longitude;
 
     var xmlhttpweather = new XMLHttpRequest();
-    var url = "http://api.openweathermap.org/data/2.5/weather?lat=" + latitude + "&lon=" + longitude + "&appid=db8bccaa0d0b6f3205c80c763b51ed2a";
+    var url = "https://api.openweathermap.org/data/2.5/weather?lat=" + latitude + "&lon=" + longitude + "&appid=db8bccaa0d0b6f3205c80c763b51ed2a";
     xmlhttpweather.open("GET", url, true);
      
     xmlhttpweather.send();
@@ -65,11 +65,8 @@ function onSuccess(position) {
 
             // MAIN WEATHER DESCIPTION
             mainWeather = weatherInfo.weather[0].main;
-            // mainWeather.onload(
-            //     colorWeather(mainWeather));
             if(mainWeather) {
                 colorWeather(mainWeather);
-                console.log(mainWeather);
             }
 
 
@@ -95,49 +92,51 @@ function onError(error) {
 }
 
 // THIS FUNCTION IS FOR CHANGING THE BACKGROUND AND THE ICON FOR THE WEATEHR FORECAST
+var bodyBg;
+var iconCh;
 function colorWeather(mainWeather) {
-    var bodyBg = document.getElementsByTagName("body");
-    var iconCh = document.querySelector("td#icon");
+    bodyBg = document.getElementById("body");
+    iconCh = document.querySelector("td#icon");
     var color = mainWeather;
 
-    bodyBg.classList.add(color);
-    console.log(bodyBg);
-    console.log(iconCh);
+    
+    if(color != "Hurracane") {
     
     switch(color)
-    {
-        case "Clouds":
-            bodyBg.classList.add("clouds");
-            iconCh.innerHTML = "<i class='fas fa-cloud'></i>";
-            break;
-        case "Rain":
-            bodyBg.classList.add("rain");
-            iconCh.innerHTML = "<i class='fas fa-tint'></i>";
-            break;
-        case "Snow":
-            bodyBg.classList.add("snow");
-            iconCh.innerHTML = "<i class='fas fa-snowflake'></i>";
-            break;
-        case "Extreme":
-            bodyBg.classList.add("extreme");
-            iconCh.innerHTML = "<i class='fas fa-hotjar'></i>";
-            break;
-        case "Mist":
-            bodyBg.classList.add("mist");
-            iconCh.innerHTML = "<i class='fas fa-cloudversify'></i>";
-            break;
-        case "Clear":
-            bodyBg.classList.add("clear");
-            iconCh.innerHTML = "<i class='fas fa-skyatlas'></i>";
-            break;
-        case "Sunny":
-            bodyBg.classList.add("sunny");
-            iconCh.innerHTML = "<i class='fas fa-sun'></i>";
-            break;
-        default:
-            bodyBg.classList.add("default");
-            iconCh.innerHTML = "<i class='fas fa-cloudversify'></i>";
-            break;
+        {
+            case "Clouds":
+                bodyBg.className = "clouds";
+                iconCh.innerHTML = "<i class='fas fa-cloud'></i>";
+                break;
+            case "Rain":
+                bodyBg.classList.add("rain");
+                iconCh.innerHTML = "<i class='fas fa-tint'></i>";
+                break;
+            case "Snow":
+                bodyBg.classList.add("snow");
+                iconCh.innerHTML = "<i class='fas fa-snowflake'></i>";
+                break;
+            case "Extreme":
+                bodyBg.classList.add("extreme");
+                iconCh.innerHTML = "<i class='fas fa-hotjar'></i>";
+                break;
+            case "Mist":
+                bodyBg.classList.add("mist");
+                iconCh.innerHTML = "<i class='fas fa-cloudversify'></i>";
+                break;
+            case "Clear":
+                bodyBg.classList.add("clear");
+                iconCh.innerHTML = "<i class='fas fa-skyatlas'></i>";
+                break;
+            case "Sunny":
+                bodyBg.classList.add("sunny");
+                iconCh.innerHTML = "<i class='fas fa-sun'></i>";
+                break;
+            default:
+                bodyBg.classList.add("default");
+                iconCh.innerHTML = "<i class='fas fa-cloudversify'></i>";
+                break;
+        }
     }
 }
 
