@@ -31,7 +31,7 @@
             <span class="sound">boom</span>
         </div>
         <div data-key="72" class="key">
-            <kbd>74</kbd>
+            <kbd>H</kbd>
             <span class="sound">ride</span>
         </div>
         <div data-key="74" class="key">
@@ -60,6 +60,27 @@
 
     <script>
          
+        
+
+        function playSound(e) {
+            const audio = document.querySelector(`audio[data-key="${e.keyCode}"]`); const key = document.querySelector(`.key[data-key="${e.keyCode}"]`);
+            if (!audio) return; // stop the function from running altogether audio.currentTime = 0; // rewind the audio to the start
+            audio.play(); key.classList.add("playing"); // add a class for transition
+        }
+
+        // create a function to remove transition
+        function removeTransition(e) {
+            if(e.propertyName !== 'transform') return; // skip it if it's not a transform
+
+            this.classList.remove('playing');
+        }
+
+        // create a transitionEnd event
+        const keys = document.querySelectorAll(".key");
+        keys.forEach(key => key.addEventListener('transitionend', removeTransition));
+
+        window.addEventListener('keydown', playSound);
+
     </script>
 
 </body>
