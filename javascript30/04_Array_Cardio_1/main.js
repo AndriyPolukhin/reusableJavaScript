@@ -91,6 +91,8 @@ const inventors = [
     // 1.2 updated styling
     const fifteen2 = inventors.filter(inventor => (inventor.year >= 1500 && inventor.year < 1600))
 
+    // 1.3 remembering
+    const fifteen3 = inventors.filter(inventor => (inventor.year >= 1500 && inventor.year < 1600))
     // console.log(fifteen);
     // console.table(fifteen2); // This is a cool hack!
 
@@ -98,6 +100,9 @@ const inventors = [
  // 2. Give us an array of the inventrors' first and last names
     const fullNames = inventors.map(inventor => `${inventor.first}  ${inventor.last}`);
     // console.table(fullNames);
+
+    // remembereing
+    const fullName2 = inventors.map(inventor => `${inventor.first} ${inventor.last}`);
 
 
  // Array.prototype.sort()
@@ -116,6 +121,9 @@ const inventors = [
 
     // console.table(ordered2);
 
+    // remembering
+    const ordered3 = inventors.sort((a, b) => a.year > b.year ? 1 : -1);
+
 
  // Array.prototype.reduce()
  // 4. How many year did all the inventors live?
@@ -128,6 +136,11 @@ const inventors = [
 
     // 4.2 Using reduce
     const totalYears2 = inventors.reduce((total, inventor) => {
+        return total + (inventor.passed - inventor.year);
+    }, 0);
+
+    // remembering
+    const totalYears3 = inventors.reduce((total, inventor) => {
         return total + (inventor.passed - inventor.year);
     }, 0);
 
@@ -152,6 +165,12 @@ const inventors = [
 
     // console.table(oldest2);
 
+    // remembering
+    const oldest3 = inventors.sort((a, b) => {
+        const lastGuy = a.passed - a.yaer;
+        const nextGuy = b.passed - b.year;
+        return lastGuy > nextGuy ? -1 : 1;
+    });
  // 6. Create a list of Boulevards in Paris that contain 'de' anywhere in the name
  // https://en.wikipedia.org/wiki/Category:Boulevards_in_Paris
 
@@ -175,6 +194,13 @@ const inventors = [
     });
     console.table(alpha);
 
+    // remembering
+    const alpha = people.sort((lastOne, nextOne) => {
+        const [aLast, aFirst] = lastOne.split(', ');
+        const [bLast, bFirst] = nextOne.split(', ');
+
+        return aLast > bLast ? 1 : -1;
+    })
  //8. Reduce Exercise
  // Sum the instances of each of therse
  const data = ['car', 'car', 'truck', 'truck', 'bike', 'walk', 'car', 'van', 'bike', 'walk', 'car', 'van', 'car', 'truck'];
@@ -188,3 +214,13 @@ const inventors = [
  }, {});
 
  console.table(transportation);
+
+ // remembering
+
+ const transortation2 = data.reduce(function(obj, item) {
+     if(!obj[item]) {
+         obj[item] = 0;
+     }
+     obj[item]++;
+     return obj;
+ }, {});
