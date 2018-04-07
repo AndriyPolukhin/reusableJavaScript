@@ -1,0 +1,28 @@
+.done-true {
+    text-decoration: line-through;
+    color: grey;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+div, h2 {
+    width: 400px;
+    padding: 10px;
+    margin: 5px;
+    border: 1px solid white;
+}
+
+input {
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: inset 0px 0px 0px 5px rgba(255,255,255,0.1);
+    border: none;
+    margin: 5px;
+    font-weight: 200;
+    font-size: 1em;
+    
+}
