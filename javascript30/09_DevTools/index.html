@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Console Tricks!</title>
+    </head>
+    <body>
+        <p onClick="makeGreen()">xBREAKxDOWN</p>
+
+
+        <script>
+            
+            const dogs = [{ name: 'Snickers', age: 2 }, { name: 'hugo', age: 8 }];
+
+            function makeGreen() {
+                const p = document.querySelector('p');
+                p.style.color = '#BADA55';
+                p.style.fontSize = '50px';
+            }
+
+            // 1. Regular
+            console.log('hello');
+            // 2. Intrepolated
+            console.log('Hello I am a %s string!', '💩');
+            console.log(`Hello I am ${dogs[1].name}`);
+            // 3. Styled
+            console.log('%c I am some great text', 'font-size:15px; color: red; background: yellow; text-shadow: 1px 1px 0 blue;');
+            // 4. warning!
+            console.warn('OH NOOO');
+            // 5. Error:|
+            console.error('Shit!');
+            // 6. Info
+            console.info('Crocodiles eat 3-4 people per year');
+            // 7. Testing
+            const p = document.querySelector('p');
+
+            console.assert(p.classList.contains('ouch'), 'That is wrong!');
+            // 8. clearing
+            console.clear();
+            // 9. Viewing DOM Elements
+            console.log(p);
+            console.dir(p);
+
+            console.clear();
+            // 10. Grouping together
+            dogs.forEach(dog => {
+                //console.group(`${dog.name}`);
+                console.groupCollapsed(`${dog.name}`);
+                console.log(`This is ${dog.name}`);
+                console.log(`${dog.name} is ${dog.age} years old`);
+                console.log(`${dog.name} is ${dog.age * 7} dog years old`);
+                console.groupEnd(`${dog.name}`);
+            });
+            // 11. counting
+            console.groupCollapsed('names');
+            console.count('Andriy');
+            console.count('Andriy');
+            console.count('Anastasia');
+            console.count('Anastasia');
+            console.count('Andriy');
+            console.count('Anastasia');
+            console.groupEnd('names');
+            // 12. timinig
+            console.time('fetching data');
+            fetch('https://api.github.com/users/andriypolukhin')
+                .then(data => data.json())
+                .then(data => {
+                    console.timeEnd('fetching data');
+                    console.log(data);
+                });
+            // 13. table
+            console.table(dogs);
+        </script>
+    </body>
+</html>
