@@ -250,6 +250,10 @@ input::-moz-focus-inner {
 
 .container {
     display: flex;
+    justify-content: space-between;
+    /* border:10px solid mistyrose; */
+    flex-direction: column;
+    min-height: 100vh;
 }
 
 
