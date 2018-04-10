@@ -249,30 +249,28 @@ input::-moz-focus-inner {
 /* We start writing out flexbox here. The above is just page setup */
 
 .container {
-    /* justify-content: space-between; */
     height: 100vh;
     display: flex;
     border: 10px solid mistyrose;
-    align-items: center;
-    flex-direction: column;
+    /* flex-wrap: wrap; */
+    align-items: flex-start;
+    /* flex-direction: column; */
+    /* align-content: center; */
 }
 
-.box1 {
-    font-size: 30px;
+.box {
+    width: 33.333%;
 }
 
-.box3 {
-    font-size: 150px;
+.box2 {
+    padding-bottom: 200px;
 }
 
-.box4 {
-    font-size: 200px;
+.box6 {
+    padding-bottom: 0;
 }
 
-.box5 {
-    font-size: 10px;
-}
-
-.box10 {
-    font-size: 77px;
+.box9 {
+    padding-bottom: 50px;
+    align-self: stretch;
 }
