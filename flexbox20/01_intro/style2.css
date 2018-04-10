@@ -249,12 +249,30 @@ input::-moz-focus-inner {
 /* We start writing out flexbox here. The above is just page setup */
 
 .container {
+    /* justify-content: space-between; */
+    height: 100vh;
     display: flex;
-    justify-content: space-between;
-    /* border:10px solid mistyrose; */
+    border: 10px solid mistyrose;
+    align-items: center;
     flex-direction: column;
-    min-height: 100vh;
 }
 
+.box1 {
+    font-size: 30px;
+}
 
+.box3 {
+    font-size: 150px;
+}
 
+.box4 {
+    font-size: 200px;
+}
+
+.box5 {
+    font-size: 10px;
+}
+
+.box10 {
+    font-size: 77px;
+}
