@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Gradient</title>
+</head>
+<body>
+    
+
+<div class="radial-gradient"></div>
+
+<div class="examples">
+    <div class="one">1</div>
+    <div class="two">2</div>
+    <div class="three">3</div>
+    <div class="four">4</div>
+</div>
+
+    <style>
+
+html {
+     background: #246756;
+ }
+
+
+
+body {
+    
+    height: 100vh;
+    width: 100vw;
+    margin: 0;
+    display: grid;
+    place-items: center center;
+    background: 
+    radial-gradient(
+      farthest-side at bottom left,
+      rgba(255, 0, 255, 0.5), 
+      transparent
+    ),
+    radial-gradient(
+      farthest-corner at bottom right,
+      rgba(255, 50, 50, 0.5), 
+      transparent 400px
+    );
+}
+
+.examples {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 20px;
+
+    --light: #5d1674;
+    --dark: #2f0047;
+}
+
+.examples > div {
+    width: 100px;
+    height: 100px;
+    box-shadow: 5px -10px 15px -5px rgba(255, 255, 255, 0.1);
+    border-radius: 5px;
+}
+
+.one {
+    background: radial-gradient(
+        at top left,
+        var(--light), var(--dark)
+    )
+}
+
+.two {
+    background: radial-gradient(
+        at top right,
+        var(--light), var(--dark)
+    )
+}
+
+.three {
+    background:radial-gradient(
+        at bottom left,
+        var(--light), var(--dark)
+    )
+}
+
+.four {
+    background: radial-gradient(
+        at bottom right,
+        var(--light), var(--dark)
+    );
+}
+
+
+.radial-gradient {
+    position: fixed;
+    top: 50px;
+    left:0px;
+    height: 100px;
+    width: 100%;
+    background: #9b59b6;
+    background:
+        radial-gradient(
+            at center, #3498db, #9b59b6;
+        );
+}
+
+    </style>
+
+      
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"></script>
+    <script>
+    $(document).mousemove(function (event) {
+            windowWidth = $(window).width();
+            windowHeight = $(window).height();
+
+            mouseXpercentage = Math.round(event.pageX / windowWidth * 100);
+            mouseYpercentage = Math.round(event.pageY / windowHeight * 100);
+
+            $('.radial-gradient').css('background', 'radial-gradient(at ' + mouseXpercentage + '% ' + mouseYpercentage + '%, #3498db, #9b59b6)');
+        });
+    </script>
+</body>
+</html>
