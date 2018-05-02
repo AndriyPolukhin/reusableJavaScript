@@ -79,3 +79,4 @@ items.forEach(item => item.addEventListener('click', handleClick));
 
 // 8. Add Evemt listener to a button to close the image
 overlayClose.addEventListener('click', close);
+
