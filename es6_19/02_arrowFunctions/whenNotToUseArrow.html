@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>When You don't use arrow</title>
+</head>
+
+<body>
+
+    <style>
+        button {
+            font-size: 100px;
+            border: none;
+            box-shadow: 2px 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .on {
+            background: #ffc600;
+
+        }
+    </style>
+
+
+    <button id="pushy">Push me</button>
+
+    <script>
+        const button = document.querySelector('#pushy');
+        button.addEventListener('click', function () {
+            console.log(this);
+            this.classList.toggle('on');
+        });
+
+        const person = {
+            points: 23,
+            score() {
+                console.log(this);
+                this.points++;
+            }
+        }
+
+
+        class Car {
+            constructor(make, colour) {
+                this.make = make;
+                this.colour = colour;
+            }
+        }
+
+        const beemer = new Car('bmw', 'blue');
+        const subie = new Car('Subaru', 'white');
+
+        Car.prototype.sumarize = function () {
+            return `This car is a ${this.make} in the colour ${this.colour}`;
+        };
+
+
+        const orderChildren = function () {
+            const children = Array.from(arguments);
+            return children.map((child, i) => {
+                return `${child} was child #${i + 1}`;
+            })
+            console.log(arguments);
+        }
+    </script>
+</body>
+
+</html>
