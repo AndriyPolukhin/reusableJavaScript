@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>TS Render Function</title>
+</head>
+
+<body>
+
+    <script>
+        const beer = {
+            name: 'Belgian Wit',
+            brewery: 'Steam Whistle Brewery',
+            keywords: ['pale', 'cloudly', 'spiced', 'crisp']
+        };
+
+        function renderKeywords(keywords) {
+            debugger;
+            return `
+                <ul>
+                    ${keywords.map(keyword => `<li>${keyword}</li>`).join('')}
+                </ul>
+            `;
+        }
+
+
+        const markup =
+            `
+            <div class="beer">
+                <h2>${beer.name}</h2>
+                <p class="brewery">${beer.brewery}</p>
+                ${renderKeywords(beer.keywords)}
+            </div>
+        `;
+
+
+        document.body.innerHTML = markup;
+    </script>
+</body>
+
+</html>
