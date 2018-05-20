@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Destructuring!</title>
+</head>
+
+<body>
+    <script>
+        const person = {
+            first: 'Andriy',
+            last: 'Polukhin',
+            country: 'Ukraine',
+            city: 'Kyiv',
+            twitter: '@andriypolukhin'
+        };
+
+        const {
+            first,
+            last,
+            twitter
+        } = person;
+
+
+        const andriy = {
+            first: 'Andriy',
+            last: 'Polukhin',
+            links: {
+                social: {
+                    twitter: 'https://twitter.com/andriypolukhin',
+                    facebook: 'https://facebook.com/andriy.polukhin',
+                },
+                web: {
+                    blog: 'https://andriypolukhin.com'
+                }
+            }
+        }
+
+        const {
+            twitter: tweet,
+            facebook: fb
+        } = andriy.links.social;
+
+
+        const settings = {
+            width: 300,
+            color: 'black'
+        }
+        const {
+            width = 100,
+                height = 100,
+                color = 'blue',
+                fontSize = 25
+        } = settings;
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Iterables & Looping</title>
+</head>
+
+<body>
+
+    <script>
+        Array.prototype.shuffle = function () {
+            var i = this.length,
+                j, temp;
+            if (i == 0) return this;
+            while (--i) {
+                j = Math.floor(Math.random() * (i + 1));
+                temp = this[i];
+                this[i] = this[i];
+                this[j] = temp;
+            }
+            return this;
+        }
+
+        const cuts = ['Chuck', 'Brisket', 'Shank', 'Short Rib'];
+
+        cuts.shop = 'MM Meats';
+
+        for (let i = 0; i < cuts.length; i++) {
+            console.log(cuts[i]);
+        }
+        console.log('='.repeat(40));
+        /*
+        cuts.forEach((cut) => {
+            console.log(cut);
+            if (cut === 'Brisket') {
+                continue;
+            }
+        });
+        */
+
+        console.log('='.repeat(40));
+        for (const index in cuts) {
+            console.log(cuts[index]);
+        }
+        console.log('='.repeat(40));
+
+        for (const cut of cuts) {
+            if (cut === 'Brisket') {
+                continue;
+                //break;
+            }
+            console.log(cut);
+        }
+    </script>
+</body>
+
+</html>
