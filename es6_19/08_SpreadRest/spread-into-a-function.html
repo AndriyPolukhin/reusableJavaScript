@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Spread Examples</title>
+</head>
+
+<body>
+    <script>
+        const inventors = ['Eistein', 'Newton', 'Calileo'];
+        const newInventors = ['Musk', 'Jobs'];
+
+        //inventors.push.apply(inventors, newInventors);
+        inventors.push(...newInventors);
+        console.log(inventors);
+
+        const name = ['Andriy', 'Polukhin'];
+
+        function sayHi(first, last) {
+            console.log(`hey there ${first} ${last}`);
+        }
+
+        sayHi(...name);
+    </script>
+</body>
+
+</html>
