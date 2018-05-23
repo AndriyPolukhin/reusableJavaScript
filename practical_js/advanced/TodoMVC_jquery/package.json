@@ -1,0 +1,17 @@
+{
+  "name": "todomvc_jquery",
+  "version": "1.0.0",
+  "description": "Demo for TodoVC jQuery",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "express": "^4.16.3"
+  },
+  "engines": {
+    "node": "4.4.5"
+  }
+}
