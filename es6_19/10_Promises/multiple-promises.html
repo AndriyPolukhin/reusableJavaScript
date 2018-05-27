@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Chaining Promises</title>
+</head>
+
+<body>
+    <script>
+        /*
+                const weather = new Promise((resolve) => {
+                    setTimeout(() => {
+                        resolve({
+                            temp: 29,
+                            conditions: 'Sunny with Clouds'
+                        });
+                    }, 2000);
+                });
+
+                const tweets = new Promise((resolve) => {
+                    setTimeout(() => {
+                        resolve(['I like cake', 'BBQ is good too!']);
+                    }, 500);
+                });
+
+                Promise
+                    .all([weather, tweets])
+                    .then(responses => {
+                        const [weatherInfo, tweetInfo] = responses;
+                        console.log(weatherInfo, tweetInfo);
+                    })
+                */
+
+        const postsPromise = fetch('https://jsonplaceholder.typicode.com/posts');
+        const albumPromise = fetch('https://jsonplaceholder.typicode.com/albums/1');
+
+        //const postsPromise = fetch('http://wesbos.com/wp-json/wp/v2/posts');
+        const streetCarsPromise = fetch('http://data.ratp.fr/api/datasets/1.0/search/?q=paris');
+
+        Promise
+            // Call all of the promises on the page
+            .all([postsPromise, streetCarsPromise])
+            // work with the promises
+            .then(responses => {
+                // use a map to format data to json
+                return Promise.all(responses.map(res => res.json()))
+            })
+            // return the jsoned data as an array of responses
+            .then(responses => {
+                console.log(responses);
+            })
+    </script>
+</body>
+
+</html>
