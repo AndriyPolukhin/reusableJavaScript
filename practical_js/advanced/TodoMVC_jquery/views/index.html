@@ -6,9 +6,9 @@
     <!-- <link rel="icon" id="favicon" href="https://heperdev.com/favicon.ico" type="image/x-icon"> -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <!-- <link rel="stylesheet" href="../public/css/base.css"> -->
-    <!-- <link rel="stylesheet" href="../public/css/index.css"> -->
-    <!-- <link rel="stylesheet" href="../css/app.css"> -->
+    <link rel="stylesheet" href="../public/css/base.css">
+    <link rel="stylesheet" href="../public/css/index.css">
+    <link rel="stylesheet" href="../css/app.css">
     <title>jQuery * TodoMVC</title>
 </head>
 
@@ -20,7 +20,7 @@
             <input id="new-todo" placeholder="What needs to be done?" autofocus>
         </header>
         <section id="main">
-            <input type="checkbox" id="toggle-all">
+            <input id="toggle-all" type="checkbox">
             <label for="toggle-all">Mark all as complete</label>
             <ul id="todo-list"></ul>
         </section>
@@ -28,13 +28,45 @@
     </section>
     <footer id="info">
         <p>Double-click to edit a todo</p>
-        <p>Created by
+        <p>Created be a
             <a href="http://sindresorhus.com">Sindre Sorhus</a>
         </p>
         <p>Part of
             <a href="http://todomvc.com">TodoMVC</a>
         </p>
     </footer>
+
+    <script id="todo-template" type="text/x-handlebars-template">
+        {{#this}}
+        <li {{#if completed}}class="completed" {{/if}} data-id="{{id}}">
+            <div class="view">
+                <input class="toggle" type="checkbox" {{#if completed}}checked{{/if}}>
+                <label>{{title}}</label>
+                <button class="destroy"></button>
+            </div>
+            <input class="edit" value="{{title}}">
+        </li>
+        {{/this}}
+    </script>
+    <script id="footer-template" type="text/x-handlebars-template">
+        <span id="todo-count">
+            <strong>{{activeTodoCount}}</strong>
+            {{activeTodoWord}} left
+        </span>
+        <ul id="filters">
+            <li>
+                <a {{#eq filter 'all'}}class="selected" {{/eq}}href="#/all">All</a>
+            </li>
+            <li>
+                <a {{#eq filter 'active'}}class="selected" {{/eq}}href="#/active">Active</a>
+            </li>
+            <li>
+                <a {{#eq filter 'completed'}}class="selected" {{/eq}}href="#/completed">Completed</a>
+            </li>
+        </ul>
+        {{#if completedTodos}}
+        <button id="clear-completed">Clear completed</button>{{/if}}
+    </script>
 
 
 

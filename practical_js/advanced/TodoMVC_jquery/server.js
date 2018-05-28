@@ -1,12 +1,12 @@
 // init project
-var express = require('express');
-var app = express();
+const express = require('express');
+const app = express();
 
 // http://expressjs.com/en/starter/static-files.html
 app.use(express.static('public'));
 
 // http://expressjs.com/en/starter/basic-routing.html
-app.get("/", function ( request, response) {
+app.get("/", function (request, response) {
     response.sendFile(__dirname + '/views/index.html');
 });
 
