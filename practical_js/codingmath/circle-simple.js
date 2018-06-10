@@ -7,7 +7,7 @@ window.onload = function () {
     const centerX = width / 2;
     const centerY = height / 2;
     const radius = 200;
-    const numObjects = 20;
+    const numObjects = 30;
     const slice = Math.PI * 2 / numObjects;
 
     let angle = 0;
