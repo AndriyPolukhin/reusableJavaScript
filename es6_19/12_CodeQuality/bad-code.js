@@ -1,10 +1,8 @@
 /* globals twttr ga */
+
 const weather = new Promise((resolve) => {
   setTimeout(() => {
-    resolve({
-      temp: 29,
-      conditions: 'Sunny with Clouds',
-    });
+    resolve({ temp: 29, conditions: 'Sunny with Clouds' });
   }, 2000);
 });
 
@@ -33,41 +31,35 @@ Promise
 
 
 ga.track();
-twttr.trackCOnversion();
+twttr.trackConversion();
 
-/* eslint-disabled */
 
+/* eslint-disable */
 if (!Array.prototype.includes) {
-  /* eslint-disable no-extend-native */
-  Array.prototype.includes = function (searchElement /* , fromIndex */) {
-    /* eslint-enable no-extend-native */
-
-
-    const O = Object(this);
-    const len = parseInt(O.length, 10) || 0;
-    if (len === 0) {
+  Object.defineProperty(Array.prototype, 'includes', {
+    value: function (searchElement, fromIndex) {
+      if (this == null) {
+        throw new TypeError('"this" is null or not defined');
+      }
+      var o = Object(this);
+      var len = o.length >>> 0;
+      if (len === 0) {
+        return false;
+      }
+      var n = fromIndex | 0;
+      var k = Math.max(n >= 0 ? n : len - Math.abs(n), 0);
+      function sameValueZero(x, y) {
+        return x === y || (typeof x === 'number' && typeof y === 'number' && isNaN(x) && isNaN(y));
+      }
+      while (k < len) {
+        if (sameValueZero(o[k], searchElement)) {
+          return true;
+        }
+        k++;
+      }
       return false;
     }
-    const n = parseInt(arguments[1], 10) || 0;
-    let k;
-    if (n >= 0) {
-      k = n;
-    } else {
-      k = len + n;
-      if (k < 0) {
-        k = 0;
-      }
-    }
-    let currentElement;
-    while (k < len) {
-      currentElement = O[k];
-      if (searchElement === currentElement ||
-                (searchElement !== searchElement && currentElement !== currentElement)) { // NaN !== NaN
-        return true;
-      }
-      k++;
-    }
-    return false;
-  };
+  });
 }
-/* eslint-enabled */
+
+/* eslint-enable */

@@ -1,4 +1,4 @@
-# Fake JavaScript Docs
+# Fake Javascript Docs
 
 ```js
 const x = 100;
