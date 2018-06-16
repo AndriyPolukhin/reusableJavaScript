@@ -1,0 +1,14 @@
+@font-face {
+  font-family: 'RuachLetPlain';
+  src: url('./RuachLetPlain.woff') format('woff'), url('./RuachLetPlain.woff2') format('woff2');
+  font-weight: 600;
+  font-style: normal;
+}
+
+.hello {
+  color: purple;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-family: 'RuachLetPlain';
+  background: url('./icon.jpg') no-repeat;
+}
