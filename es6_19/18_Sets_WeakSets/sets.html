@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Sets</title>
+</head>
+
+<body>
+  <script>
+    const people = new Set();
+    people.add('Andriy');
+    people.add('Anastasia');
+    people.add('Olga');
+
+    for (const person of people) {
+      console.log(person);
+    }
+
+    const students = new Set(['Andriy', 'Nastena', 'Olga']);
+
+    const dogs = ['Punky', 'Drond'];
+
+    const dogSet = new Set(dogs);
+  </script>
+</body>
+
+</html>
