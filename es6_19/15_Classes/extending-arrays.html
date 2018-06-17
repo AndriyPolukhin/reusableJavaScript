@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Extending Arrays</title>
+</head>
+
+<body>
+  <script>
+    class MovieCollection extends Array {
+      constructor(name, ...items) {
+        super(...items);
+        this.name = name;
+      }
+      add(movie) {
+        this.push(movie);
+      }
+      topRated(limit = 10) {
+        return this.sort((a, b) => (a.stars > b.stars ? -1 : 1)).slice(0, limit);
+      }
+    }
+
+    const movies = new MovieCollection('Andriy\' Fav Movies', {
+      name: 'Bee Movie',
+      stars: 10
+    }, {
+      name: 'Start Wars Trek',
+      stars: 1
+    }, {
+      name: 'Highickers through the Galaxy',
+      stars: 7
+    }, {
+      name: 'King of the road',
+      stars: 8
+    });
+
+    movies.add({
+      name: 'Titanic',
+      stars: 4
+    });
+  </script>
+</body>
+
+</html>

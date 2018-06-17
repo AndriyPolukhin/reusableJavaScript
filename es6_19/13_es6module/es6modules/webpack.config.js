@@ -1,8 +1,9 @@
 const webpack = require('webpack');
-
+const path = require('path');
 const nodeEnv = process.env.NODE_ENV || 'production';
 
 module.exports = {
+  mode: 'production',
   devtool: 'source-map',
   entry: {
     filename: './app.js'
@@ -15,25 +16,28 @@ module.exports = {
     loaders: [{
       test: /\.js$/,
       exclude: /node_modules/,
-      loader: 'babel-loader',
+      loader: 'babel',
       query: {
         presets: ['es2015-native-modules']
       }
     }]
   },
   plugins: [
+    // uglify js
     new webpack.optimize.UglifyJsPlugin({
       compress: {
-        warnings: false
+        warning: false
       },
       output: {
         comments: false
       },
       sourceMap: true
     }),
-    new webpack.EnvironmentPlugin('NODE_ENV'),
+    // env plugin
     new webpack.DefinePlugin({
-      'process.env.NODE_ENV': JSON.stringify(nodeEnv)
+      'process.env': {
+        NODE_ENV: JSON.stringify(nodeEnv)
+      }
     })
   ]
 };

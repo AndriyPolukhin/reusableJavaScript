@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Classes</title>
+</head>
+
+<body>
+  <script>
+    class Dog {
+      constructor(name, breed) {
+        this.name = name;
+        this.breed = breed;
+      }
+      bark() {
+        console.log(`Bark Bark! My name is ${this.name}`);
+      }
+      cuddle() {
+        console.log(`Bark Bark! My name is ${this.name} and I'm a ${this.breed}`);
+      }
+      static info() {
+        console.log('A dog is better then a cat by 10 times');
+      }
+      get description() {
+        return `${this.name} is a ${this.breed} type of dog`;
+      }
+      set nicknames(value) {
+        this.nick = value.trim();
+      }
+      get nicknames() {
+        return this.nick.toUpperCase();
+      }
+    }
+
+    const ayax = new Dog('Ayax', 'R\'Del Terier');
+    const silva = new Dog('Silva', 'German Retriver');
+  </script>
+</body>
+
+</html>
