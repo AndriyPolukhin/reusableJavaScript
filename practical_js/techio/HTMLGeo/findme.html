@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Finding Me</title>
+<script>
+function getLocation()
+{
+  // Check whether browser supports Geolocation API or not
+  if (navigator.geolocation) { // Supported
+
+    // To add PositionOptions
+
+	navigator.geolocation.getCurrentPosition(getPosition);
+  } else { // Not supported
+	alert("Oops! This browser does not support HTML Geolocation.");
+  }
+}
+function getPosition(position)
+{
+  document.getElementById("location").innerHTML =
+	  "Latitude: " + position.coords.latitude + "<br>" +
+	  "Longitude: " + position.coords.longitude;
+}
+
+// To add catchError(positionError) function
+
+</script>
+</head>
+<body>
+<h1>Finding Me</h1>
+<button onclick="getLocation()">Where am I?</button>
+<p id="location"></p>
+</body>
+</html>
