@@ -1,1 +1,4 @@
-This is the INPUT TEXT data
+
+This is the INPUT TEXT data!
+console.log("\n");
+And we are going to work with it!
