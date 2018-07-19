@@ -1,0 +1,1 @@
+{"index.jsx":"const MyComponent = function() {\n  // change code below this line\nreturn (\n  <div>Go form $2000 to $5000 and from there to $20 000</div>\n);\n\n\n  // change code above this line\n}"}

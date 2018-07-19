@@ -1,0 +1,1 @@
+{"index.jsx":"// write your code here\nconst JSX = \n<div>\n    <h1>React within react</h1>\n    <p>Hello there JSX</p>\n    <ul>\n        <li>Components</li>\n        <li>State</li>\n        <li>Virtual Dom</li>\n    </ul>\n</div>;"}
