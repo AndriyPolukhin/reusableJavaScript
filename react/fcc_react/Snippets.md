@@ -35,3 +35,6 @@ return (
 
 # Render component to the DOM
 ReactDOM.render(<ComponentToRender />, targetNode).
+
+# Bind a method in the constructor
+this.handleClick = this.handleClick.bind(this)
