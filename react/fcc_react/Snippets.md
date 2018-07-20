@@ -38,3 +38,8 @@ ReactDOM.render(<ComponentToRender />, targetNode).
 
 # Bind a method in the constructor
 this.handleClick = this.handleClick.bind(this)
+
+let onlineUsers = users.filter(user => user.online);
+
+
+renderToString()
