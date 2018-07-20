@@ -13,8 +13,10 @@ class CampSite extends React.Component {
 };
 
 const Camper = (props) => {
-  return <p>{props.name}</p>
+  return (
+    <p>{props.name}</p>
+  );
 };
 
-Camper.default = { name="CamperBot" }
-CamperpropTypes = { name: PropTypes.string.isRequired }
+Camper.default = { name: 'CamperBot' };
+Camper.propTypes = { name: PropTypes.string.isRequired };
