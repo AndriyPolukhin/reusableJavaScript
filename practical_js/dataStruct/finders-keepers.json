@@ -1,0 +1,1 @@
+{"index.js":"function findElement(arr, func) {\n  \n  let nums = [];\n\n  for (let i = 0; i < arr.length; i++) {\n    if (func(arr[i])) {\n      nums.push(arr[i])\n    }\n  }\n\n  nums.sort((a, b) => {\n    return a - b;\n  });\n\n  if (nums.length > 0) {\n    return nums[0];\n  }\n  return undefined;\n}\n\nfindElement([1, 2, 3, 4], num => num % 2 === 0);"}
