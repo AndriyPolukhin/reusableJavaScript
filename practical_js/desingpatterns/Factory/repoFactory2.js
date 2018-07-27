@@ -1,4 +1,4 @@
-const repoFactory = function() {
+const repoFactory = function () {
   const repos = this;
   const repoList = [
     { name: 'task', source: './taskRepository' },
@@ -6,7 +6,7 @@ const repoFactory = function() {
     { name: 'project', source: './projectRepository' }
   ];
 
-  repoList.forEach(function(repo) {
+  repoList.forEach(function (repo) {
     repos[repo.name] = require(repo.source)();
   });
 };
