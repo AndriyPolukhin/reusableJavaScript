@@ -2,10 +2,6 @@ const mongoose = require('mongoose');
 const Store = mongoose.model('Store');
 
 exports.homePage = (req, res) => {
-  req.flash('error', `Something Happened`);
-  req.flash('info', `Some Info`);
-  req.flash('warning', `This is a warning`);
-  req.flash('success', `It's a huge success`);
   res.render('index');
 };
 
@@ -14,8 +10,14 @@ exports.addStore = (req, res) => {
 };
 
 exports.createStore = async (req, res) => {
-  const store = new Store(req.body);
-  await store.save();
+  const store = await (new Store(req.body)).save();
   req.flash('success', `Successfully Created ${store.name}. Care to leave a review?`);
-  res.redirect('/');
+  res.redirect('/store/${store.slug}');
 };
+
+exports.getStores = async (req, res) => {
+  // 1. Query the database for the list of all stores
+  const stores = await Store.find();
+  console.log(stores);
+  res.render('stores', { title: 'Stores', stores });
+}
