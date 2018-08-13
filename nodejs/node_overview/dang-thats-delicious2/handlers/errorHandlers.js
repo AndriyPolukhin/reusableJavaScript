@@ -7,7 +7,7 @@
 */
 
 exports.catchErrors = (fn) => {
-  return function(req, res, next) {
+  return function (req, res, next) {
     return fn(req, res, next).catch(next);
   };
 };
@@ -30,6 +30,7 @@ exports.notFound = (req, res, next) => {
 */
 
 exports.flashValidationErrors = (err, req, res, next) => {
+  // if there are no erros to show for flashes, skip
   if (!err.errors) return next(err);
   // validation errors look like
   const errorKeys = Object.keys(err.errors);
