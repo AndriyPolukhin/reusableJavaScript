@@ -3,6 +3,5 @@ extends layout
 include mixins/_storeForm
 
 block content
-  .inner
-    h2= title.toUpperCase()
-    +storeForm(store)
+  h2= title
+  +storeForm()
