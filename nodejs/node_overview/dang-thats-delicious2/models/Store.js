@@ -40,7 +40,10 @@ const storeSchema = new mongoose.Schema({
     ref: 'User',
     required: 'You must supply an author'
   }
-});
+}, {
+    toJSON: { virtuals: true },
+    toObject: { virtuals: true }
+  });
 
 
 // Define our indexes
@@ -49,6 +52,7 @@ storeSchema.index({
   description: 'text'
 });
 
+storeSchema.index({ location: '2dsphere' });
 
 storeSchema.pre('save', async function (next) {
   if (!this.isModified('name')) {
@@ -75,5 +79,11 @@ storeSchema.statics.getTagsList = function () {
     { $sort: { count: -1 } }
   ]).cursor({}).exec().toArray();
 };
+// 1. Find reviews where the stores _id property === reviews store property
+storeSchema.virtual('reviews', {
+  ref: 'Review', // What model to link?
+  localField: '_id', // which filed on the Store?
+  foreignField: 'store' // which field on the Review?
+});
 
 module.exports = mongoose.model('Store', storeSchema);
