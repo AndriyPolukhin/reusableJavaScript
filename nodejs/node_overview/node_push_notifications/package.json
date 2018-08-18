@@ -1,0 +1,17 @@
+{
+  "name": "node_push_notifications",
+  "version": "1.0.0",
+  "description": "This is a node push notification app",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "keywords": [],
+  "author": "Andriy Polukhin",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "express": "^4.16.3",
+    "web-push": "^3.3.2"
+  }
+}
