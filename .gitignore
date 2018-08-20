@@ -15,6 +15,9 @@
 /es6_19/13_es6module/outputManagement/node_modules/
 /nodejs/cafeApp/node_modules
 */node_modules/
+.DS_Store
+.idea
+
 # Logs
 logs
 *.log
@@ -73,6 +76,7 @@ typings/
 
 # dotenv environment variables file
 .env
+.env.now
 
 # next.js build output
 .next
