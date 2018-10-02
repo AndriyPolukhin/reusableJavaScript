@@ -670,11 +670,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "F:\\Project_WebSites\\Practise_and_modules\\Modules_\\REUSABLE CODE\\PRACTICE\\reusableJavaScript\\Bootcamp_WD_FS\\JavaScript\\Derek Banas\\C#\\Program\\Program.csproj",
+      "projectUniqueName": "f:\\PRACTICE\\reusableJavaScript\\Bootcamp_WD_FS\\JavaScript\\Derek Banas\\C#\\Program\\Program.csproj",
       "projectName": "Program",
-      "projectPath": "F:\\Project_WebSites\\Practise_and_modules\\Modules_\\REUSABLE CODE\\PRACTICE\\reusableJavaScript\\Bootcamp_WD_FS\\JavaScript\\Derek Banas\\C#\\Program\\Program.csproj",
+      "projectPath": "f:\\PRACTICE\\reusableJavaScript\\Bootcamp_WD_FS\\JavaScript\\Derek Banas\\C#\\Program\\Program.csproj",
       "packagesPath": "C:\\Users\\Andrey\\.nuget\\packages\\",
-      "outputPath": "F:\\Project_WebSites\\Practise_and_modules\\Modules_\\REUSABLE CODE\\PRACTICE\\reusableJavaScript\\Bootcamp_WD_FS\\JavaScript\\Derek Banas\\C#\\Program\\obj\\",
+      "outputPath": "f:\\PRACTICE\\reusableJavaScript\\Bootcamp_WD_FS\\JavaScript\\Derek Banas\\C#\\Program\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
