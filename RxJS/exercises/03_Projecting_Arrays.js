@@ -56,7 +56,7 @@
   newReleases.forEach((item) => {
     const { id, title } = item;
 
-    console.log(`The item id: ${id} and the title: ${title}`);
+    // console.log(`The item id: ${id} and the title: ${title}`);
     videoAndTitlePairs.push({ id, title });
 
   });
