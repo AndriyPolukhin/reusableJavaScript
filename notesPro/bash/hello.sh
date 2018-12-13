@@ -1,8 +1,4 @@
-#!/usr/bin/env bash
-
-whom_variable="World"
-
-
-printf "Hello, %s\n" "$whom_variable"
-
-printf "Hello, %s\n" "$1"
+#!/bin/bash
+echo "Hello World\n"
+adding_string_to_number="s"
+v=$(expr 5 + adding_string_to_number)
