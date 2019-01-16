@@ -1,6 +1,7 @@
 bash_aliases.sh*
 combined.gz
 combined2.gz
+file.txt
 file_all.sh
 file1.gz
 file1.sh
@@ -14,7 +15,10 @@ hello.sh*
 hello.txt.gz
 hello-world.sh*
 howdy.txt.gz
+lines.txt
 log.txt
 namearg.sh*
 script.sh*
+standard.sh
+tempFile.txt
 test.py*

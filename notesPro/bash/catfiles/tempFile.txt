@@ -1,0 +1,13 @@
+total 10
+-rwxr-xr-x 1 Andrey 197121 351 янв  9 14:30 aliases*
+-rw-r--r-- 1 Andrey 197121  52 янв  9 14:26 combined.gz
+-rw-r--r-- 1 Andrey 197121  83 янв  9 14:38 file
+-rw-r--r-- 1 Andrey 197121  83 янв  9 14:40 file.txt
+-rw-r--r-- 1 Andrey 197121   0 янв  9 14:14 file_all
+-rw-r--r-- 1 Andrey 197121  20 янв  9 14:25 file1
+-rw-r--r-- 1 Andrey 197121  13 янв  9 14:26 file2
+-rw-r--r-- 1 Andrey 197121  13 янв  9 14:26 file3
+-rw-r--r-- 1 Andrey 197121  46 янв  9 14:47 lines
+-rw-r--r-- 1 Andrey 197121   0 янв  9 14:55 tempFile.txt
+-rwxr-xr-x 1 Andrey 197121 209 янв  9 14:34 test.py*
+-rw-r--r-- 1 Andrey 197121  33 янв  9 14:16 unicode.txt
