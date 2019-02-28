@@ -19,3 +19,9 @@ _data.delete('test', 'newFile', (err) => {
 });
 */
 
+/*
+// @TODO: GET RID OF THIS
+helpers.sendTwilioSms('4158375309', 'hello', (err) => {
+  console.log('this was the error', err);
+});
+ */
