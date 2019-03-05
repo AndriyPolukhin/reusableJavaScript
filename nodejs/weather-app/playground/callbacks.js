@@ -1,12 +1,13 @@
 const getUser = (id, callback) => {
   const user = {
     id,
-    name: 'Andriy'
+    name: 'Andriy',
+    job: 'Software Engineer'
   };
 
   setTimeout(() => {
     callback(user);
-  }, 3000);
+  }, 3000)
 
 };
 
