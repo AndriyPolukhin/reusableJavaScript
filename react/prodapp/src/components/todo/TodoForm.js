@@ -15,5 +15,4 @@ TodoForm.propTypes = {
   currentTodo: PropTypes.string.isRequired,
   handleInputChange: PropTypes.func.isRequired,
   handleSubmit: PropTypes.func.isRequired
-
 }

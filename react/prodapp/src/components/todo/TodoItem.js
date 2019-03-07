@@ -5,7 +5,7 @@ export const TodoItem = (props) => {
   return (
     <li>
       <input
-        type='checkbox'
+        type="checkbox"
         defaultChecked={props.isComplete}
       /> {props.name}
     </li>
@@ -13,7 +13,7 @@ export const TodoItem = (props) => {
 }
 
 TodoItem.propTypes = {
+  id: PropTypes.number.isRequired,
   name: PropTypes.string.isRequired,
-  isComplete: PropTypes.bool,
-  id: PropTypes.number.isRequired
+  isComplete: PropTypes.bool
 }
